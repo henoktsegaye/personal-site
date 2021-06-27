@@ -5,8 +5,8 @@ import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
-import Layout from "../../components/layout";
-import Thumbnail from "../../components/thumbnail";
+import Layout from "../../components/layout/layout";
+import Thumbnail from "../../components/basic/thumbnail";
 import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
@@ -60,7 +60,7 @@ const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
 export default PostPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { content, data } = getPost(params?.slug as string);
+  const { content, data } = getPost(params?.slug as string, false);
 
   const mdxSource = await serialize(content, { scope: data });
 
@@ -73,7 +73,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getAllPosts(["slug"]);
+  const { posts } = getAllPosts(["slug"]);
 
   const paths = posts.map((post) => ({
     params: {

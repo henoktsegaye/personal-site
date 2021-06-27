@@ -1,6 +1,6 @@
 // components/Layout.tsx
-import Header from "../components/header";
-import Meta from "../components/meta";
+import Header from "../layout/header";
+import Meta from "../layout/meta";
 
 type Props = {
   children: React.ReactNode;

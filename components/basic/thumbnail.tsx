@@ -1,7 +1,6 @@
-
 // components/Thumbnail.tsx
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   title: string;
@@ -11,13 +10,15 @@ type Props = {
 
 const Thumbnail: React.FC<Props> = ({ title, src, slug }: Props) => {
   const image = (
-    <Image
-      src={src}
-      alt={`Cover Image for ${title}`}
-      width={1280}
-      height={720}
-      className="rounded-xl"
-    />
+    <div className="w-full h-56 mx-auto bg-transparent relative ">
+      <Image
+        src={src}
+        alt={`Cover Image for ${title}`}
+        layout="fill"
+        objectFit="contain"
+        className="rounded-xl"
+      />
+    </div>
   );
   return (
     <>

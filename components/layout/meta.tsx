@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { SITE_URL, SITE_NAME, TWITTER_USERNAME } from '../lib/constants';
+import { SITE_URL, SITE_NAME, TWITTER_USERNAME } from '../../lib/constants';
 
 type Props = {
   pageTitle?: string;
