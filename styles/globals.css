@@ -17,5 +17,37 @@ a {
 
 * {
   box-sizing: border-box;
- /* color: #ddd; */
+  /* color: #ddd; */
+}
+
+.blog h2 {
+  @apply text-3xl;
+  @apply mb-4;
+  @apply mt-6;
+  @apply dark:text-gray-100;
+  @apply text-gray-800;
+}
+
+.blog h3 {
+  @apply text-2xl;
+  @apply mt-6;
+  @apply mb-4;
+  @apply dark:text-gray-200;
+  @apply text-gray-700;
+}
+
+.blog p {
+  @apply dark:text-gray-300;
+  @apply text-gray-600;
+}
+
+.blog hr {
+  @apply mb-4;
+  @apply mt-4;
+  @apply dark:border-gray-900;
+  @apply border-gray-200;
+}
+.blog a {
+  @apply text-blue-600;
+  @apply dark:text-blue-700;
 }

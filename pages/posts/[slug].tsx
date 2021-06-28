@@ -34,7 +34,7 @@ const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
         />
         <meta property="og:image" content={ogImage} key="ogImage" />
       </Head>
-      <div className="max-w-screen-lg mx-auto pb-20">
+      <div className="max-w-screen-lg mx-auto pb-10">
         <article className="prose prose-blue">
           <div className="mb-4">
             <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />
@@ -44,13 +44,10 @@ const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
             {frontMatter.title}
           </h1>
 
-          <p className="font-bold text-gray-700 dark:text-gray-200v mb-10 ">
-            yield: {frontMatter.yields}
-          </p>
-
           <p className="text-gray-700 dark:text-gray-200">
             {frontMatter.description}
           </p>
+          <MDXRemote {...source} />
         </article>
       </div>
     </Layout>

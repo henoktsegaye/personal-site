@@ -1,4 +1,5 @@
 // pages/posts/[slug].tsx
+import "../../styles/blog.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -10,7 +11,7 @@ import Thumbnail from "../../components/basic/thumbnail";
 import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
-
+import Footer from "../../components/layout/footer";
 type Props = {
   source: MDXRemoteSerializeResult;
   frontMatter: Omit<IPost, "slug">;
@@ -34,7 +35,7 @@ const WorksPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
         />
         <meta property="og:image" content={ogImage} key="ogImage" />
       </Head>
-      <div className="max-w-screen-lg mx-auto pb-20">
+      <div className="max-w-screen-lg mx-auto mt-10 pb-10">
         <article className="prose prose-blue">
           <div className="mb-4">
             <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />
@@ -43,16 +44,12 @@ const WorksPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
           <h1 className="text-gray-700 text-4xl font-bold mb-6 dark:text-gray-200">
             {frontMatter.title}
           </h1>
-
-          <p className="font-bold text-gray-700 dark:text-gray-200v mb-10 ">
-            yield: {frontMatter.yields}
-          </p>
-
-          <p className="text-gray-700 dark:text-gray-200">
-            {frontMatter.description}
-          </p>
+          <div className="text-lg blog ">
+            <MDXRemote {...source} />
+          </div>
         </article>
       </div>
+      <Footer />
     </Layout>
   );
 };
