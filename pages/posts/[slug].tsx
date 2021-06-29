@@ -102,16 +102,11 @@ export const getStaticProps = async ({
   const { posts } = getAllPosts(["slug"]);
   const localeString: langType = langString[locale];
 
-  const paths = posts.map((post) => ({
-    params: {
-      slug: post.slug,
-      localeString,
-    },
-  }));
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
+      localeString,
     },
   };
 };
