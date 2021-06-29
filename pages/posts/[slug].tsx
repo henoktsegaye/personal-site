@@ -1,4 +1,5 @@
 // pages/posts/[slug].tsx
+import { useState } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -10,17 +11,46 @@ import Thumbnail from "../../components/basic/thumbnail";
 import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
+import langString, { langType } from "../../lib/lang";
 
 type Props = {
   source: MDXRemoteSerializeResult;
   frontMatter: Omit<IPost, "slug">;
+  localeString: langType;
 };
 
-const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
+const PostPage: React.FC<Props> = ({
+  source,
+  frontMatter,
+  localeString,
+}: Props) => {
+  const [theme, setTheme] = useState<boolean>(false);
+  const changeTheme = () => {
+    if (!theme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    setTheme(!theme);
+  };
   const ogImage = SITE_URL + frontMatter.thumbnail;
-
+  const {
+    middleContent,
+    socialMedia,
+    hero,
+    portfolio,
+    blog,
+    getConnected,
+    footer,
+    general,
+  } = localeString;
   return (
-    <Layout pageTitle={frontMatter.title}>
+    <Layout
+      pageTitle={frontMatter.title}
+      strings={general}
+      changeTheme={changeTheme}
+      theme={theme}
+    >
       <Head>
         <meta
           name="description"
@@ -56,11 +86,28 @@ const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
 
 export default PostPage;
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({
+  params,
+  locale = "en",
+}: {
+  locale: "am" | "en";
+  params: {
+    slug: string;
+  };
+}) => {
   const { content, data } = getPost(params?.slug as string, false);
 
   const mdxSource = await serialize(content, { scope: data });
 
+  const { posts } = getAllPosts(["slug"]);
+  const localeString: langType = langString[locale];
+
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug,
+      localeString,
+    },
+  }));
   return {
     props: {
       source: mdxSource,
@@ -69,7 +116,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async ({ locale = "en" }) => {
   const { posts } = getAllPosts(["slug"]);
 
   const paths = posts.map((post) => ({

@@ -1,5 +1,5 @@
 // pages/index.tsx
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
 
@@ -26,30 +26,56 @@ type Props = {
 
 const Home: React.FC<Props> = ({ files, localeString }) => {
   const { posts, works } = files;
-  const { middleContent, socialMedia, hero } = localeString;
+  const {
+    middleContent,
+    socialMedia,
+    hero,
+    portfolio,
+    blog,
+    getConnected,
+    footer,
+    general,
+  } = localeString;
+
+  const [theme, setTheme] = useState<boolean>(false);
+
   useEffect(() => {
     console.log("we have local stirng", localeString);
     // document.documentElement.classList.add("dark");
-  }, []);
+  }, [localeString]);
+
+  const changeTheme = () => {
+    if (!theme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    setTheme(!theme);
+  };
 
   return (
-    <Layout>
+    <Layout
+      strings={general}
+      pageTitle={general.siteTitle}
+      changeTheme={changeTheme}
+      theme={theme}
+    >
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{general.siteTitle}</title>
       </Head>
 
-      <div className="">
+      <div>
         <Hero hero={hero} socialMedia={socialMedia} />
-        <WorksTeaser works={works} />
+        <WorksTeaser works={works} strings={portfolio} />
         <MiddleContent
           title={middleContent.title}
           content={middleContent.description}
           link={middleContent.link}
         />
-        <BlogsTeaser posts={posts} />
-        <EmailMe />
+        <BlogsTeaser strings={blog} posts={posts} />
+        <EmailMe strings={getConnected} />
 
-        <Footer />
+        <Footer footer={footer} />
       </div>
     </Layout>
   );

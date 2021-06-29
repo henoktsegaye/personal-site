@@ -13,8 +13,8 @@ type props = {
 const Hero: React.FC<props> = ({ hero, socialMedia }) => {
   const { title, subTitle, secondRowTitle, moreText } = hero;
   return (
-    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-screen-sm mx-auto my-12 mb-24">
-      <div className=" grid lg:grid-cols-6 grid-cols-3 items-center">
+    <div className="2xl:max-w-screen-xl  xl:max-w-screen-lg lg:max-w-screen-md max-w-screen-sm mx-auto my-12 mb-24">
+      <div className=" grid xl:grid-cols-6 grid-cols-3 items-center">
         <div className="col-span-3 text-left">
           <h1 className="text-3xl leading-normal align-middle font-semibold text-gray-600 dark:text-gray-400">
             <span> {title?.intro} </span>

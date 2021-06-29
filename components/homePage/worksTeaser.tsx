@@ -3,23 +3,22 @@ import { IPost } from "../../types/post";
 import Thumbnail from "../basic/thumbnail";
 type props = {
   works: IPost[];
+  strings: {
+    title: string;
+    description: string;
+  };
 };
 
-const WorksTeaser: React.FC<props> = ({ works }) => {
+const WorksTeaser: React.FC<props> = ({ works, strings }) => {
   return (
-    <div className=" mx-auto dark:bg-blue-800 bg-blue-600 ">
+    <div className=" mx-auto dark:bg-blue-800 bg-blue-600 " id="workTeaser">
       <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-screen-sm mx-auto pt-6 pb-10">
         <div className="text-left mb-12">
           <h1 className="dark:text-gray-100 text-gray-100 font-bold text-3xl">
-            {" "}
-            Some Thoughts{" "}
+            {strings?.title}
           </h1>
-          <span className=" float-right dark:text-gray-100 text-gray-100 text-xl ">
-            Go there &rarr;
-          </span>
-          <p className="text-md text-gray-200 mt-2">
-            man endehone aytenal wogun, leza min gize
-          </p>
+
+          <p className="text-md text-gray-200 mt-2">{strings?.description}</p>
         </div>
 
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-0">
