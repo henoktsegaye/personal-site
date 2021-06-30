@@ -101,10 +101,10 @@ const langString: {
       description: "ከአሁን በፊት በተሻለ መንገድ የሰራሆቸው ስራዎች እንደሚከተለው ዘርዝሪያለሁ ።",
     },
     socialMedia: {
-      twitter: "https://twitter.com/henok-code",
-      github: "https://github.com/henokcode",
+      twitter: "https://twitter.com/henokcode",
+      github: "https://github.com/henoktsegaye",
       instagram: "https://instagram.com/henokcode",
-      linkedIn: "https://linkedin.com/in/henok-tsegaye",
+      linkedIn: "https://www.linkedin.com/in/henok-tsegaye-yeshanew",
     },
     getConnected: {
       title: "ሀሳብዎን ይግለጡ ።",
@@ -154,10 +154,10 @@ const langString: {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     },
     socialMedia: {
-      twitter: "https://twitter.com/henok-code",
-      github: "https://github.com/henokcode",
+      twitter: "https://twitter.com/henokcode",
+      github: "https://github.com/henoktsegaye",
       instagram: "https://instagram.com/henokcode",
-      linkedIn: "https://linkedin.com/in/henok-tsegaye",
+      linkedIn: "https://www.linkedin.com/in/henok-tsegaye-yeshanew",
     },
     portfolio: {
       title: "Previous Works",
