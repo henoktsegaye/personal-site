@@ -29,8 +29,12 @@ const WorksPage: React.FC<Props> = ({
   const [theme, setTheme] = useState<boolean>(false);
   const changeTheme = () => {
     if (!theme) {
+      localStorage.setItem("theme", "dark");
+
       document.documentElement.classList.add("dark");
     } else {
+      localStorage.setItem("theme", "light");
+
       document.documentElement.classList.remove("dark");
     }
     setTheme(!theme);
@@ -80,7 +84,7 @@ const WorksPage: React.FC<Props> = ({
           </div>
         </article>
       </div>
-      <Footer footer={footer} />
+      <Footer footer={footer} smaller />
     </Layout>
   );
 };

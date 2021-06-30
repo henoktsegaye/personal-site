@@ -13,8 +13,16 @@ type props = {
   theme: boolean;
 };
 
-const Header: React.FC<props> = ({ strings, changeTheme }) => {
-  const [theme , setTheme] = useState<boolean> (false);
+const Header: React.FC<props> = ({ strings, changeTheme, theme }) => {
+  const [ztheme, setTheme] = useState<boolean>(false);
+  useEffect(() => {
+    const xtheme = localStorage.getItem("theme")
+      ? localStorage.getItem("theme")
+      : "light";
+    if (xtheme == "dark") {
+      changeTheme();
+    }
+  }, []);
   useEffect(() => {
     const xtheme = localStorage.getItem("theme")
       ? localStorage.getItem("theme")
@@ -23,8 +31,10 @@ const Header: React.FC<props> = ({ strings, changeTheme }) => {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
       setTheme(true);
+    } else {
+      setTheme(false);
     }
-  }, []);
+  }, [theme]);
   return (
     <header className="pt-4 pb-4  bg-white border-b border-gray-100 dark:border-gray-900 dark:bg-black">
       <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg max-w-sm lg:max-w-screen-md ">
@@ -66,7 +76,7 @@ const Header: React.FC<props> = ({ strings, changeTheme }) => {
                 className="ml-3 align-bottom outline-none focus:outline-none hover:bg-opacity-50 bg-gray-100 dark:bg-gray-900 p-2 rounded-full"
                 onClick={changeTheme}
               >
-                {theme ? (
+                {ztheme ? (
                   <MoonIcon
                     width={24}
                     height={24}

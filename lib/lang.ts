@@ -45,7 +45,7 @@ interface langType {
     title: heroTitle;
     subTitle: string;
     secondRowTitle: string;
-    moreText: string;
+    moreText: string[];
   };
   socialMedia: socialMedia;
   portfolio: {
@@ -88,9 +88,11 @@ const langString: {
         title2: "ሶፍትዌር አበልጻጊ ነኝ።",
       },
       subTitle: "ራስህን/ሽን ለማስተዎወቅ ታች ላይ ኢሜይል ልትልክ/ኪ ትችላላችሁ ።",
-      secondRowTitle: "ያሳስበኛል ።",
-      moreText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      secondRowTitle: "ቴክኖሎጅስት።",
+      moreText: [
+        "ስለ ቴክኖሎጂ ብዙ ፍላጎት አለኝ። ቴክኖሎጅ የመጣበት እንዱሁም የሚሄድበትን በቅርበት መመልከት እወዳለሁ።  ከዛም አልፎ በሀገራችን ኢትዮጵያ በቴክኖሎጅው ዘርፍ ብዙ አቅም እንዳላት አምናለሁ። ",
+        " በአዲስ-አበባ ዩንቨርስቲ በ ኮምፒውተር ሳይንስ ትምህርቴን የተከታተልኩ ሲሆን በዋነኝነት ከዌብ እንዲሁም ከ ተንቀሳቃሽ ስልኮች ጋር የተገናኙ ሶፍትዌሮችን እሰራለሁ። በዚህም ምክኒያት JAVASCRIPT የተሰኘውን ማዘዣ እወደዋለሁ። የአሰራሬ መመሪያ ንፁ እና ሰርዐት ያለው ስራ ነው።",
+      ],
     },
     portfolio: {
       title: "ከአሁን በፊት የተሰሩ ስራዎች",
@@ -149,9 +151,11 @@ const langString: {
         title2: "Software Developer.",
       },
       subTitle: "Send me an email to introduce yourself.",
-      secondRowTitle: "I care",
-      moreText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      secondRowTitle: "technologiest",
+      moreText: [
+        "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better palce and our Country Ethiopia a power house.",
+        "Graduated from Addis Ababa university, I usaully work in web and mobile application development , for that reason i like using JAVASCRIPT. My work philosphy is Clean code and structure."
+      ],
     },
     socialMedia: {
       twitter: "https://twitter.com/henokcode",

@@ -5,7 +5,7 @@ type props = {
     title: heroTitle;
     subTitle: string;
     secondRowTitle: string;
-    moreText: string;
+    moreText: string[];
   };
   socialMedia: socialMedia;
 };
@@ -30,13 +30,20 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
               {title?.title2}
             </span>
           </h1>
-          <p className="text-gray-500 lg:mt-10 mt-2 text-lg"> {hero?.subTitle} </p>
+          <p className="text-gray-500 lg:mt-10 mt-2 text-lg">
+            {" "}
+            {hero?.subTitle}{" "}
+          </p>
         </div>
         <div className="col-span-3 mt-10 lg:mt-0">
           <p className="dark:text-gray-200 text-gray-800 font-bold text-3xl mb-3">
             {secondRowTitle}
           </p>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">{moreText}</p>
+          {moreText.map((content) => (
+            <p className="text-gray-600 dark:text-gray-400 text-lg mb-3">
+              {content}
+            </p>
+          ))}
 
           <div className="flex flex-row flex-wrap mt-6">
             <a
