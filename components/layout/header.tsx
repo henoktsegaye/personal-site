@@ -27,9 +27,9 @@ const Header: React.FC<props> = ({ strings, changeTheme }) => {
   }, []);
   return (
     <header className="pt-4 pb-4  bg-white border-b border-gray-100 dark:border-gray-900 dark:bg-black">
-      <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-screen-sm ">
+      <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg max-w-sm lg:max-w-screen-md ">
         <div className="grid grid-cols-7">
-          <div className="flex flex-row justify-between items-center 2xl:col-span-4 xl:col-span-3  lg:col-span-2 ">
+          <div className="flex flex-row justify-between items-center 2xl:col-span-4 xl:col-span-3  col-span-6 lg:col-span-2 ">
             <Link href="/">
               <a className="text-xl font-bold  dark:text-gray-400 text-gray-500 ">
                 {" "}

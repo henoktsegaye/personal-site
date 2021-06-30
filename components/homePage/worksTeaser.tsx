@@ -12,7 +12,7 @@ type props = {
 const WorksTeaser: React.FC<props> = ({ works, strings }) => {
   return (
     <div className=" mx-auto dark:bg-blue-800 bg-blue-600 " id="workTeaser">
-      <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-screen-sm mx-auto pt-6 pb-10">
+      <div className="2xl:max-w-screen-xl max-w-sm xl:max-w-screen-lg lg:max-w-screen-md mx-auto pt-6 pb-10">
         <div className="text-left mb-12">
           <h1 className="dark:text-gray-100 text-gray-100 font-bold text-3xl">
             {strings?.title}

@@ -13,7 +13,7 @@ const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
   const { title, description } = strings;
   return (
     <div className=" mx-auto bg-blue-50 dark:bg-gray-900 " id="blogTeaser">
-      <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-screen-sm mx-auto pt-6 pb-10">
+      <div className="2xl:max-w-screen-xl max-w-sm xl:max-w-screen-lg lg:max-w-screen-md mx-auto pt-6 pb-10">
         <div className="text-left mb-6 mt-6  ">
           <h1 className="dark:text-gray-100 text-gray-600 font-bold text-3xl">
             {title}

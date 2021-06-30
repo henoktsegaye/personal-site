@@ -10,7 +10,7 @@ type props = {
 
 const MiddleContent: React.FC<props> = ({ title, content, link }) => {
   return (
-    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-screen-sm mx-auto my-10" id="middleContent">
+    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto my-10" id="middleContent">
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center py-10 ">
         <div className="order-2 lg:order-1">
           <div className="text-4xl font-bold mb-10 text-gray-600 dark:text-gray-100 ">
