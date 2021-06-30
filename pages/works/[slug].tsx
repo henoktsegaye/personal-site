@@ -1,5 +1,6 @@
 // pages/posts/[slug].tsx
 import "../../styles/blog.module.css";
+import { useState } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -12,16 +13,46 @@ import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
+import langString, { langType } from "../../lib/lang";
+
 type Props = {
   source: MDXRemoteSerializeResult;
   frontMatter: Omit<IPost, "slug">;
+  localeString: langType;
 };
 
-const WorksPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
+const WorksPage: React.FC<Props> = ({
+  source,
+  frontMatter,
+  localeString,
+}: Props) => {
+  const [theme, setTheme] = useState<boolean>(false);
+  const changeTheme = () => {
+    if (!theme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    setTheme(!theme);
+  };
   const ogImage = SITE_URL + frontMatter.thumbnail;
-
+  const {
+    middleContent,
+    socialMedia,
+    hero,
+    portfolio,
+    blog,
+    getConnected,
+    footer,
+    general,
+  } = localeString;
   return (
-    <Layout pageTitle={frontMatter.title}>
+    <Layout
+      pageTitle={frontMatter.title}
+      strings={general}
+      changeTheme={changeTheme}
+      theme={theme}
+    >
       <Head>
         <meta
           name="description"
@@ -49,22 +80,32 @@ const WorksPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
           </div>
         </article>
       </div>
-      <Footer />
+      <Footer footer={footer} />
     </Layout>
   );
 };
 
 export default WorksPage;
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({
+  params,
+  locale = "en",
+}: {
+  locale: "am" | "en";
+  params: {
+    slug: string;
+  };
+}) => {
   const { content, data } = getPost(params?.slug as string, true);
 
   const mdxSource = await serialize(content, { scope: data });
+  const localeString: langType = langString[locale];
 
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
+      localeString,
     },
   };
 };

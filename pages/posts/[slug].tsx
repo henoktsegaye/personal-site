@@ -1,5 +1,5 @@
 // pages/posts/[slug].tsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -11,6 +11,7 @@ import Thumbnail from "../../components/basic/thumbnail";
 import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
+import Footer from "../../components/layout/footer";
 import langString, { langType } from "../../lib/lang";
 
 type Props = {
@@ -25,10 +26,27 @@ const PostPage: React.FC<Props> = ({
   localeString,
 }: Props) => {
   const [theme, setTheme] = useState<boolean>(false);
-  const changeTheme = () => {
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme") || "light";
+    changeTheme(theme);
+  }, []);
+
+  const changeTheme = (type: string) => {
+    localStorage.setItem("theme", type);
+    switch (type) {
+      case "dark":
+        document.documentElement.classList.add("dark");
+      default:
+        document.documentElement.classList.remove("dark");
+    }
+  };
+  const toggleTheme = () => {
     if (!theme) {
+      localStorage.setItem("theme", "dark");
       document.documentElement.classList.add("dark");
     } else {
+      localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
     }
     setTheme(!theme);
@@ -48,7 +66,7 @@ const PostPage: React.FC<Props> = ({
     <Layout
       pageTitle={frontMatter.title}
       strings={general}
-      changeTheme={changeTheme}
+      changeTheme={toggleTheme}
       theme={theme}
     >
       <Head>
@@ -80,6 +98,7 @@ const PostPage: React.FC<Props> = ({
           <MDXRemote {...source} />
         </article>
       </div>
+      <Footer footer={footer} />
     </Layout>
   );
 };

@@ -39,15 +39,12 @@ const Home: React.FC<Props> = ({ files, localeString }) => {
 
   const [theme, setTheme] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log("we have local stirng", localeString);
-    // document.documentElement.classList.add("dark");
-  }, [localeString]);
-
-  const changeTheme = () => {
+  const toogleTheme = () => {
     if (!theme) {
+      localStorage.setItem("theme", "dark");
       document.documentElement.classList.add("dark");
     } else {
+      localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
     }
     setTheme(!theme);
@@ -57,7 +54,7 @@ const Home: React.FC<Props> = ({ files, localeString }) => {
     <Layout
       strings={general}
       pageTitle={general.siteTitle}
-      changeTheme={changeTheme}
+      changeTheme={toogleTheme}
       theme={theme}
     >
       <Head>
