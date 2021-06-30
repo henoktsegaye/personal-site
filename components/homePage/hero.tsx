@@ -30,9 +30,9 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
               {title?.title2}
             </span>
           </h1>
-          <p className="text-gray-500 mt-10 text-lg"> {hero?.subTitle} </p>
+          <p className="text-gray-500 lg:mt-10 mt-2 text-lg"> {hero?.subTitle} </p>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-3 mt-10 lg:mt-0">
           <p className="dark:text-gray-200 text-gray-800 font-bold text-3xl mb-3">
             {secondRowTitle}
           </p>

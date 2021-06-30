@@ -82,7 +82,7 @@ const PostPage: React.FC<Props> = ({
         />
         <meta property="og:image" content={ogImage} key="ogImage" />
       </Head>
-      <div className="max-w-screen-lg mx-auto pb-10">
+      <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
         <article className="prose prose-blue">
           <div className="mb-4">
             <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />

@@ -66,7 +66,7 @@ const WorksPage: React.FC<Props> = ({
         />
         <meta property="og:image" content={ogImage} key="ogImage" />
       </Head>
-      <div className="max-w-screen-lg mx-auto mt-10 pb-10">
+      <div className="lg:max-w-screen-lg max-w-sm mx-auto mt-10 pb-10">
         <article className="prose prose-blue">
           <div className="mb-4">
             <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />
