@@ -14,6 +14,12 @@ import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
 import langString, { langType } from "../../lib/lang";
+interface returnPath {
+  params: {
+    slug: string;
+  };
+  locale: string;
+}
 
 type Props = {
   source: MDXRemoteSerializeResult;
@@ -116,13 +122,19 @@ export const getStaticProps = async ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { works } = getAllPosts(["slug"]);
-
-  const paths = works.map((post) => ({
+  const enPaths: returnPath[] = works.map((post) => ({
     params: {
       slug: post.slug,
     },
+    locale: "en",
   }));
 
+  const enPathsCopy = [...enPaths];
+  const amPaths = enPathsCopy.map((zpath) => ({
+    ...zpath,
+    locale: "am",
+  }));
+  const paths = [...amPaths, ...enPaths];
   return {
     paths,
     fallback: false,

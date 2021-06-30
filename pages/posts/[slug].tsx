@@ -14,6 +14,13 @@ import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
 import langString, { langType } from "../../lib/lang";
 
+interface returnPath {
+  params: {
+    slug: string;
+  };
+  locale: string;
+}
+
 type Props = {
   source: MDXRemoteSerializeResult;
   frontMatter: Omit<IPost, "slug">;
@@ -118,15 +125,22 @@ export const getStaticProps = async ({
   };
 };
 
-export const getStaticPaths = async ({ locale = "en" }) => {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const { posts } = getAllPosts(["slug"]);
-
-  const paths = posts.map((post) => ({
+  const enPaths: returnPath[] = posts.map((post) => ({
     params: {
       slug: post.slug,
     },
+    locale: "en",
   }));
 
+  const enPathsCopy = [...enPaths];
+  const amPaths = enPathsCopy.map((zpath) => ({
+    ...zpath,
+    locale: "am",
+  }));
+  const paths = [...amPaths, ...enPaths];
+  
   return {
     paths,
     fallback: false,
