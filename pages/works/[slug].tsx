@@ -8,7 +8,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import Layout from "../../components/layout/layout";
-import Thumbnail from "../../components/basic/thumbnail";
+import Featured from "../../components/basic/featured";
 import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
@@ -69,7 +69,7 @@ const WorksPage: React.FC<Props> = ({
       <div className="lg:max-w-screen-lg max-w-sm mx-auto mt-10 pb-10">
         <article className="prose prose-blue">
           <div className="mb-4">
-            <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />
+            <Featured title={frontMatter.title} src={frontMatter.thumbnail} />
           </div>
 
           <h1 className="text-gray-700 text-4xl font-bold mb-6 dark:text-gray-200">

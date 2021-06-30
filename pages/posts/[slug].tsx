@@ -7,7 +7,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import Layout from "../../components/layout/layout";
-import Thumbnail from "../../components/basic/thumbnail";
+import Featured from "../../components/basic/featured";
 import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
@@ -26,27 +26,10 @@ const PostPage: React.FC<Props> = ({
   localeString,
 }: Props) => {
   const [theme, setTheme] = useState<boolean>(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme") || "light";
-    changeTheme(theme);
-  }, []);
-
-  const changeTheme = (type: string) => {
-    localStorage.setItem("theme", type);
-    switch (type) {
-      case "dark":
-        document.documentElement.classList.add("dark");
-      default:
-        document.documentElement.classList.remove("dark");
-    }
-  };
-  const toggleTheme = () => {
+  const changeTheme = () => {
     if (!theme) {
-      localStorage.setItem("theme", "dark");
       document.documentElement.classList.add("dark");
     } else {
-      localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
     }
     setTheme(!theme);
@@ -66,7 +49,7 @@ const PostPage: React.FC<Props> = ({
     <Layout
       pageTitle={frontMatter.title}
       strings={general}
-      changeTheme={toggleTheme}
+      changeTheme={changeTheme}
       theme={theme}
     >
       <Head>
@@ -85,20 +68,19 @@ const PostPage: React.FC<Props> = ({
       <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
         <article className="prose prose-blue">
           <div className="mb-4">
-            <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />
+            <Featured title={frontMatter.title} src={frontMatter.thumbnail} />
           </div>
 
           <h1 className="text-gray-700 text-4xl font-bold mb-6 dark:text-gray-200">
             {frontMatter.title}
           </h1>
 
-          <p className="text-gray-700 dark:text-gray-200">
-            {frontMatter.description}
-          </p>
-          <MDXRemote {...source} />
+          <div className="text-lg blog ">
+            <MDXRemote {...source} />
+          </div>
         </article>
       </div>
-      <Footer footer={footer} />
+      <Footer footer={footer} smaller />
     </Layout>
   );
 };
@@ -116,7 +98,9 @@ export const getStaticProps = async ({
 }) => {
   const { content, data } = getPost(params?.slug as string, false);
 
-  const mdxSource = await serialize(content, { scope: data });
+  const mdxSource = await serialize(content, {
+    scope: data,
+  });
 
   const { posts } = getAllPosts(["slug"]);
   const localeString: langType = langString[locale];

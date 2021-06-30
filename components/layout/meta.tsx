@@ -22,6 +22,7 @@ const Meta: React.FC<Props> = ({ pageTitle }: Props) => {
 
   return (
     <Head>
+      <meta charSet="utf-8"/>
       <title>{`${pageTitle} | ${SITE_NAME}`}</title>
       <link
         rel="apple-touch-icon"

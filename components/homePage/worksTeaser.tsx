@@ -27,7 +27,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
               key={post.slug}
               className={`rounded-xl m-2 p-2 overflow-hidden `}
             >
-              <div className="mb-4">
+              <div className="mb-4 bg-blue-100 rounded-xl dark:bg-blue-900">
                 <Thumbnail
                   slug={post.slug}
                   title={post.title}
