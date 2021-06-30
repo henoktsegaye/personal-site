@@ -5,4 +5,6 @@ module.exports = {
     localeDetection: true,
   },
   target: "serverless",
+  trailingSlash: true,
+  exportTrailingSlash: true,
 };

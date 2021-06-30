@@ -1,8 +1,15 @@
 # example netlify.toml
 [build]
-  command = "next export"
+  command = "npm run build"
   functions = "netlify/functions"
   publish = "out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[context.production.environment]
+  NEXT_SERVERLESS = "true"
+  NODE_ENV = "production"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.

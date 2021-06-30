@@ -10,6 +10,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^3.4.2",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^11.0.0",
     "gray-matter": "^4.0.3",
