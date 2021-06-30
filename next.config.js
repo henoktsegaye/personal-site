@@ -4,4 +4,5 @@ module.exports = {
     defaultLocale: "en",
     localeDetection: true,
   },
+  target: "serverless",
 };
