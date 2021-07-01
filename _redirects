@@ -1,4 +1,4 @@
-/en/* /404.html 404
+/en/* /en/404.html 404
 /am/* /am/404.html 404
-/works/* /404.html 404
-/posts/* /404.html 404
+/works/* /en/404.html 404
+/posts/* /en/404.html 404
