@@ -1,2 +1,5 @@
 /en/* /en/404.html 404
 /am/* /am/404.html 404
+/assets /assets 200
+/favicon /favicon 200
+/*   /index.html   200
