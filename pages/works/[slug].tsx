@@ -25,12 +25,14 @@ type Props = {
   source: MDXRemoteSerializeResult;
   frontMatter: Omit<IPost, "slug">;
   localeString: langType;
+  locale: "am" | "en";
 };
 
 const WorksPage: React.FC<Props> = ({
   source,
   frontMatter,
   localeString,
+  locale,
 }: Props) => {
   const [theme, setTheme] = useState<boolean>(false);
   const changeTheme = () => {
@@ -62,6 +64,7 @@ const WorksPage: React.FC<Props> = ({
       strings={general}
       changeTheme={changeTheme}
       theme={theme}
+      locale={locale}
     >
       <Head>
         <meta
@@ -116,6 +119,7 @@ export const getStaticProps = async ({
       source: mdxSource,
       frontMatter: data,
       localeString,
+      locale,
     },
   };
 };

@@ -25,12 +25,14 @@ type Props = {
   source: MDXRemoteSerializeResult;
   frontMatter: Omit<IPost, "slug">;
   localeString: langType;
+  locale: "en" | "am";
 };
 
 const PostPage: React.FC<Props> = ({
   source,
   frontMatter,
   localeString,
+  locale
 }: Props) => {
   const [theme, setTheme] = useState<boolean>(false);
   const changeTheme = () => {
@@ -58,6 +60,7 @@ const PostPage: React.FC<Props> = ({
   } = localeString;
   return (
     <Layout
+      locale={locale}
       pageTitle={frontMatter.title}
       strings={general}
       changeTheme={changeTheme}
@@ -121,6 +124,7 @@ export const getStaticProps = async ({
       source: mdxSource,
       frontMatter: data,
       localeString,
+      locale,
     },
   };
 };
@@ -140,7 +144,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     locale: "am",
   }));
   const paths = [...amPaths, ...enPaths];
-  
+
   return {
     paths,
     fallback: false,
