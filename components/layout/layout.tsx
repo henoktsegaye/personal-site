@@ -13,6 +13,7 @@ type Props = {
   theme: boolean;
   locale: "en" | "am";
   allStrings: langType;
+  slug?: string;
 };
 
 const Layout: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const Layout: React.FC<Props> = ({
   allStrings,
   pageDescription,
   pageImage,
+  slug,
 }: Props) => {
   const { general, socialMedia } = allStrings;
   return (
@@ -42,6 +44,7 @@ const Layout: React.FC<Props> = ({
           locale={locale}
           theme={theme}
           changeTheme={changeTheme}
+          slug={slug}
         />
         <main className="pt-4 relative w-full h-full">{children}</main>
       </div>

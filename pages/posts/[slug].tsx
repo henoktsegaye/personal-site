@@ -26,6 +26,7 @@ type Props = {
   frontMatter: Omit<IPost, "slug">;
   localeString: langType;
   locale: "en" | "am";
+  slug: string;
 };
 
 const PostPage: React.FC<Props> = ({
@@ -33,6 +34,7 @@ const PostPage: React.FC<Props> = ({
   frontMatter,
   localeString,
   locale,
+  slug,
 }: Props) => {
   const [theme, setTheme] = useState<boolean>(false);
   const changeTheme = () => {
@@ -59,6 +61,7 @@ const PostPage: React.FC<Props> = ({
       changeTheme={changeTheme}
       theme={theme}
       allStrings={localeString}
+      slug={`posts/${slug}`}
     >
       <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
         <article className="prose prose-blue">
@@ -106,6 +109,7 @@ export const getStaticProps = async ({
       frontMatter: data,
       localeString,
       locale,
+      slug: params.slug,
     },
   };
 };

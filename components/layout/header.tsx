@@ -12,6 +12,7 @@ type props = {
   changeTheme: () => void;
   theme: boolean;
   locale: "am" | "en";
+  slug?: string;
 };
 
 const localOpposite = {
@@ -24,7 +25,13 @@ const displayString = {
   en: "አማ",
 };
 
-const Header: React.FC<props> = ({ strings, changeTheme, theme, locale }) => {
+const Header: React.FC<props> = ({
+  strings,
+  changeTheme,
+  theme,
+  locale,
+  slug = false,
+}) => {
   const [ztheme, setTheme] = useState<boolean>(false);
   useEffect(() => {
     const xtheme = localStorage.getItem("theme")
@@ -59,31 +66,31 @@ const Header: React.FC<props> = ({ strings, changeTheme, theme, locale }) => {
             </Link>
           </div>
           <div className=" flex-row 2xl:pl-6 justify-between hidden items-center 2xl:col-span-3 xl:col-span-4 lg:col-span-5 lg:flex">
-            <Link href="#workTeaser">
+            <Link href="/#workTeaser">
               <a className="text-lg  dark:text-gray-400 text-gray-500 ">
                 {" "}
                 {strings.work}{" "}
               </a>
             </Link>{" "}
-            <Link href="#middleContent">
+            <Link href="/#middleContent">
               <a className="text-lg  dark:text-gray-400 text-gray-500 ">
                 {strings.middleContent}
               </a>
             </Link>
-            <Link href="#blogTeaser">
+            <Link href="/#blogTeaser">
               <a className="text-lg  dark:text-gray-400 text-gray-500 ">
                 {" "}
                 {strings.blog}{" "}
               </a>
             </Link>{" "}
             <div className="flex justify-center items-center">
-              <Link href="#emailMe">
+              <Link href="/#emailMe">
                 <a className="text-lg bg-blue-600 dark:bg-blue-700 px-4 py-2 rounded-lg text-gray-200">
                   {" "}
                   {strings.emailMe}{" "}
                 </a>
               </Link>
-              <Link locale={localOpposite[locale]} href="">
+              <Link locale={localOpposite[locale]} href={`${slug || ""}`}>
                 <span className="ml-4 mr-2 dark:text-gray-400 text-gray-500 text-lg cursor-pointer">
                   {displayString[locale]}
                 </span>
@@ -109,14 +116,13 @@ const Header: React.FC<props> = ({ strings, changeTheme, theme, locale }) => {
             </div>
           </div>
           <div className="flex lg:hidden col-span-4">
-          <div className="flex justify-center items-center">
-              <Link href="#emailMe">
+            <div className="flex justify-center items-center">
+              <Link href="/#emailMe">
                 <a className="text-lg bg-blue-600 dark:bg-blue-700 px-4 py-2 rounded-lg text-gray-200">
-                  {" "}
-                  {strings.emailMe}{" "}
+                  {strings.emailMe}
                 </a>
               </Link>
-              <Link locale={localOpposite[locale]} href="">
+              <Link locale={localOpposite[locale]} href="#main">
                 <span className="ml-4 mr-2 dark:text-gray-400 text-gray-500 text-lg cursor-pointer">
                   {displayString[locale]}
                 </span>

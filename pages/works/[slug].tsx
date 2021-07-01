@@ -25,6 +25,7 @@ type Props = {
   frontMatter: Omit<IPost, "slug">;
   localeString: langType;
   locale: "am" | "en";
+  slug: string;
 };
 
 const WorksPage: React.FC<Props> = ({
@@ -32,6 +33,7 @@ const WorksPage: React.FC<Props> = ({
   frontMatter,
   localeString,
   locale,
+  slug,
 }: Props) => {
   const [theme, setTheme] = useState<boolean>(false);
   const changeTheme = () => {
@@ -58,6 +60,7 @@ const WorksPage: React.FC<Props> = ({
       changeTheme={changeTheme}
       theme={theme}
       allStrings={localeString}
+      slug={`/works/${slug}`}
     >
       <Head>
         <meta
@@ -113,6 +116,7 @@ export const getStaticProps = async ({
       frontMatter: data,
       localeString,
       locale,
+      slug: params.slug,
     },
   };
 };
