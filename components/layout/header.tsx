@@ -47,10 +47,10 @@ const Header: React.FC<props> = ({ strings, changeTheme, theme, locale }) => {
     }
   }, [theme]);
   return (
-    <header className="pt-4 pb-4  bg-white border-b border-gray-100 dark:border-gray-900 dark:bg-black">
+    <header className="pt-4 pb-4  bg-gray-100 lg:bg-white border-b border-gray-100 dark:border-gray-900 dark:bg-black">
       <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg max-w-sm lg:max-w-screen-md ">
         <div className="grid grid-cols-7">
-          <div className="flex flex-row justify-between items-center 2xl:col-span-4 xl:col-span-3  col-span-6 lg:col-span-2 ">
+          <div className="flex flex-row justify-between items-center 2xl:col-span-4 xl:col-span-3  col-span-3 lg:col-span-2 ">
             <Link href="/">
               <a className="text-xl font-bold  dark:text-gray-400 text-gray-500 ">
                 {" "}
@@ -77,6 +77,39 @@ const Header: React.FC<props> = ({ strings, changeTheme, theme, locale }) => {
               </a>
             </Link>{" "}
             <div className="flex justify-center items-center">
+              <Link href="#emailMe">
+                <a className="text-lg bg-blue-600 dark:bg-blue-700 px-4 py-2 rounded-lg text-gray-200">
+                  {" "}
+                  {strings.emailMe}{" "}
+                </a>
+              </Link>
+              <Link locale={localOpposite[locale]} href="#">
+                <span className="ml-4 mr-2 dark:text-gray-400 text-gray-500 text-lg cursor-pointer">
+                  {displayString[locale]}
+                </span>
+              </Link>
+              <button
+                className="ml-3 align-bottom outline-none focus:outline-none hover:bg-opacity-50 bg-gray-100 dark:bg-gray-900 p-2 rounded-full"
+                onClick={changeTheme}
+              >
+                {ztheme ? (
+                  <MoonIcon
+                    width={24}
+                    height={24}
+                    className="fill-current text-gray-600 dark:text-gray-300"
+                  />
+                ) : (
+                  <SunIcon
+                    width={24}
+                    height={24}
+                    className="fill-current text-gray-600 dark:text-gray-300"
+                  />
+                )}
+              </button>
+            </div>
+          </div>
+          <div className="flex lg:hidden col-span-4">
+          <div className="flex justify-center items-center">
               <Link href="#emailMe">
                 <a className="text-lg bg-blue-600 dark:bg-blue-700 px-4 py-2 rounded-lg text-gray-200">
                   {" "}
