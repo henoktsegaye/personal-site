@@ -1,29 +1,37 @@
 // components/Meta.tsx
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { SITE_URL, SITE_NAME, TWITTER_USERNAME } from '../../lib/constants';
+import { SITE_URL } from "../../lib/constants";
+import { siteStrings, socialMedia } from "../../lib/lang";
 
 type Props = {
-  pageTitle?: string;
+  siteString: siteStrings;
+  socialMedia: socialMedia;
+  title?: string;
+  description?: string;
+  imgURL?: string;
 };
 
-const meta = {
-  description: `${SITE_NAME} provides awesome food recipes.`,
-  ogImagePath: '/assets/card-image.webp',
-};
-
-const Meta: React.FC<Props> = ({ pageTitle }: Props) => {
+const Meta: React.FC<Props> = ({
+  siteString,
+  socialMedia,
+  title,
+  description,
+  imgURL,
+}: Props) => {
+  const { siteTitle, siteDescription } = siteString;
   const router = useRouter();
   const ogUrl = SITE_URL + router.asPath;
-  const ogType = router.pathname === '/' ? 'website' : 'article';
-  const ogTitle = pageTitle ? pageTitle : 'Awesome food recipes';
-  const ogImage = SITE_URL + meta.ogImagePath;
+  const ogType = router.pathname === "/" ? "website" : "article";
+  const ogTitle = title;
+  const ogImage = SITE_URL + imgURL;
+  const TWITTER_USERNAME = socialMedia.twitter;
 
   return (
     <Head>
-      <meta charSet="utf-8"/>
-      <title>{`${pageTitle} | ${SITE_NAME}`}</title>
+      <meta charSet="utf-8" />
+      <title>{`${siteTitle} | ${title}`}</title>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -52,14 +60,14 @@ const Meta: React.FC<Props> = ({ pageTitle }: Props) => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#fff" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={meta.description} key="description" />
+      <meta name="description" content={description} key="description" />
       <meta property="og:url" content={ogUrl} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:site_name" content={siteTitle} />
       <meta property="og:title" content={ogTitle} />
       <meta
         property="og:description"
-        content={meta.description}
+        content={description}
         key="ogDescription"
       />
       <meta property="og:image" content={ogImage} key="ogImage" />

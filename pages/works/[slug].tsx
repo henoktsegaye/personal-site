@@ -2,7 +2,6 @@
 import "../../styles/blog.module.css";
 import { useState } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -48,23 +47,17 @@ const WorksPage: React.FC<Props> = ({
     setTheme(!theme);
   };
   const ogImage = SITE_URL + frontMatter.thumbnail;
-  const {
-    middleContent,
-    socialMedia,
-    hero,
-    portfolio,
-    blog,
-    getConnected,
-    footer,
-    general,
-  } = localeString;
+  const { footer, general } = localeString;
   return (
     <Layout
+      locale={locale}
       pageTitle={frontMatter.title}
+      pageDescription={frontMatter.description}
+      pageImage={frontMatter.thumbnail}
       strings={general}
       changeTheme={changeTheme}
       theme={theme}
-      locale={locale}
+      allStrings={localeString}
     >
       <Head>
         <meta

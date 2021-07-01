@@ -32,7 +32,7 @@ const PostPage: React.FC<Props> = ({
   source,
   frontMatter,
   localeString,
-  locale
+  locale,
 }: Props) => {
   const [theme, setTheme] = useState<boolean>(false);
   const changeTheme = () => {
@@ -48,37 +48,18 @@ const PostPage: React.FC<Props> = ({
     setTheme(!theme);
   };
   const ogImage = SITE_URL + frontMatter.thumbnail;
-  const {
-    middleContent,
-    socialMedia,
-    hero,
-    portfolio,
-    blog,
-    getConnected,
-    footer,
-    general,
-  } = localeString;
+  const { footer, general } = localeString;
   return (
     <Layout
       locale={locale}
       pageTitle={frontMatter.title}
+      pageDescription={frontMatter.description}
+      pageImage={frontMatter.thumbnail}
       strings={general}
       changeTheme={changeTheme}
       theme={theme}
+      allStrings={localeString}
     >
-      <Head>
-        <meta
-          name="description"
-          content={frontMatter.description}
-          key="description"
-        />
-        <meta
-          property="og:description"
-          content={frontMatter.description}
-          key="ogDescription"
-        />
-        <meta property="og:image" content={ogImage} key="ogImage" />
-      </Head>
       <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
         <article className="prose prose-blue">
           <div className="mb-4">

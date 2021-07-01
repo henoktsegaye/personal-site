@@ -1,15 +1,18 @@
 // components/Layout.tsx
-import { siteStrings } from "../../lib/lang";
+import { langType, siteStrings } from "../../lib/lang";
 import Header from "../layout/header";
 import Meta from "../layout/meta";
 
 type Props = {
   children: React.ReactNode;
   pageTitle?: string;
+  pageDescription?: string;
+  pageImage?: string;
   strings: siteStrings;
   changeTheme: () => void;
   theme: boolean;
   locale: "en" | "am";
+  allStrings: langType;
 };
 
 const Layout: React.FC<Props> = ({
@@ -19,10 +22,20 @@ const Layout: React.FC<Props> = ({
   changeTheme,
   theme,
   locale,
+  allStrings,
+  pageDescription,
+  pageImage,
 }: Props) => {
+  const { general, socialMedia } = allStrings;
   return (
     <div className=" bg-white dark:bg-black ">
-      <Meta pageTitle={pageTitle} />
+      <Meta
+        siteString={general}
+        socialMedia={socialMedia}
+        description={pageDescription}
+        imgURL={pageImage}
+        title={pageTitle}
+      />
       <div className=" mx-auto ">
         <Header
           strings={strings}

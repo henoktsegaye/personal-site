@@ -1,3 +1,10 @@
+interface string404 {
+  title: string;
+  siteTitle: string;
+  subTitle: string;
+  buttonText: string;
+}
+
 interface link {
   text: string;
   href: string;
@@ -63,6 +70,7 @@ interface langType {
   };
   getConnected: getConnected;
   footer: footer;
+  string404: string404;
 }
 
 const langString: {
@@ -131,6 +139,12 @@ const langString: {
     footer: {
       title: "በ ❤️  የታነፀ ።",
     },
+    string404: {
+      title: "ይህ ገጽ አልተገኘም ።",
+      siteTitle: "ይህ ገጽ አልተገኘም",
+      subTitle: "ወደ ዋናዉ ማውጫ በመሄድ ማየት ይችላሉ ።",
+      buttonText: "ወደ ማውጫው ተመለስ",
+    },
   },
   en: {
     general: {
@@ -154,7 +168,7 @@ const langString: {
       secondRowTitle: "technologiest",
       moreText: [
         "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better palce and our Country Ethiopia a power house.",
-        "Graduated from Addis Ababa university, I usaully work in web and mobile application development , for that reason i like using JAVASCRIPT. My work philosphy is Clean code and structure."
+        "Graduated from Addis Ababa university, I usaully work in web and mobile application development , for that reason i like using JAVASCRIPT. My work philosphy is Clean code and structure.",
       ],
     },
     socialMedia: {
@@ -197,6 +211,12 @@ const langString: {
     footer: {
       title: "Designed By ME with ❤️",
     },
+    string404: {
+      siteTitle: "Page not found",
+      title: "didn't found this page",
+      subTitle: "you can go home and look around",
+      buttonText: "Go Home",
+    },
   },
 };
 
@@ -209,4 +229,5 @@ export type {
   getConnected,
   footer,
   siteStrings,
+  string404,
 };
