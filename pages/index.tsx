@@ -22,9 +22,10 @@ type Props = {
     works: IPost[];
   };
   localeString: langType;
+  locale: "am" | "en";
 };
 
-const Home: React.FC<Props> = ({ files, localeString }) => {
+const Home: React.FC<Props> = ({ files, localeString, locale}) => {
   const { posts, works } = files;
   const {
     middleContent,
@@ -56,6 +57,7 @@ const Home: React.FC<Props> = ({ files, localeString }) => {
       pageTitle={general.siteTitle}
       changeTheme={toogleTheme}
       theme={theme}
+      locale={locale}
     >
       <Head>
         <title>{general.siteTitle}</title>
@@ -95,5 +97,5 @@ export const getStaticProps = async ({
 
   const localeString: langType = langString[locale];
 
-  return { props: { files, localeString } };
+  return { props: { files, localeString, locale } };
 };
