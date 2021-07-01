@@ -112,7 +112,7 @@ const langString: {
       title: "ሀሳብዎን ይግለጡ ።",
       subtitle: "መልዕክት ሊልኩልኝ ካሰኝዎት ታች ላይ ያለዉን ሊንክ ይጫኑ",
       link: {
-        href: "",
+        href: "mailto:maxhenock@gmail.com",
         target: "_blank",
         text: "መልዕክት ላክ",
       },
@@ -124,8 +124,8 @@ const langString: {
         "ታሪኩ ከመሰጠህ /ሽ ብዙ ተጨማሪ ማንበብ ይቻላል ፣ ይበረታታልም ።",
       ],
       link: {
-        text: "ተመልክት",
-        href: "/start",
+        text: "ይቆየን",
+        href: "#!",
       },
     },
     footer: {
@@ -178,7 +178,7 @@ const langString: {
       subtitle:
         "I like hearing from people, even to say. seriously i like hearing from people.",
       link: {
-        href: "",
+        href: "mailto:maxhenock@gmail.com",
         target: "_blank",
         text: "Send an Email",
       },
@@ -190,8 +190,8 @@ const langString: {
         "If you are still intereseted you might want to know more about it.",
       ],
       link: {
-        text: "ተመልክት",
-        href: "/start",
+        text: "More Coming Soon",
+        href: "#!",
       },
     },
     footer: {

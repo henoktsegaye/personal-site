@@ -14,11 +14,11 @@ const EmailMe: React.FC<props> = ({ strings }) => {
           {title}
         </p>
         <p className="text-gray-500 dark:text-gray-300 mt-4 mb-2">{subtitle}</p>
-        <Link href={link.href} passHref={true}>
+        <a href={link.href} >
           <button className="bg-blue-600 dark:bg-black text-white px-6 py-4 rounded-lg mt-6">
             {link.text}
           </button>
-        </Link>
+        </a>
       </div>
     </div>
   );
