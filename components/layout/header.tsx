@@ -122,7 +122,7 @@ const Header: React.FC<props> = ({
                   {strings.emailMe}
                 </a>
               </Link>
-              <Link locale={localOpposite[locale]} href="#main">
+              <Link locale={localOpposite[locale]}  href={`${slug || ""}`}>
                 <span className="ml-4 mr-2 dark:text-gray-400 text-gray-500 text-lg cursor-pointer">
                   {displayString[locale]}
                 </span>
