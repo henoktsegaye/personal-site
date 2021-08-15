@@ -95,7 +95,6 @@ export const getStaticProps = async ({
   };
 }) => {
   const { content, data } = getPost(params?.slug as string, false);
-
   const mdxSource = await serialize(content, {
     scope: data,
   });

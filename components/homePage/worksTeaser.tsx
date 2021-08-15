@@ -38,12 +38,11 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
               <div className="content">
                 <h2 className="text-2xl font-bold mb-4 text-gray-200 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   <Link href={`/works/${post.slug}`}>
-                    <a>{post.title} &rarr;</a>
+                    <a>{post.title}</a>
                   </Link>
                 </h2>
                 <p className="dark:text-gray-300 text-gray-200 mb-4 text-md">
-                  {" "}
-                  {post.date}{" "}
+                  {post.date}
                 </p>
                 <div className="text-gray-200 mb-3">{post.description}</div>
               </div>
