@@ -60,3 +60,11 @@ a {
   @apply text-blue-600;
   @apply dark:text-blue-700;
 }
+#nprogress .bar {
+  @apply bg-gradient-to-r !important;
+  @apply from-blue-600 !important;
+  @apply via-indigo-600 !important;
+  @apply to-red-600 !important;
+  @apply dark:bg-green-700 !important;
+
+}
