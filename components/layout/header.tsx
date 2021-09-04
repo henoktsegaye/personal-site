@@ -36,7 +36,7 @@ const Header: React.FC<props> = ({
   useEffect(() => {
     const xtheme = localStorage.getItem("theme")
       ? localStorage.getItem("theme")
-      : "light";
+      : "dark";
     if (xtheme == "dark") {
       changeTheme();
     }

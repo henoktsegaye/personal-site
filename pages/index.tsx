@@ -38,7 +38,7 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
     general,
   } = localeString;
 
-  const [theme, setTheme] = useState<boolean>(true);
+  const [theme, setTheme] = useState<boolean>(false);
 
   const toogleTheme = () => {
     if (!theme) {

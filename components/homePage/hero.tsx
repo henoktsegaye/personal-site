@@ -30,7 +30,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
               {title?.title2}
             </span>
           </h1>
-          <p className="text-gray-500 lg:mt-10 mt-2 text-lg">
+          <p className="text-gray-500 lg:mt-4 mt-2 text-md">
             {" "}
             {hero?.subTitle}{" "}
           </p>

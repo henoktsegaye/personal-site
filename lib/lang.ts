@@ -165,10 +165,10 @@ const langString: {
         title2: "Software Developer.",
       },
       subTitle: "Send me an email to introduce yourself.",
-      secondRowTitle: "technologiest",
+      secondRowTitle: "Technologiest",
       moreText: [
-        "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better palce and our Country Ethiopia a power house.",
-        "Graduated from Addis Ababa university, I usaully work in web and mobile application development , for that reason i like using JAVASCRIPT. My work philosphy is Clean code and structure.",
+        "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better place and our Country Ethiopia a power house.",
+        "Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
       ],
     },
     socialMedia: {
@@ -180,7 +180,7 @@ const langString: {
     portfolio: {
       title: "Previous Works",
       description:
-        "Here i Listed some of the works i have done so far, that might interest you.",
+        "Here I Listed some of the works i have done so far, that might be intersting.",
     },
     blog: {
       title: "Some Thoughts i have.",
