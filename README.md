@@ -11,7 +11,7 @@ This personal site is built using [next JS](https://nextjs.com).
 ![Issues](https://img.shields.io/github/issues/henoktsegaye/personal-site.svg)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-## Want run the project ?
+## Want to run the project ?
 
 First, run the development server:
 

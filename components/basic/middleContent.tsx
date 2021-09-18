@@ -10,7 +10,7 @@ type props = {
 
 const MiddleContent: React.FC<props> = ({ title, content, link }) => {
   return (
-    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto my-10" id="middleContent">
+    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto border-b-2 border-gray-50 dark:border-gray-900 my-10" id="middleContent">
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center py-10 ">
         <div className="order-2 lg:order-1">
           <div className="text-4xl font-bold mb-10 text-gray-600 dark:text-gray-100 ">
@@ -25,7 +25,7 @@ const MiddleContent: React.FC<props> = ({ title, content, link }) => {
             </p>
           ))}
           <Link href={link.href} passHref={true}>
-            <button className="bg-blue-600 py-4 px-6 rounded-lg mt-8 text-white">
+            <button className=" py-4  text-lg font-bold rounded-lg mt-8 text-blue-900">
               {link.text} &rarr;
             </button>
           </Link>

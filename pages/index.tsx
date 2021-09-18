@@ -62,16 +62,15 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
       locale={locale}
       allStrings={localeString}
     >
-
       <div>
         <Hero hero={hero} socialMedia={socialMedia} />
-        <WorksTeaser works={works} strings={portfolio} />
+        <BlogsTeaser strings={blog} posts={posts} />
         <MiddleContent
           title={middleContent.title}
           content={middleContent.description}
           link={middleContent.link}
         />
-        <BlogsTeaser strings={blog} posts={posts} />
+        <WorksTeaser works={works} strings={portfolio} />
         <EmailMe strings={getConnected} />
 
         <Footer footer={footer} />
@@ -93,6 +92,8 @@ export const getStaticProps = async ({
     "thumbnail",
     "title",
     "description",
+    "hashtag",
+    "color",
   ]);
 
   const localeString: langType = langString[locale];

@@ -58,6 +58,7 @@ interface langType {
   portfolio: {
     title: string;
     description: string;
+    more: string;
   };
   blog: {
     title: string;
@@ -104,6 +105,7 @@ const langString: {
     },
     portfolio: {
       title: "ከአሁን በፊት የተሰሩ ስራዎች",
+      more: "ተጨማሪ ይመልከቱ",
       description: "ከአሁን በፊት በተሻለ መንገድ የሰራሆቸው ስራዎች እንደሚከተለው ዘርዝሪያለሁ ።",
     },
     blog: {
@@ -179,6 +181,7 @@ const langString: {
     },
     portfolio: {
       title: "Previous Works",
+      more: "View More",
       description:
         "Here I Listed some of the works i have done so far, that might be intersting.",
     },

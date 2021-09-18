@@ -31,7 +31,7 @@ const Meta: React.FC<Props> = ({
   return (
     <Head>
       <meta charSet="utf-8" />
-      <title>{`${siteTitle} | ${title}`}</title>
+      <title>{`${title} | ${siteTitle} `}</title>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
