@@ -41,7 +41,6 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
             </span>
           </h1>
           <p className="text-gray-500 lg:mt-4 mt-2 text-md">
-            {" "}
             {hero?.subTitle}{" "}
           </p>
         </div>
