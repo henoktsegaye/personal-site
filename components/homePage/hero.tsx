@@ -48,7 +48,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
           </p>
         </div>
 
-        <div className="col-span-6 mt-10   bg-gradient-to-r from-blue-50 dark:from-gray-900 dark:to-black to-white border-1 border-gray-200 shadow-2xl drop-shadow-2xl dark:border-gray-900 py-6 px-6 rounded-xl lg:mt-0">
+        <div className="col-span-6 mt-10   bg-gradient-to-r from-blue-50 dark:from-gray-800 dark:to-gray-900 to-white border-1 border-gray-200 shadow-2xl drop-shadow-2xl dark:border-gray-900 py-6 px-6 rounded-xl lg:mt-0">
           <p className="dark:text-gray-200 text-gray-800 capitalize font-bolder text-4xl mb-3">
             {secondRowTitle}
           </p>

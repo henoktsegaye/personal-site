@@ -23,7 +23,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
             {strings?.description}
           </p>
         </div>
-
+        <div className="from-blue-700 to-gray-50 dark:from-blue-700 dark-to-gray-900"></div>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-0">
           {works.map((post) => (
             <div
