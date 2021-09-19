@@ -85,7 +85,7 @@ const Header: React.FC<props> = ({
             </Link>{" "}
             <div className="flex justify-center items-center">
               <Link href="/#emailMe">
-                <a className="text-lg bg-blue-600 dark:bg-blue-700 px-4 py-2 rounded-lg text-gray-200">
+                <a className="text-lg  bg-gradient-to-r from-blue-500 to-indigo-700 dark:bg-blue-700 px-6 py-2 rounded-full text-gray-200">
                   {" "}
                   {strings.emailMe}{" "}
                 </a>

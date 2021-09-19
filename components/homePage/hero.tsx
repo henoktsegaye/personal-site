@@ -29,31 +29,31 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
           </div>
         </div>
         <div className="col-span-3  text-left pb-4">
-          <h1 className="text-3xl leading-normal align-middle font-semibold text-gray-600 dark:text-gray-400">
+          <h1 className="text-3xl leading-normal align-middle font-semibold text-gray-500 dark:text-gray-600">
             <span> {title?.intro} </span>
-            <span className="font-extrabold  text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-600 dark:via-red-500 from-blue-600 via-red-500 to-yellow-600 dark:to-yellow-600  text-6xl block mb-1 py-2">
+            <span className=" font-extrabold text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-600 dark:via-red-500 from-blue-600 via-red-600 to-indigo-500 dark:to-yellow-600  text-6xl block mb-1 py-2">
               {title?.name}
             </span>
             {title?.secondIntro}
-            <span className="font-bold block dark:text-gray-200 text-gray-500 text-6xl">
+            <span className="font-bold block dark:text-white text-black text-6xl">
               {title?.title1}
             </span>
             <span className=" mt-4 inline-block"> {title?.thirdIntro} </span>
-            <span className=" block mt-2  text-gray-600 dark:text-gray-200 font-bold text-4xl">
+            <span className=" block mt-2  text-gray-900 dark:text-white font-bold text-4xl">
               {title?.title2}
             </span>
           </h1>
-          <p className="text-gray-500 lg:mt-4 mt-2 text-md">
+          <p className="text-gray-500 lg:mt-4 mt-1 text-md">
             {hero?.subTitle}{" "}
           </p>
         </div>
 
-        <div className="col-span-6 mt-10   bg-gradient-to-r from-blue-50 dark:from-gray-800 dark:to-gray-900 to-white border-1 border-gray-200 shadow-2xl drop-shadow-2xl dark:border-gray-900 py-6 px-6 rounded-xl lg:mt-0">
-          <p className="dark:text-gray-200 text-gray-800 capitalize font-bolder text-4xl mb-3">
+        <div className="col-span-6 mt-10   bg-gradient-to-r from-white dark:from-black dark:to-black to-white border-2 border-gray-100 shadow-sm drop-shadow-2xl dark:border-gray-800 py-6 px-6 rounded-xl lg:mt-0">
+          <p className="dark:text-gray-200 text-gray-500 capitalize font-extrabold text-4xl mb-3">
             {secondRowTitle}
           </p>
           {moreText.map((content) => (
-            <p className="text-gray-600 font-light dark:text-gray-400 text-lg mb-3">
+            <p className="text-gray-600 font-md dark:text-gray-400 text-lg mb-3">
               {content}
             </p>
           ))}
