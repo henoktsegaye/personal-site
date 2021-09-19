@@ -118,7 +118,7 @@ const Header: React.FC<props> = ({
           <div className="flex lg:hidden col-span-4">
             <div className="flex justify-center items-center">
               <Link href="/#emailMe">
-                <a className="text-lg bg-blue-600 dark:bg-blue-700 px-4 py-2 rounded-lg text-gray-200">
+                <a className="text-lg bg-gradient-to-r from-blue-600 to-red-400 dark:bg-blue-700 px-4 py-2 rounded-lg text-gray-200">
                   {strings.emailMe}
                 </a>
               </Link>
