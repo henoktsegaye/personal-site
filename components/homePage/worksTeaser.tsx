@@ -15,11 +15,11 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
     <div className=" mx-auto dark:bg-black bg-white " id="workTeaser">
       <div className="2xl:max-w-screen-xl max-w-sm xl:max-w-screen-lg lg:max-w-screen-md mx-auto pt-6 pb-10">
         <div className="text-left mb-12">
-          <h1 className="dark:text-gray-100 text-gray-900 font-bold text-3xl">
+          <h1 className="dark:text-gray-100 text-blue-900 font-normal text-6xl">
             {strings?.title}
           </h1>
 
-          <p className="text-md text-gray-800 dark:text-gray-200 mt-2">
+          <p className="text-md text-gray-400 dark:text-gray-200 mt-2">
             {strings?.description}
           </p>
         </div>
@@ -33,7 +33,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
               } dark:to-gray-900 to-gray-50 overflow-hidden `}
             >
               <div className="content">
-                <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                <h2 className="text-2xl font-normal mb-4 text-gray-900 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                   <Link href={`/works/${post.slug}`}>
                     <a>{post.title}</a>
                   </Link>
