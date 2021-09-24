@@ -5,6 +5,11 @@ interface string404 {
   buttonText: string;
 }
 
+interface langauges {
+  title: string;
+  subTitle: string;
+}
+
 interface link {
   text: string;
   href: string;
@@ -47,6 +52,7 @@ interface footer {
 }
 
 interface langType {
+  languages:langauges;
   general: siteStrings;
   hero: {
     title: heroTitle;
@@ -79,6 +85,10 @@ const langString: {
   en: langType;
 } = {
   am: {
+    languages: {
+      title: "የመጠቀማቸው የማዘዣ ቋንቋዎች",
+      subTitle: '',
+    },
     general: {
       siteTitle: "ሔኖክ ፀጋዬ",
       siteDescription: "ቴክኖሎጅስት ፣ ሶፍትዌር አበልጻጊ",
@@ -87,6 +97,7 @@ const langString: {
       blog: "ጦማር",
       emailMe: "ኢሜል ላክ",
     },
+    
     hero: {
       title: {
         intro: "ሰላም",
@@ -149,6 +160,10 @@ const langString: {
     },
   },
   en: {
+    languages: {
+      title: "programming languages i use",
+      subTitle: '',
+    },
     general: {
       siteTitle: "Henok Tsegaye",
       siteDescription: "Technologiest and Software developer",

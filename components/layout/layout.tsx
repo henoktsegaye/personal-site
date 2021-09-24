@@ -30,7 +30,7 @@ const Layout: React.FC<Props> = ({
 }: Props) => {
   const { general, socialMedia } = allStrings;
   return (
-    <div className=" bg-white dark:bg-black ">
+    <>
       <Meta
         siteString={general}
         socialMedia={socialMedia}
@@ -38,7 +38,7 @@ const Layout: React.FC<Props> = ({
         imgURL={pageImage}
         title={pageTitle}
       />
-      <div className=" mx-auto ">
+      <div className=" bg-white flex flex-col  dark:bg-black ">
         <Header
           strings={strings}
           locale={locale}
@@ -46,9 +46,9 @@ const Layout: React.FC<Props> = ({
           changeTheme={changeTheme}
           slug={slug}
         />
-        <main className="pt-4 relative w-full h-full">{children}</main>
+        <main className=" relative w-full h-full">{children}</main>
       </div>
-    </div>
+    </>
   );
 };
 

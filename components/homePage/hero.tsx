@@ -17,13 +17,13 @@ type props = {
 const Hero: React.FC<props> = ({ hero, socialMedia }) => {
   const { title, subTitle, secondRowTitle, moreText } = hero;
   return (
-    <div className="2xl:max-w-screen-xl  xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto my-12 mb-24">
+    <div className="2xl:max-w-screen-xl bg-gradient-to-tr from-pink-50 dark:from-gray-800 via-blue-50 dark:via-gray-900 to-gray-50 rounded-2xl dark:to-black dark:bg-gray-900  border-2 border-white dark:border-gray-900 xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto pt-8 pb-8 my-6 px-4 ">
       <div className=" grid xl:grid-cols-6  grid-cols-3 items-end">
-        <div className="col-span-3">
-          <div className="mr-12 px-4 ">
+        <div className="col-span-6 xl:col-span-3 ">
+          <div className="xl:mr-12 px-4 ">
             <img
               src="/assets/renew.png"
-              className=" left-0 filter drop-shadow-2xl brightness-100 saturation-100 grayscale contrast-150 text-left justify-items-start "
+              className=" left-0 filter drop-shadow-2xl brightness-100  saturate-200 grayscale contrast-200 text-left justify-items-start "
               alt=""
             />
           </div>
@@ -50,8 +50,8 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
           </p>
         </div>
 
-        <div className="col-span-6 mt-10   bg-gradient-to-r from-white dark:from-black dark:to-black to-white border-2 border-gray-100 shadow-sm drop-shadow-2xl dark:border-gray-800 py-6 px-6 rounded-xl lg:mt-0">
-          <p className="dark:text-gray-200 text-gray-900 uppercase font-normal text-3xl mb-3">
+        <div className="col-span-6 mt-10 border-t-2  border-gray-200   dark:from-black dark:to-black to-white  drop-shadow-2xl dark:border-gray-800 py-6 px-6  lg:mt-0"  >
+          <p className="dark:text-gray-200 text-gray-900 capitalize font-normal text-3xl mb-3">
             {secondRowTitle}
           </p>
           {moreText.map((content) => (
@@ -63,7 +63,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
           <div className="flex flex-row  flex-wrap mt-6">
             <a
               href={socialMedia.github}
-              className="dark:text-gray-200 flex align-middle items-center  text-xs bg-gray-200  dark:bg-black rounded-lg px-4 py-2  text-gray-600 font-bold mr-4   "
+              className="dark:text-gray-200 flex align-middle items-center  text-md  rounded-lg px-4 py-2  text-gray-600  mr-2   "
             >
               {" "}
               <GithubIcon
@@ -75,7 +75,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
             </a>
             <a
               href={socialMedia.twitter}
-              className="dark:text-gray-200 flex align-middle items-center  text-xs bg-gray-200  dark:bg-black rounded-lg px-4 py-2  text-gray-600 font-bold mr-4  "
+              className="dark:text-gray-200 flex align-middle items-center  text-md rounded-lg px-4 py-2  text-gray-600  mr-2  "
             >
               <TwitterIcon
                 width={16}
@@ -86,7 +86,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
             </a>
             <a
               href={socialMedia.linkedIn}
-              className="dark:text-gray-200 flex align-middle items-center  text-xs bg-gray-200  dark:bg-black rounded-lg px-4 py-2  text-gray-600 font-bold mr-4  "
+              className="dark:text-gray-200 flex align-middle items-center  text-md  rounded-lg px-4 py-2  text-gray-600  mr-2  "
             >
               <LinkedInIcon
                 width={16}
@@ -98,7 +98,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
 
             <a
               href={socialMedia.instagram}
-              className="dark:text-gray-200 flex align-middle items-center  text-xs bg-gray-200  dark:bg-black rounded-lg px-4 py-2  text-gray-600 font-bold mr-4  "
+              className="dark:text-gray-200 flex align-middle items-center  text-md rounded-lg px-4 py-2  text-gray-600  mr-2  "
             >
               <InstagramIcon
                 width={16}

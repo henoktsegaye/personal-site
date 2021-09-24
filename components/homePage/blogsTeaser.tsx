@@ -16,10 +16,10 @@ type props = {
 const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
   const { title, description } = strings;
   return (
-    <div className=" mx-auto bg-blue-50 dark:bg-gray-900 " id="blogTeaser">
+    <div className=" mx-auto bg-white dark:bg-black " id="blogTeaser">
       <div className="2xl:max-w-screen-xl max-w-sm xl:max-w-screen-lg lg:max-w-screen-md mx-auto pt-6 pb-10">
         <div className="text-left mb-12 mt-6  ">
-          <h1 className="dark:text-gray-50 text-blue-900 font-extrab capitalize text-5xl">
+          <h1 className="dark:text-gray-50 text-gray-900 font-bold capitalize text-3xl">
             {title}
           </h1>
 
@@ -49,7 +49,7 @@ const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
                 </div>
                 <p className="dark:text-gray-300 text-gray-400 mb-4 text-md">
                   {post.date}
-                  <span className="text-right py-1 text-white px-4 mx-2 bg-blue-700 rounded-xl">
+                  <span className="text-right py-1 text-gray-600 px-4 mx-2 text-sm bg-blue-200 rounded-xl">
                     #{post.hashtag}
                   </span>
                 </p>
