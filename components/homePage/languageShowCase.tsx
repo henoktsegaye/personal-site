@@ -18,13 +18,13 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
       <h2 className="text-left text-2xl dark:text-white text-gray-500 w-full mb-5 ml-3 ">
         {title}
       </h2>
-      <div className="flex flex-row justify-start">
+      <div className="flex flex-row  justify-start flex-nowrap overflow-x-hidden  ">
         <div className="w-30 mx-2 relative bg-gradient-to-r from-blue-50 to-blue-100 p-4 justify-center items-center flex rounded-xl">
           <ReactIcon
             width={46}
             height={46}
             className="fill-current mr-2 text-gray-600 dark:text-gray-300"
-          />{" "}
+          />
           react js
           <span className="absolute bottom-2 left-2 text-xl z-10">
             💪
