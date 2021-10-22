@@ -28,9 +28,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
           {works.map((post) => (
             <div
               key={post.slug}
-              className={`rounded-xl border border-gray-100 dark:border-gray-900 my-2 p-4 bg-gradient-to-t from-gray-100 ${
-                post.color ?post.color : "dark:from-blue-700  from-blue-100"
-              } dark:to-gray-900  to-white overflow-hidden `}
+              className={`rounded-xl border border-gray-100 dark:border-gray-900 my-2 p-4 bg-gradient-to-t from-gray-100 dark:from-gray-900  to-gray-100 dark:to-gray-900 overflow-hidden `}
             >
               <div className="content">
                 <h2 className="text-2xl font-normal mb-2 text-gray-900 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
@@ -54,7 +52,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
                 <div className="dark:text-gray-200 h-16 text-gray-600 mb-3">
                   {post.description}
                 </div>
-                <div className="mb-4 bg-white  rounded-xl dark:bg-blue-100">
+                <div className="mb-4 bg-white  rounded-xl dark:bg-gray-300">
                   <Thumbnail
                     slug={post.slug}
                     title={post.title}

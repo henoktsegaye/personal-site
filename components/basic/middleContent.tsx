@@ -10,7 +10,7 @@ type props = {
 
 const MiddleContent: React.FC<props> = ({ title, content, link }) => {
   return (
-    <div className="2xl:max-w-screen-xl bg-gradient-to-bl from-blue-50 dark:from-gray-900 via-gray-50 dark:via-black to-gray-100  dark:to-gray-900 p-10 rounded-3xl xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto border-b-0 border-gray-50 dark:border-gray-900 my-10" id="middleContent">
+    <div className="2xl:max-w-screen-xl bg-gradient-to-br from-blue-50 dark:from-gray-900 border  via-gray-50 dark:via-black to-gray-100  dark:to-black p-10 rounded-3xl xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto  border-gray-50 dark:border-gray-900 my-10" id="middleContent">
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center py-10 ">
         <div className="order-2 lg:order-1">
           <div className="text-3xl font-bold mb-10 text-gray-800  dark:text-gray-100 ">

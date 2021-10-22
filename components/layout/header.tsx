@@ -67,25 +67,25 @@ const Header: React.FC<props> = ({
           </div>
           <div className=" flex-row 2xl:pl-6 justify-between hidden items-center 2xl:col-span-3 xl:col-span-4 lg:col-span-5 lg:flex">
             <Link href="/#workTeaser">
-              <a className="text-md uppercase dark:text-gray-400 text-gray-500 ">
+              <a className="text-lg dark:text-gray-400 text-gray-500 ">
                 {" "}
                 {strings.work}{" "}
               </a>
             </Link>{" "}
             <Link href="/#middleContent">
-              <a className="text-md uppercase  dark:text-gray-400 text-gray-500 ">
+              <a className="text-lg  dark:text-gray-400 text-gray-500 ">
                 {strings.middleContent}
               </a>
             </Link>
             <Link href="/#blogTeaser">
-              <a className="text-md uppercase  dark:text-gray-400 text-gray-500 ">
+              <a className="text-lg  dark:text-gray-400 text-gray-500 ">
                 {" "}
                 {strings.blog}{" "}
               </a>
             </Link>{" "}
             <div className="flex justify-center items-center">
               <Link href="/#emailMe">
-                <a className="text-md uppercase  bg-gradient-to-r from-blue-500 to-indigo-700 dark:bg-blue-700 px-6 py-2 rounded-full text-gray-200">
+                <a className="text-lg bg-blue-600  dark:bg-blue-600 px-6 py-2 rounded-full text-gray-200">
                   {" "}
                   {strings.emailMe}{" "}
                 </a>
@@ -118,7 +118,7 @@ const Header: React.FC<props> = ({
           <div className="flex lg:hidden col-span-4">
             <div className="flex justify-center items-center">
               <Link href="/#emailMe">
-                <a className="text-lg bg-gradient-to-r from-blue-600 to-purple-400 dark:bg-blue-700 px-4 py-2 rounded-full text-gray-200">
+                <a className="text-lg bg-gradient-to-r from-blue-600 to-red-400 dark:bg-blue-600 px-4 py-2 rounded-full text-gray-200">
                   {strings.emailMe}
                 </a>
               </Link>

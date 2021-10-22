@@ -17,7 +17,7 @@ type props = {
 const Hero: React.FC<props> = ({ hero, socialMedia }) => {
   const { title, subTitle, secondRowTitle, moreText } = hero;
   return (
-    <div className="2xl:max-w-screen-xl bg-gradient-to-tr from-pink-50 dark:from-gray-800 via-blue-50 dark:via-gray-900 to-gray-50 rounded-2xl dark:to-black dark:bg-gray-900  border-2 border-white dark:border-gray-900 xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto pt-8 pb-8 my-6 px-4 ">
+    <div className="2xl:max-w-screen-xl bg-gradient-to-tr from-white dark:from-gray-900 dark:via-black to-white rounded-2xl dark:to-black dark:bg-gray-900  border-2 border-gray-100 dark:border-gray-900 xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto pt-4 pb-4 my-6 px-4 ">
       <div className=" grid xl:grid-cols-6  grid-cols-3 items-end">
         <div className="col-span-6 xl:col-span-3 ">
           <div className="xl:mr-12 px-4 ">
@@ -31,7 +31,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
         <div className="col-span-3  text-left pb-4">
           <h1 className="text-4xl leading-normal font-normal align-middle  text-gray-500 dark:text-gray-600">
             <span> {title?.intro} </span>
-            <span className=" font-extrabold text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-600 dark:via-red-500 from-blue-600 via-red-600 to-indigo-500 dark:to-yellow-600  text-7xl block mb-1 mt-0 pb-1 pt-0">
+            <span className=" font-extrabold text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-600 dark:via-red-500 from-blue-600 via-red-600 to-indigo-500 dark:to-blue-600  text-7xl block mb-1 mt-0 pb-1 pt-0">
               {title?.name}
             </span>
             <div className="mt-2">
@@ -55,7 +55,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
             {secondRowTitle}
           </p>
           {moreText.map((content) => (
-            <p className="text-gray-500  dark:text-gray-400 text-md mb-3">
+            <p className="text-gray-500  dark:text-gray-400 text-lg mb-3">
               {content}
             </p>
           ))}
@@ -63,7 +63,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
           <div className="flex flex-row  flex-wrap mt-6">
             <a
               href={socialMedia.github}
-              className="dark:text-gray-200 flex align-middle items-center  text-md  rounded-lg px-4 py-2  text-gray-600  mr-2   "
+              className="dark:text-gray-200 flex align-middle items-center  text-lg  rounded-lg px-4 py-2  text-gray-600  mr-2   "
             >
               {" "}
               <GithubIcon
@@ -75,7 +75,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
             </a>
             <a
               href={socialMedia.twitter}
-              className="dark:text-gray-200 flex align-middle items-center  text-md rounded-lg px-4 py-2  text-gray-600  mr-2  "
+              className="dark:text-gray-200 flex align-middle items-center  text-lg rounded-lg px-4 py-2  text-gray-600  mr-2  "
             >
               <TwitterIcon
                 width={16}
@@ -86,7 +86,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
             </a>
             <a
               href={socialMedia.linkedIn}
-              className="dark:text-gray-200 flex align-middle items-center  text-md  rounded-lg px-4 py-2  text-gray-600  mr-2  "
+              className="dark:text-gray-200 flex align-middle items-center  text-lg  rounded-lg px-4 py-2  text-gray-600  mr-2  "
             >
               <LinkedInIcon
                 width={16}
@@ -98,7 +98,7 @@ const Hero: React.FC<props> = ({ hero, socialMedia }) => {
 
             <a
               href={socialMedia.instagram}
-              className="dark:text-gray-200 flex align-middle items-center  text-md rounded-lg px-4 py-2  text-gray-600  mr-2  "
+              className="dark:text-gray-200 flex align-middle items-center  text-lg rounded-lg px-4 py-2  text-gray-600  mr-2  "
             >
               <InstagramIcon
                 width={16}

@@ -68,10 +68,14 @@ const PostPage: React.FC<Props> = ({
           <div className="mb-4 mt-12">
             <Featured title={frontMatter.title} src={frontMatter.thumbnail} />
           </div>
-          <h1 className="text-5xl text-blue-800 dark:text-white font-bold mb-4">
+          <h1 className="text-4xl text-black dark:text-white font-bold mb-4">
             {frontMatter.title}
           </h1>
-          <div className="text-lg blog ">
+          <span className="text-gray-500 block mb-4  text-xl dark:text-gray-400">
+             {frontMatter?.date} | #
+            {frontMatter?.hashtag}
+          </span>
+          <div className="text-lg blog border-t pt-4 dark:border-gray-900">
             <MDXRemote components={{ ImageBox }} {...source} />
           </div>
         </article>
