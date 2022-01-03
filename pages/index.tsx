@@ -16,6 +16,7 @@ import LanguageShowCase from "../components/homePage/languageShowCase";
 import EmailMe from "../components/homePage/emailMe";
 import Hero from "../components/homePage/hero";
 import langString, { langType } from "../lib/lang";
+import TestimonialsSection from "../components/homePage/testimonials";
 
 type Props = {
   files: {
@@ -73,7 +74,36 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
           link={middleContent.link}
         />
         <LanguageShowCase title={languages.title} />
-
+        <TestimonialsSection
+          title={languages.title}
+          description={languages.subTitle}
+          testimonails={[
+            {
+              name: "Jhon Doe",
+              title: "Frontend Developer",
+              image: "/assets/henok-face.jpg",
+              location: "New York",
+              testimonial:
+                " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            },
+            {
+              name: "Jhon Doe",
+              title: "Frontend Developer",
+              image: "/assets/henok-face.jpg",
+              location: "New York",
+              testimonial:
+                " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            },
+            {
+              name: "Jhon Doe",
+              title: "Frontend Developer",
+              image: "/assets/buildingStuff.png",
+              location: "New York",
+              testimonial:
+                " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            },
+          ]}
+        />
         <WorksTeaser works={works} strings={portfolio} />
         <EmailMe strings={getConnected} />
 
