@@ -15,7 +15,7 @@ import MiddleContent from "../components/basic/middleContent";
 import LanguageShowCase from "../components/homePage/languageShowCase";
 import EmailMe from "../components/homePage/emailMe";
 import Hero from "../components/homePage/hero";
-import langString, { langType } from "../lib/lang";
+import LanguageStrings, { langType } from "../lib/lang";
 import TestimonialsSection from "../components/homePage/testimonials";
 
 type Props = {
@@ -39,6 +39,7 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
     getConnected,
     footer,
     general,
+    testimonials
   } = localeString;
 
   const [theme, setTheme] = useState<boolean>(false);
@@ -75,34 +76,9 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
         />
         <LanguageShowCase title={languages.title} />
         <TestimonialsSection
-          title={languages.title}
-          description={languages.subTitle}
-          testimonails={[
-            {
-              name: "Jhon Doe",
-              title: "Frontend Developer",
-              image: "/assets/henok-face.jpg",
-              location: "New York",
-              testimonial:
-                " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            },
-            {
-              name: "Jhon Doe",
-              title: "Frontend Developer",
-              image: "/assets/henok-face.jpg",
-              location: "New York",
-              testimonial:
-                " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            },
-            {
-              name: "Jhon Doe",
-              title: "Frontend Developer",
-              image: "/assets/buildingStuff.png",
-              location: "New York",
-              testimonial:
-                " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            },
-          ]}
+          title={testimonials.title}
+          description={testimonials.subTitle}
+          testimonails={testimonials.testimonials}
         />
         <WorksTeaser works={works} strings={portfolio} />
         <EmailMe strings={getConnected} />
@@ -132,7 +108,7 @@ export const getStaticProps = async ({
     "type",
   ]);
 
-  const localeString: langType = langString[locale];
+  const localeString: langType = LanguageStrings[locale];
 
   return { props: { files, localeString, locale } };
 };

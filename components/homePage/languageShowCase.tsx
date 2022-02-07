@@ -15,7 +15,7 @@ type props = {
 const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
   return (
     <div className=" max-w-screen-xl my-4 mx-auto mb-20">
-      <h2 className="text-left text-2xl dark:text-white text-gray-500 w-full mb-5 ml-3 ">
+      <h2 className="text-left text-3xl dark:text-white text-black w-full mb-5 ml-3 ">
         {title}
       </h2>
       <div className="flex flex-row  justify-start flex-nowrap overflow-x-hidden  ">
@@ -23,10 +23,10 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
           <ReactIcon
             width={46}
             height={46}
-            className="fill-current mr-2 text-gray-600 dark:text-gray-300"
+            className="fill-current mr-2 text-black dark:text-gray-300"
           />
           React JS
-          <span className="absolute bottom-2 left-2 text-xl z-10">
+          <span className="absolute bottom-2   left-2 text-xl z-10">
             💪
           </span>
         </div>
@@ -38,7 +38,7 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
             className="fill-current mr-2 text-gray-600 dark:text-gray-300"
           />{" "}
           Next JS
-          <span className="absolute bottom-2 left-2 text-xl z-10">
+          <span className="absolute bottom-2   left-2 text-xl z-10">
             👍
           </span>
         </div>
@@ -47,10 +47,10 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
           <JavascriptIcon
             width={46}
             height={46}
-            className="fill-current mr-2 text-gray-600 dark:text-gray-300"
+            className="fill-current mr-2 text-black dark:text-gray-300"
           />{" "}
           Javascript
-          <span className="absolute bottom-2 left-2 text-xl z-10">
+          <span className="absolute bottom-2   left-2 text-xl z-10">
             😎
           </span>
         </div>
@@ -59,10 +59,10 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
           <NodejsIcon
             width={46}
             height={46}
-            className="fill-current mr-2 text-gray-600 dark:text-gray-300"
+            className="fill-current mr-2 text-black dark:text-gray-300"
           />{" "}
           Node JS
-          <span className="absolute bottom-2 left-2 text-xl z-10">
+          <span className="absolute bottom-2   left-2 text-xl z-10">
             😎
           </span>
         </div>
@@ -71,10 +71,10 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
           <MongoIcon
             width={46}
             height={46}
-            className="fill-current mr-2 text-gray-600 dark:text-gray-300"
+            className="fill-current mr-2 text-black dark:text-gray-300"
           />
           MongoDB
-          <span className="absolute bottom-2 left-2 text-xl z-10">
+          <span className="absolute bottom-2   left-2 text-xl z-10">
             👍
           </span>
         </div>
@@ -86,7 +86,7 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
             className="fill-current mr-2 text-gray-600 dark:text-gray-300"
           />
           Wordpress
-          <span className="absolute bottom-2 left-2 text-xl z-10">
+          <span className="absolute bottom-2   left-2 text-xl z-10">
             😎
           </span>
         </div>

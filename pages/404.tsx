@@ -12,7 +12,7 @@ import Footer from "../components/layout/footer";
 import Display404 from "../components/basic/display404";
 import EmailMe from "../components/homePage/emailMe";
 import Hero from "../components/homePage/hero";
-import langString, { langType } from "../lib/lang";
+import LanguageStrings, { langType } from "../lib/lang";
 
 type Props = {
   files: {
@@ -87,7 +87,7 @@ export const getStaticProps = async ({
     "description",
   ]);
 
-  const localeString: langType = langString[locale];
+  const localeString: langType = LanguageStrings[locale];
 
   return { props: { files, localeString, locale } };
 };

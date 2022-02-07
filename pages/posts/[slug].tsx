@@ -12,7 +12,7 @@ import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
-import langString, { langType } from "../../lib/lang";
+import LanguageStrings, { langType } from "../../lib/lang";
 
 interface returnPath {
   params: {
@@ -102,7 +102,7 @@ export const getStaticProps = async ({
   });
 
   const { posts } = getAllPosts(["slug"]);
-  const localeString: langType = langString[locale];
+  const localeString: langType = LanguageStrings[locale];
 
   return {
     props: {

@@ -1,22 +1,33 @@
-interface string404 {
+interface String404 {
   title: string;
   siteTitle: string;
   subTitle: string;
   buttonText: string;
 }
 
-interface langauges {
+interface TitleSubtitle {
   title: string;
   subTitle: string;
 }
 
-interface link {
+/**
+ * testimonial Interface
+ */
+interface Testimonials {
+  name: string;
+  title: string;
+  image: string;
+  location: string
+  testimonial: string;
+}
+
+interface Link {
   text: string;
   href: string;
   target?: string;
 }
 
-interface heroTitle {
+interface HeroTitle {
   intro: string;
   name: string;
   secondIntro: string;
@@ -25,20 +36,20 @@ interface heroTitle {
   title2: string;
 }
 
-interface socialMedia {
+interface SocialMedia {
   twitter: string;
   github: string;
   instagram: string;
   linkedIn: string;
 }
 
-interface getConnected {
+interface GetConnected {
   title: string;
   subtitle: string;
-  link: link;
+  link: Link;
 }
 
-interface siteStrings {
+interface SiteSettings {
   siteTitle: string;
   siteDescription: string;
   work: string;
@@ -47,25 +58,28 @@ interface siteStrings {
   emailMe: string;
 }
 
-interface footer {
+interface Footer {
   title: string;
 }
 
-interface langType {
-  languages:langauges;
-  general: siteStrings;
+interface LangType {
+  languages: TitleSubtitle;
+  general: SiteSettings;
   hero: {
-    title: heroTitle;
+    title: HeroTitle;
     subTitle: string;
     secondRowTitle: string;
     moreText: string[];
   };
-  socialMedia: socialMedia;
+  socialMedia: SocialMedia;
   portfolio: {
     title: string;
     description: string;
     more: string;
   };
+  testimonials: {
+    testimonials: Testimonials[];
+  } & TitleSubtitle;
   blog: {
     title: string;
     description: string;
@@ -73,16 +87,16 @@ interface langType {
   middleContent: {
     title: string;
     description: string[];
-    link: link;
+    link: Link;
   };
-  getConnected: getConnected;
-  footer: footer;
-  string404: string404;
+  getConnected: GetConnected;
+  footer: Footer;
+  string404: String404;
 }
 
-const langString: {
-  am: langType;
-  en: langType;
+const LanguageStrings: {
+  am: LangType;
+  en: LangType;
 } = {
   am: {
     languages: {
@@ -97,7 +111,20 @@ const langString: {
       blog: "ጦማር",
       emailMe: "ኢሜል ላክ",
     },
-    
+    testimonials: {
+      title: "ምስክርነት",
+      subTitle: "የሚከተሉት ሰዎች ከኔ ጋር የሰሩ ሲሆን በነበርንም ሰራ የሚከተለዉን ሀሳብ ሊያጋሩ ፈቃደኛ ሆነዋል።",
+      testimonials: [
+        {
+          name: "ሮበርት ያው",
+          title: "CTO at Sincere",
+          image: "/assets/henok-face.jpg",
+          location: "ካሊፎርኒያ ፣ አሜሪካ",
+          testimonial: " እንደ አሜሪካ የሚከተሉት ሰዎች ከኔ ጋር የሰሩ ሲሆን በነበርንም ሰራ የሚከተለዉን ሀሳብ ሊያራሩ ፈቃደኛ ሆነዋል።"
+        },
+
+      ],
+    },
     hero: {
       title: {
         intro: "ሰላም",
@@ -172,17 +199,30 @@ const langString: {
       blog: "Blog",
       emailMe: "Email Me",
     },
+    testimonials: {
+      title: "Testimonials",
+      subTitle: "What people say about me",
+      testimonials: [
+        {
+          name: "Robert Yau",
+          title: "CTO at Sincere ",
+          image: "/assets/henok-face.jpg",
+          location: "San Francisco, CA, USA",
+          testimonial: "Being nice working with Henok",
+        }
+      ]
+    },
     hero: {
       title: {
-        intro: "HI, I am",
-        name: "Henok Tsegaye",
+        intro: "HI, I am ,",
+        name: "Henok Tsegaye.",
         secondIntro: "I am a",
-        title1: "Technologiest",
-        thirdIntro: "and mainly a",
+        title1: "Technologiest.",
+        thirdIntro: "And mainly a",
         title2: "Software Developer.",
       },
       subTitle: "Send me an email to introduce yourself.",
-      secondRowTitle: "Technologiest",
+      secondRowTitle: "Technologiest By Interest.",
       moreText: [
         "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better place and our Country Ethiopia a power house.",
         "Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
@@ -238,14 +278,14 @@ const langString: {
   },
 };
 
-export default langString;
+export default LanguageStrings;
 export type {
-  langType,
-  link,
-  socialMedia,
-  heroTitle,
-  getConnected,
-  footer,
-  siteStrings,
-  string404,
+  LangType as langType,
+  Link as link,
+  SocialMedia as socialMedia,
+  HeroTitle as heroTitle,
+  GetConnected as getConnected,
+  Footer as footer,
+  SiteSettings as siteStrings,
+  String404 as string404,
 };

@@ -14,7 +14,7 @@ import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
-import langString, { langType } from "../../lib/lang";
+import LanguageStrings, { langType } from "../../lib/lang";
 interface returnPath {
   params: {
     slug: string;
@@ -118,7 +118,7 @@ export const getStaticProps = async ({
   const { content, data } = getPost(params?.slug as string, true);
 
   const mdxSource = await serialize(content, { scope: data });
-  const localeString: langType = langString[locale];
+  const localeString: langType = LanguageStrings[locale];
 
   return {
     props: {
