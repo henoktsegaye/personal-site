@@ -24,11 +24,11 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
           </p>
         </div>
         <div className="from-blue-700 to-gray-50 dark:from-blue-700 dark-to-gray-900"></div>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-6">
           {works.map((post) => (
             <div
               key={post.slug}
-              className={`rounded-xl border  border-gray-200 dark:border-gray-800 my-1  overflow-hidden `}
+              className={`rounded-xl border  border-gray-200 dark:bg-gray-900 dark:border-gray-900 my-1  py-6 overflow-hidden `}
             >
               <div className="content">
 
@@ -42,12 +42,12 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
                     </Link>
                   </h2>
 
-                  <div className="dark:text-gray-300  text-gray-700 mb-5 ">
+                  <div className="dark:text-gray-300  text-gray-700 mb-3 ">
 
                     {post.tech
                       ? post?.tech.slice(0, 3).map((t) => (
-                        <span className="text-gray-700 dark:text-gray-400 inline-block bg-gray-50 dark:bg-gray-900  text-sm px-3 py-1 rounded-xl mr-2  ">
-                          # {t}
+                        <span className="text-gray-400 dark:text-gray-400 inline-block dark:bg-gray-900  text-sm py-1 rounded-xl mr-2  ">
+                          {t}
                         </span>
                       ))
                       : null}
@@ -60,10 +60,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
                     {post.date} | {post?.type}
                   </p>
 
-                  <div className="float-right pb-3">
-                    <button className="bg-blue-50 dark:text-white hover:bg-blue-600 transition-colors delay-75 hover:text-white dark:hover:bg-blue-600 dark:bg-gray-900  py-2 px-4 rounded-lg" >  Go There </button>
 
-                  </div>
 
                 </div>
 

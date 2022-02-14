@@ -224,8 +224,7 @@ const LanguageStrings: {
       subTitle: "Send me an email to introduce yourself.",
       secondRowTitle: "Technologiest By Interest.",
       moreText: [
-        "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better place and our Country Ethiopia a power house.",
-        "Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
+        "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better place and our Country Ethiopia a power house.Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
       ],
     },
     socialMedia: {
