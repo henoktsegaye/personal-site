@@ -10,12 +10,12 @@ type props = {
 
 const MiddleContent: React.FC<props> = ({ title, content, link }) => {
   return (
-    <div className="2xl:max-w-screen-xl bg-gradient-to-br from-blue-50 dark:from-gray-900 border  via-gray-50 dark:via-black to-gray-100  dark:to-black px-10 rounded-3xl xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto  border-gray-50 dark:border-gray-900 my-10" id="middleContent">
+    <div className="2xl:max-w-screen-xl bg-gradient-to-br from-blue-50 dark:from-gray-900 border  via-gray-50 dark:via-gary-900 to-gray-100  dark:to-black px-10 rounded-3xl xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto  border-gray-50 dark:border-gray-900 my-10" id="middleContent">
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center py-10 ">
         <div className="order-2 lg:order-1">
-          <div className="text-3xl font-bold mb-10 text-black  dark:text-gray-100 ">
+          <h3 className="text-3xl font-bold mb-10 text-black  dark:text-gray-100 ">
             {title}
-          </div>
+          </h3>
           {content.map((text, index) => (
             <p
               key={`data${index}`}

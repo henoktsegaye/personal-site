@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { GetStaticProps, GetStaticPropsContext } from "next";
 import Head from "next/head";
-
 import Layout from "../components/layout/layout";
 import Thumbnail from "../components/basic/thumbnail";
 import { IPost } from "../types/post";
@@ -17,6 +16,7 @@ import EmailMe from "../components/homePage/emailMe";
 import Hero from "../components/homePage/hero";
 import LanguageStrings, { langType } from "../lib/lang";
 import TestimonialsSection from "../components/homePage/testimonials";
+import WorkHistoryContainer from "../components/workHistory";
 
 type Props = {
   files: {
@@ -39,7 +39,8 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
     getConnected,
     footer,
     general,
-    testimonials
+    testimonials,
+    workHistories,
   } = localeString;
 
   const [theme, setTheme] = useState<boolean>(false);
@@ -68,18 +69,22 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
     >
       <div>
         <Hero hero={hero} socialMedia={socialMedia} />
-        <BlogsTeaser strings={blog} posts={posts} />
+        {/* <BlogsTeaser strings={blog} posts={posts} /> */}
         <MiddleContent
           title={middleContent.title}
           content={middleContent.description}
           link={middleContent.link}
         />
         <LanguageShowCase title={languages.title} />
-        <TestimonialsSection
+        <WorkHistoryContainer
+          title={workHistories.title}
+          workHistory={workHistories.workHistories}
+        />
+        {/* <TestimonialsSection
           title={testimonials.title}
           description={testimonials.subTitle}
           testimonails={testimonials.testimonials}
-        />
+        /> */}
         <WorksTeaser works={works} strings={portfolio} />
         <EmailMe strings={getConnected} />
 

@@ -1,3 +1,4 @@
+import { WorkHistoryType } from "../components/workHistory/type";
 interface String404 {
   title: string;
   siteTitle: string;
@@ -17,7 +18,7 @@ interface Testimonials {
   name: string;
   title: string;
   image: string;
-  location: string
+  location: string;
   testimonial: string;
 }
 
@@ -62,9 +63,19 @@ interface Footer {
   title: string;
 }
 
+/**
+ * work history type
+ */
+
+type WorkHistory = {
+  workHistories: WorkHistoryType[];
+  title: string;
+};
+
 interface LangType {
   languages: TitleSubtitle;
   general: SiteSettings;
+  workHistories: WorkHistory;
   hero: {
     title: HeroTitle;
     subTitle: string;
@@ -101,7 +112,7 @@ const LanguageStrings: {
   am: {
     languages: {
       title: "የመጠቀማቸው የማዘዣ ቋንቋዎች",
-      subTitle: '',
+      subTitle: "",
     },
     general: {
       siteTitle: "ሔኖክ ፀጋዬ",
@@ -111,18 +122,56 @@ const LanguageStrings: {
       blog: "ጦማር",
       emailMe: "ኢሜል ላክ",
     },
+    workHistories: {
+      title: "የስራ ታሪክ",
+      workHistories: [
+        {
+          role: "ዌብ አበልጻጊ",
+          responsibilities: [""],
+          company: {
+            name: "ካፕታሪዮ",
+            website: "https://captario.com",
+          },
+          startDate: "2022-01-04",
+          currentlyWorkingHere: true,
+          address: {
+            country: "ስዊድን",
+            city: "ጎተንበርግ",
+          },
+        },
+        {
+          role: "ሞባይል ትግበራ አበልጻጊ",
+          responsibilities: [
+            "የመተግበሪያው ላይ የነበሩ ችግሮችን መፍታት",
+            "አንዳንድ ወሳኝ የትግበራ ክፍሎችን መተግበር",
+            "የተግበራውን በስርአት ማዋቀር",
+          ],
+          company: {
+            name: "ሲንሲር",
+            website: "https://sincere.com",
+          },
+          startDate: "2021-10-04",
+          endDate: "2020-01-01",
+          address: {
+            country: "አሜሪካ",
+            city: "ሳንፍራንሲስኮ",
+          },
+        },
+      ],
+    },
     testimonials: {
       title: "ምስክርነት",
-      subTitle: "የሚከተሉት ሰዎች ከኔ ጋር የሰሩ ሲሆን በነበርንም ሰራ የሚከተለዉን ሀሳብ ሊያጋሩ ፈቃደኛ ሆነዋል።",
+      subTitle:
+        "የሚከተሉት ሰዎች ከኔ ጋር የሰሩ ሲሆን በነበርንም ሰራ የሚከተለዉን ሀሳብ ሊያጋሩ ፈቃደኛ ሆነዋል።",
       testimonials: [
         {
           name: "ሮበርት ያው",
           title: "CTO at Sincere",
           image: "/assets/henok-face.jpg",
           location: "ካሊፎርኒያ ፣ አሜሪካ",
-          testimonial: " እንደ አሜሪካ የሚከተሉት ሰዎች ከኔ ጋር የሰሩ ሲሆን በነበርንም ሰራ የሚከተለዉን ሀሳብ ሊያራሩ ፈቃደኛ ሆነዋል።"
+          testimonial:
+            " እንደ አሜሪካ የሚከተሉት ሰዎች ከኔ ጋር የሰሩ ሲሆን በነበርንም ሰራ የሚከተለዉን ሀሳብ ሊያራሩ ፈቃደኛ ሆነዋል።",
         },
-
       ],
     },
     hero: {
@@ -189,7 +238,7 @@ const LanguageStrings: {
   en: {
     languages: {
       title: "programming languages i use",
-      subTitle: '',
+      subTitle: "",
     },
     general: {
       siteTitle: "Henok Tsegaye",
@@ -198,6 +247,43 @@ const LanguageStrings: {
       middleContent: "How it Started",
       blog: "Blog",
       emailMe: "Email Me",
+    },
+    workHistories: {
+      title: "Work History",
+      workHistories: [
+        {
+          role: "Frontend Developer",
+          responsibilities: ["Developed some features there"],
+          company: {
+            name: "Captario",
+            website: "https://captario.com",
+          },
+          startDate: "2022-01-04",
+          currentlyWorkingHere: true,
+          address: {
+            country: "Sweden",
+            city: "Gotheberg",
+          },
+        },
+        {
+          role: "Mobile Developer",
+          responsibilities: [
+            "Organized the codebase for better manageability and maintainability.",
+            "Tracked and fixed bugs on the previous version of the application.",
+            "Implemented some key features of the application communicating with the back end.",
+          ],
+          company: {
+            name: "Sincere",
+            website: "https://sincere.com",
+          },
+          startDate: "2021-10-04",
+          endDate: "2022-01-01",
+          address: {
+            country: "America",
+            city: "San Francisco",
+          },
+        },
+      ],
     },
     testimonials: {
       title: "Testimonials",
@@ -209,8 +295,8 @@ const LanguageStrings: {
           image: "/assets/henok-face.jpg",
           location: "San Francisco, CA, USA",
           testimonial: "Being nice working with Henok",
-        }
-      ]
+        },
+      ],
     },
     hero: {
       title: {
