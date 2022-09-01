@@ -1,7 +1,46 @@
-# Javascript Primitive Types
+---
+date: "2021-03-28"
+thumbnail: /assets/javascript-primitives.png
+title: Understanding Javascript primitive types
+description: Javascript Primitive types are the basic building blocks of Javascript.
+hashtag: Javascript
+---
 
 Javascript has primitive types that constitute the basis of all data types in the language.
-Those primitive types are directly map to the types in the language. Which are 
+everything else in javascript is an object like functions classes ( in es6) or arrays.
+you can tell this by just looking at the typeof operator.
+
+```
+typeof 'hello' // string
+typeof true // boolean
+typeof 1 // number
+typeof {} // object
+typeof null // object
+typeof undefined // undefined
+typeof function () {} // function
+typeof Symbol('hello') // symbol
+```
+
+But here `typeof null` is an object which is not actully true since null is a primitive type.
+
+```
+typeof null // object
+```
+
+this is considered a bug in javascript.
+
+well if primitives are not Objects you might ask how are we accessing properties of them.
+
+```
+'hello'.length // 5
+```
+
+this is not a bug in javascript :)
+This is actully one of the features of javascript. It maps out primitive types to **_Wrapper Objects_** which is the reason we can see the `length` property of a string.
+Which will actully create a new object and with value as "hello" , so you can access the length property of the object.
+But once we had access the property of the object Garbage Collector will remove the object from memory.
+
+Those primitive types are directly map to the types in the language. Which are
 Javascript has 7 primitive types:
 
 - undefined
@@ -12,10 +51,23 @@ Javascript has 7 primitive types:
 - symbol
 - object
 
-## What do we mean by primitive types?
-primitive types are the simplest types of data in Javascript. they are not objects.
-any other types in Javascript are objects.
+## Primitive Types properties
+
+## Primitive Types are Immutable
+
+Javascript primitive types are immutable. meaning you cannot change the value of a primitive type.
+which is differnt from the immutable nature of objects. as objects are mutable.
+Objects are reference types , which means you can change the value of the object. but primitive types are not reference types. but value types.
+```
+var a = 1; 
+var b = a; 
+a = 2; 
+console.log(a); // 2 
+console.log(b); // 1 
+```
+
+when assigning a primitive type to a variable , the value of the variable is copied and the variable is not a reference to the value of the primitive type which means you can change the value of the variable and that won't be reflected
+But what happens when you re-assign the primitive type to a variable?
+that value would be destroyed and new value would be assigned to the variable.
 
 
-
-Primitive types are immutable.

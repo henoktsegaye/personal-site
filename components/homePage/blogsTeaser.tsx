@@ -44,7 +44,7 @@ const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
                   />
                 </div>
                 <h2 className="text-2xl line-clamp-2 mb-4 text-black font-bold dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
-                  <Link href={`/posts/${post.slug}`}>
+                  <Link href={`/blogs/${post.slug}`}>
                     <a>{post.title}</a>
                   </Link>
                 </h2>

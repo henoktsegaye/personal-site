@@ -28,7 +28,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
           {works.map((post) => (
             <div
               key={post.slug}
-              className={`rounded-xl border  border-gray-200 dark:bg-gray-900 dark:border-gray-900 my-1  py-6 overflow-hidden `}
+              className={`rounded-xl border  border-gray-200 dark:bg-gray-900 dark:border-gray-900 my-1  py-1 overflow-hidden `}
             >
               <div className="content">
 
@@ -36,13 +36,13 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
 
                 <div className="pb-1 pt-3 px-6">
 
-                  <h2 className="text-2xl font-bold mb-2 line-clamp-1 text-black dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                  <h2 className="text-lg font-bold mb-2 line-clamp-1 text-black dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                     <Link href={`/works/${post.slug}`}>
                       <a>{post.title}</a>
                     </Link>
                   </h2>
 
-                  <div className="dark:text-gray-300  text-gray-700 mb-3 ">
+                  <div className="dark:text-gray-300  text-gray-700 mb-1 ">
 
                     {post.tech
                       ? post?.tech.slice(0, 3).map((t) => (
@@ -52,8 +52,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
                       ))
                       : null}
                   </div>
-
-                  <p className="dark:text-gray-200 h-16 text-gray-900 mb-3">
+                  <p className="dark:text-gray-200 h-16 text-gray-900 mb-2">
                     {post.description}
                   </p>
                   <p className="text-gray-400 text-sm mb-2" >

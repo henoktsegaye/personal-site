@@ -15,7 +15,7 @@ const Thumbnail: React.FC<Props> = ({ title, src, slug }: Props) => {
         src={src}
         alt={`Cover Image for ${title}`}
         layout="fill"
-        objectFit="contain"
+        objectFit="cover"
         className="rounded-xl"
       />
     </div>

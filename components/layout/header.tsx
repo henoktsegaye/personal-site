@@ -60,34 +60,25 @@ const Header: React.FC<props> = ({
           <div className="flex flex-row justify-between items-center 2xl:col-span-4 xl:col-span-3  col-span-3 lg:col-span-2 ">
             <Link href="/">
               <a className="text-xl font-bold  dark:text-gray-400 text-gray-500 ">
-                {" "}
-                <img src="/assets/name.png"  className="h-10" alt={strings.siteTitle} />
+                <img src="/assets/name.png" className="h-10" alt={strings.siteTitle} />
               </a>
             </Link>
           </div>
-          <div className=" flex-row 2xl:pl-6 justify-between hidden items-center 2xl:col-span-3 xl:col-span-4 lg:col-span-5 lg:flex">
+          <div className=" flex-row 2xl:pl-6 justify-between hidden items-center 2xl:col-span-3 2xl:ml-32 xl:ml-40 xl:col-span-4 lg:col-span-5 lg:flex">
             <Link href="/#workTeaser">
               <a className="text-lg dark:text-gray-400 text-gray-500 ">
-                {" "}
-                {strings.work}{" "}
-              </a>
-            </Link>{" "}
-            <Link href="/#middleContent">
-              <a className="text-lg  dark:text-gray-400 text-gray-500 ">
-                {strings.middleContent}
+                {strings.work}
               </a>
             </Link>
-            <Link href="/#blogTeaser">
-              <a className="text-lg  dark:text-gray-400 text-gray-500 ">
-                {" "}
-                {strings.blog}{" "}
+            <Link href="/blogs">
+              <a className={`text-lg ${slug === "/blogs" ? "text-black dark:text-white" : " dark:text-gray-400 text-gray-500 "} `}>
+                {strings.blog}
               </a>
-            </Link>{" "}
-            <div className="flex justify-center items-center">
+            </Link>
+            <div className="flex justify-between items-center w-7/12 px-2">
               <Link href="/#emailMe">
-                <a className="text-lg bg-blue-600  dark:bg-blue-600 px-6 py-2 rounded-lg text-gray-200">
-                  {" "}
-                  {strings.emailMe}{" "}
+                <a className="text-lg  px-0  rounded-lg dark:text-gray-400 text-gray-500">
+                  {strings.emailMe}
                 </a>
               </Link>
               <Link locale={localOpposite[locale]} href={`${slug || ""}`}>
@@ -115,14 +106,9 @@ const Header: React.FC<props> = ({
               </button>
             </div>
           </div>
-          <div className="flex lg:hidden col-span-4">
-            <div className="flex justify-center items-center">
-              <Link href="/#emailMe">
-                <a className="text-lg bg-gradient-to-r from-blue-600 to-red-400 dark:bg-blue-600 px-4 py-2 rounded-lg text-gray-200">
-                  {strings.emailMe}
-                </a>
-              </Link>
-              <Link locale={localOpposite[locale]}  href={`${slug || ""}`}>
+          <div className="flex lg:hidden col-span-4 relative">
+            <div className="flex justify-end w-full items-center">
+              <Link locale={localOpposite[locale]} href={`${slug || ""}`}>
                 <span className="ml-4 mr-2 dark:text-gray-400 text-gray-500 text-lg cursor-pointer">
                   {displayString[locale]}
                 </span>

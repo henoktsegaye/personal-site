@@ -70,16 +70,16 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
       <div>
         <Hero hero={hero} socialMedia={socialMedia} />
         {/* <BlogsTeaser strings={blog} posts={posts} /> */}
-        <MiddleContent
+        {/* <MiddleContent
           title={middleContent.title}
           content={middleContent.description}
           link={middleContent.link}
-        />
+        /> */}
         <LanguageShowCase title={languages.title} />
-        <WorkHistoryContainer
+        {/* <WorkHistoryContainer
           title={workHistories.title}
           workHistory={workHistories.workHistories}
-        />
+        /> */}
         {/* <TestimonialsSection
           title={testimonials.title}
           description={testimonials.subTitle}

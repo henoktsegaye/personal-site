@@ -186,7 +186,6 @@ const LanguageStrings: {
       subTitle: "ራስህን/ሽን ለማስተዎወቅ ታች ላይ ኢሜይል ልትልክ/ኪ ትችላላችሁ ።",
       secondRowTitle: "ቴክኖሎጅስት።",
       moreText: [
-        "ስለ ቴክኖሎጂ ብዙ ፍላጎት አለኝ። ቴክኖሎጅ የመጣበት እንዱሁም የሚሄድበትን በቅርበት መመልከት እወዳለሁ።  ከዛም አልፎ በሀገራችን ኢትዮጵያ በቴክኖሎጅው ዘርፍ ብዙ አቅም እንዳላት አምናለሁ። ",
         " በአዲስ-አበባ ዩንቨርስቲ በ ኮምፒውተር ሳይንስ ትምህርቴን የተከታተልኩ ሲሆን በዋነኝነት ከዌብ እንዲሁም ከ ተንቀሳቃሽ ስልኮች ጋር የተገናኙ ሶፍትዌሮችን እሰራለሁ። በዚህም ምክኒያት JAVASCRIPT የተሰኘውን ማዘዣ እወደዋለሁ። የአሰራሬ መመሪያ ንፁ እና ሰርዐት ያለው ስራ ነው።",
       ],
     },
@@ -310,7 +309,7 @@ const LanguageStrings: {
       subTitle: "Send me an email to introduce yourself.",
       secondRowTitle: "Technologiest By Interest.",
       moreText: [
-        "I have a big interest in Tech. I always enjoy looking back to a history in tech and talking about where technology is heading. I also belive in technology making the world a better place and our Country Ethiopia a power house.Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
+        "Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
       ],
     },
     socialMedia: {
