@@ -1,4 +1,4 @@
-// pages/posts/[slug].tsx
+// pages/works/[slug].tsx
 import "../../styles/blog.module.css";
 import { useState } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";

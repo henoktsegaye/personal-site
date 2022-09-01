@@ -23,7 +23,7 @@ const Thumbnail: React.FC<Props> = ({ title, src, slug }: Props) => {
   return (
     <>
       {slug ? (
-        <Link href={`/posts/${slug}`}>
+        <Link href={`/blogs/${slug}`}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (

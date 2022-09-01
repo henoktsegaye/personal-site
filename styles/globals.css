@@ -46,12 +46,13 @@ ul {
 .blog p , body b {
   @apply dark:text-gray-400;
   @apply text-gray-600;
-  @apply text-base;
   @apply mb-2;
 }
 
 .blog strong {
-  @apply text-base;
+  @apply font-bold;
+  @apply dark:text-gray-300;
+  @apply text-gray-700;
 }
 
 .blog hr {

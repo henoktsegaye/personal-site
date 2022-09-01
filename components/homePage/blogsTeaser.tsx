@@ -28,11 +28,11 @@ const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+        <div className="grid 2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-8">
           {posts.map((post) => (
             <div
               key={post.slug}
-              className={`rounded-xl  bg-white dark:bg-black  py-4  dark:border-gray-900 border-gray-200 overflow-hidden `}
+              className={`rounded-xl  bg-gray-50 dark:bg-gray-900  p-6  dark:border-gray-900 border-gray-200 overflow-hidden `}
             >
               <div className="content">
                

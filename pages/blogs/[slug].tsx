@@ -1,4 +1,4 @@
-// pages/posts/[slug].tsx
+// pages/blogs/[slug].tsx
 import { useState, useEffect } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import dynamic from "next/dynamic";
@@ -85,7 +85,7 @@ const PostPage: React.FC<Props> = ({
       changeTheme={toggleTheme}
       theme={darkTheme}
       allStrings={localeString}
-      slug={`posts/${slug}`}
+      slug={`${slug}`}
     >
       <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
         <article className="prose prose-blue">

@@ -195,8 +195,8 @@ const LanguageStrings: {
       description: "ከአሁን በፊት በተሻለ መንገድ የሰራሆቸው ስራዎች እንደሚከተለው ዘርዝሪያለሁ ።",
     },
     blog: {
-      title: "ክ ሀሳቦቸ መካክል",
-      description: "ከአሁን በፊት በተሻለ መንገድ የሰራሆቸው ስራዎች እንደሚከተለው ዘርዝሪያለሁ ።",
+      title: "ከሀሳቦቸ መካከል",
+      description: "አንዳንድ ሃሳቦችን ከብዙ በትንሹ እንዲህ አቅርቢያለሁ።",
     },
     socialMedia: {
       twitter: "https://twitter.com/henokcode",

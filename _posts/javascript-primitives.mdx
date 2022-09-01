@@ -2,13 +2,20 @@
 date: "2021-03-28"
 thumbnail: /assets/javascript-primitives.png
 title: Understanding Javascript primitive types
-description: Javascript Primitive types are the basic building blocks of Javascript.
+description: Javascript Primitive types are the basic building blocks of Javascript. We will try to understand how they work.
 hashtag: Javascript
 ---
+Welcome to the **Understanding Javascript basics** series, on this blog we will try to understand primitive types in Javascript. 
 
-Javascript has primitive types that constitute the basis of all data types in the language.
-everything else in javascript is an object like functions classes ( in es6) or arrays.
-you can tell this by just looking at the typeof operator.
+let's get to it 🙂
+
+---
+
+
+Javascript has primitive types ( primitive value ) that are directly represented at the lowest level of the language implementation.
+Javascript in general has two types of data types - **primitive** and **non-primitive** (Object).
+every other data type in javascript is an object. Functions, classes, or arrays are all objects.
+you can tell this by just looking at the **typeof** operator which might not be accurate at time but it's a good enough approximation.
 
 ```
 typeof 'hello' // string
@@ -28,19 +35,79 @@ typeof null // object
 ```
 
 this is considered a bug in javascript.
+Javascript primitives types are not objects and their value are immutable. but variables can be reassigned to a new value.
+doing so will create a new variable and garbage collector will clean up the old one.
 
-well if primitives are not Objects you might ask how are we accessing properties of them.
+example of primitive type immutablity
+```
+let a = 1;
+let b = a;
+// changing a will not change b
+a = 2;
+console.log(a); // 2
+console.log(b); // 1
+```
+As both `a` and `b` are primitive types, they are not related to each other.
+when copying `b` from `a` Javascript **will copy the value of `a` and assign it to `b`** , so changing one will not change the other.
 
+Comparing primitive types to object 👇🏾
+```
+let a = {
+    value: 1
+};
+let b = a;
+// changing a will change b as they have the same reference
+a.value = 2;
+console.log(a.value); // 2
+console.log(b.value); // 2
+``` 
+As you can see in the above example, Objects doesn't hold values but references so, changing `a` will change `b ` as they have the same reference.
+
+well if primitives are not Objects you might ask how are we accessing properties off them like this example below ?
 ```
 'hello'.length // 5
 ```
 
-this is not a bug in javascript :)
-This is actully one of the features of javascript. It maps out primitive types to **_Wrapper Objects_** which is the reason we can see the `length` property of a string.
-Which will actully create a new object and with value as "hello" , so you can access the length property of the object.
+<img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" />
+<br />
+This is not a bug in javascript 😄
+
+This is actully one of the features of javascript. 
+
+Primitives are not Objects but they **act like they are** 🤔 ? Well here is how it works
+
+Javascript maps out primitive types to **_Wrapper Objects_** which is the reason we can see the `length` property of a string.
+Which will actully create a new object with value `"hello"`, so you can access the length property ( or anyother String proprety ) off that object. This is actully true for Other two Primitive types **Boolean** and **Number** .
+
+```
+let strObj = new String('hello')
+typeof strObj // object
+strObj.length // 5
+
+// access the value of the object , which is the primitive value
+strObj.valueOf() // hello
+typeof strObj.valueOf() // string
+```
+
+Boolean Object
+```
+let boolObj = new Boolean(true)
+typeof boolObj // object
+boolObj.valueOf() // true
+typeof boolObj.valueOf() // boolean
+```
+Number Object
+```
+let numObj = new Number(1)
+typeof numObj // object
+numObj.toFixed(2) // 1.00
+
+numObj.valueOf() // 1
+typeof numObj.valueOf() // number
+```
+
 But once we had access the property of the object Garbage Collector will remove the object from memory.
 
-Those primitive types are directly map to the types in the language. Which are
 Javascript has 7 primitive types:
 
 - undefined
@@ -48,26 +115,12 @@ Javascript has 7 primitive types:
 - boolean
 - number
 - string
-- symbol
-- object
+- symbol - es2015
+- bigint - es2020
 
-## Primitive Types properties
 
-## Primitive Types are Immutable
+The `symbol` data type is new in es6.
+`bigint` is new in es2020.
 
-Javascript primitive types are immutable. meaning you cannot change the value of a primitive type.
-which is differnt from the immutable nature of objects. as objects are mutable.
-Objects are reference types , which means you can change the value of the object. but primitive types are not reference types. but value types.
-```
-var a = 1; 
-var b = a; 
-a = 2; 
-console.log(a); // 2 
-console.log(b); // 1 
-```
-
-when assigning a primitive type to a variable , the value of the variable is copied and the variable is not a reference to the value of the primitive type which means you can change the value of the variable and that won't be reflected
-But what happens when you re-assign the primitive type to a variable?
-that value would be destroyed and new value would be assigned to the variable.
-
+we will dive deep into these primitive types in the next blog in this series.
 

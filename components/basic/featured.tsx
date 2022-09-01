@@ -28,7 +28,7 @@ const Featured: React.FC<Props> = ({ title, src, slug, color }: Props) => {
   return (
     <>
       {slug ? (
-        <Link href={`/posts/${slug}`}>
+        <Link href={`/${slug}`}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (

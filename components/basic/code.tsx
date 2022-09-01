@@ -29,13 +29,13 @@ function Code({ children, className = "", inline = false, dark = false }: Props)
         return (
         <>
           {tokens.length > 0 && (
-            <pre className={` ${inline ? "inline-block text-sm px-5 py-0 " : " py-2 text-base "} rounded-md ${className}`} style={style}>
+            <pre className={` ${inline ? "inline-block text-sm px-5 py-0 " : " py-2 text-base my-6 "} rounded-md ${className}`} style={style}>
               {tokens.map((line, i) => (
                 <div
                   key={i}
                   {...getLineProps({ line, key: i })}
                 >
-                  {!inline && <span className={`mr-2 ${dark ? "text-gray-700" : "text-gray-300"}`} > {i + 1}</span>}
+                  {!inline && <span className="mr-5 dark:text-gray-700 text-gray-300" > {i + 1}</span>}
                   {line.map((token, key) => (
                     <span
                       key={key}
