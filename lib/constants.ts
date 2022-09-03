@@ -1,4 +1,4 @@
 // utils/constants.ts
-export const SITE_URL = 'http://localhost:3000';
-export const SITE_NAME = 'Henok';
-export const TWITTER_USERNAME = '@MyAwesomeFoodBlog';
+export const SITE_URL = 'https://henoktsegaye.com';
+export const SITE_NAME = 'Henok Tsegaye';
+export const TWITTER_USERNAME = '@henokcode';

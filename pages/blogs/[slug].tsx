@@ -6,6 +6,7 @@ import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import ImageBox from "../../components/basic/imageBox";
+import CodeAndImageBox from "../../components/basic/CodeAndImageBox";
 import { Code } from "../../components/basic/code";
 import Layout from "../../components/layout/layout";
 import Featured from "../../components/basic/featured";
@@ -51,11 +52,11 @@ const PostPage: React.FC<Props> = ({
   const toggleTheme = () => {
     if (!darkTheme) {
       localStorage.setItem("theme", "dark");
-
+      window.dispatchEvent(new Event("storage"));
       document.documentElement.classList.add("dark");
     } else {
       localStorage.setItem("theme", "light");
-
+      window.dispatchEvent(new Event("storage"));
       document.documentElement.classList.remove("dark");
     }
     setDarkTheme(!darkTheme);
@@ -64,6 +65,7 @@ const PostPage: React.FC<Props> = ({
   const { footer, general } = localeString;
   const components = {
     ImageBox,
+    CodeAndImageBox,
     code: (props: {className: string, children:string}) => (
       <Code
         {...props}
