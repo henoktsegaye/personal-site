@@ -47,6 +47,7 @@ const Header: React.FC<props> = ({
       : "light";
     if (xtheme == "dark") {
       document.documentElement.classList.add("dark");
+      document.body.classList.add('bg-black');
       localStorage.setItem("theme", "dark");
       setTheme(true);
     } else {
