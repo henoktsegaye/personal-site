@@ -23,7 +23,6 @@ const CodeAndImageBox: FC<props> = ({ url, alt, limit = true, code }) => {
 
     useEffect(() => {
         window.addEventListener('storage', () => {
-            console.log("on storage change", localStorage.getItem("theme"));
             getTheme()
         });
         getTheme()
