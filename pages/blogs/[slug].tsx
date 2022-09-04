@@ -37,8 +37,6 @@ const PostPage: React.FC<Props> = ({
   locale,
   slug,
 }: Props) => {
-console.log('front matter is', frontMatter)
-console.log('theme is ', theme)
   const [theme, setTheme] = useState<boolean>(false);
   
   const toggleTheme = () => {
