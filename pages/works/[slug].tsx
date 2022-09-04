@@ -37,26 +37,19 @@ const WorksPage: React.FC<Props> = ({
   locale,
   slug,
 }: Props) => {
-
   const [theme, setTheme] = useState<boolean>(false);
-  
-  const toggleTheme = () => {
+  const changeTheme = () => {
     if (!theme) {
       localStorage.setItem("theme", "dark");
-      window.dispatchEvent(new Event("storage"));
+
       document.documentElement.classList.add("dark");
-      document.body.classList.add('bg-black');
     } else {
       localStorage.setItem("theme", "light");
-      window.dispatchEvent(new Event("storage"));
-      document.documentElement.classList.remove("dark");
-      document.body.classList.remove('bg-black');
 
+      document.documentElement.classList.remove("dark");
     }
     setTheme(!theme);
-
   };
-
   const ogImage = SITE_URL + frontMatter.thumbnail;
   const { footer, general } = localeString;
   return (
@@ -66,7 +59,7 @@ const WorksPage: React.FC<Props> = ({
       pageDescription={frontMatter.description}
       pageImage={frontMatter.thumbnail}
       strings={general}
-      changeTheme={toggleTheme}
+      changeTheme={changeTheme}
       theme={theme}
       allStrings={localeString}
       slug={`/works/${slug}`}

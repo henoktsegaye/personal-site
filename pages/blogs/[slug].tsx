@@ -37,40 +37,45 @@ const PostPage: React.FC<Props> = ({
   locale,
   slug,
 }: Props) => {
-  const [theme, setTheme] = useState<boolean>(false);
+
+  const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  
+  useEffect(() => {
+    const xtheme = localStorage.getItem("theme")
+      ? localStorage.getItem("theme")
+      : "dark";
+    if (xtheme == "dark") {
+      toggleTheme();
+    }
+  }, []);
   
   const toggleTheme = () => {
-    if (!theme) {
+    if (!darkTheme) {
       localStorage.setItem("theme", "dark");
       window.dispatchEvent(new Event("storage"));
       document.documentElement.classList.add("dark");
-      document.body.classList.add('bg-black');
-
     } else {
       localStorage.setItem("theme", "light");
       window.dispatchEvent(new Event("storage"));
       document.documentElement.classList.remove("dark");
-      document.body.classList.remove('bg-black');
-
     }
-    setTheme(!theme);
-
+    setDarkTheme(!darkTheme);
   };
 
   const { footer, general } = localeString;
   const components = {
     ImageBox,
     CodeAndImageBox,
-    code: (props: { className: string, children: string }) => (
+    code: (props: {className: string, children:string}) => (
       <Code
         {...props}
-        dark={!theme}
+        dark={!darkTheme}
       />
     ),
-    inlineCode: (props: { className: string, children: string }) => <code
-      {...props}
-      className={`${!theme ? "bg-gray-50" : "bg-gray-800"} px-3 py-1 rounded ${props.className}`}
-    />,
+    inlineCode: (props: {className: string, children:string}) => <code
+        {...props}
+        className={`${!darkTheme ? "bg-gray-50" : "bg-gray-800"} px-3 py-1 rounded ${props.className}`}
+      />,
   };
   return (
     <Layout
@@ -80,7 +85,7 @@ const PostPage: React.FC<Props> = ({
       pageImage={frontMatter.thumbnail}
       strings={general}
       changeTheme={toggleTheme}
-      theme={theme}
+      theme={darkTheme}
       allStrings={localeString}
       slug={`${slug}`}
     >
@@ -121,6 +126,7 @@ export const getStaticProps = async ({
     scope: data,
   });
 
+  const { posts } = getAllPosts(["slug"]);
   const localeString: langType = LanguageStrings[locale];
 
   return {

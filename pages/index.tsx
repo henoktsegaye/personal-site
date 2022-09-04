@@ -38,11 +38,10 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
 
   const [theme, setTheme] = useState<boolean>(false);
 
-  const toggleTheme = () => {
+  const toogleTheme = () => {
     if (!theme) {
-      localStorage.setItem("theme", "dark");     
-      document.body.classList.add('bg-black');
-
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
     } else {
       localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
@@ -56,7 +55,7 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
       pageTitle={general.siteDescription}
       pageDescription={general.siteDescription}
       pageImage="/assets/henok-face.jpg"
-      changeTheme={toggleTheme}
+      changeTheme={toogleTheme}
       theme={theme}
       locale={locale}
       allStrings={localeString}
