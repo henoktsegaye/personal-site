@@ -1,8 +1,6 @@
 // pages/blogs/[slug].tsx
 import { useState, useEffect } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import dynamic from "next/dynamic";
-import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import ImageBox from "../../components/basic/imageBox";
@@ -11,10 +9,11 @@ import { Code } from "../../components/basic/code";
 import Layout from "../../components/layout/layout";
 import Featured from "../../components/basic/featured";
 import { IPost } from "../../types/post";
-import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
 import LanguageStrings, { langType } from "../../lib/lang";
+import Link from "next/link"
+import Image from "next/image"
 
 interface returnPath {
   params: {

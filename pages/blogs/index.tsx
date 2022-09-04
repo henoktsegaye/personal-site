@@ -1,5 +1,5 @@
 // pages/index.tsx
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Layout from "../../components/layout/layout";
 import { IPost } from "../../types/post";
 import { getAllPosts } from "../../lib/mdxUtils";

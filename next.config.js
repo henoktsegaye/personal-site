@@ -6,5 +6,4 @@ module.exports = {
   },
   target: "serverless",
   trailingSlash: true,
-  exportTrailingSlash: true,
 };
