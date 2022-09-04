@@ -37,7 +37,8 @@ const PostPage: React.FC<Props> = ({
   locale,
   slug,
 }: Props) => {
-
+console.log('front matter is', frontMatter)
+console.log('theme is ', theme)
   const [theme, setTheme] = useState<boolean>(false);
   
   const toggleTheme = () => {
@@ -94,7 +95,7 @@ const PostPage: React.FC<Props> = ({
             {frontMatter.title}
           </h1>
           <span className="text-gray-500 block mb-4  text-xl dark:text-gray-400">
-            {frontMatter?.date} | #{frontMatter?.hashtag}
+            {frontMatter?.date} | {frontMatter?.hashtag}
           </span>
           <div className="text-lg blog border-t pt-4 dark:border-gray-900">
             <MDXRemote components={components} {...source} />

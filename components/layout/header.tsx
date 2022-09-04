@@ -40,12 +40,14 @@ const Header: React.FC<props> = ({
     if (xtheme == "dark") {
       changeTheme();
     }
+    console.log('detected theme is ', xtheme)
   }, []);
   useEffect(() => {
     const xtheme = localStorage.getItem("theme")
       ? localStorage.getItem("theme")
       : "light";
     if (xtheme == "dark") {
+      console.log('setting theme to dark')
       document.documentElement.classList.add("dark");
       document.body.classList.add('bg-black');
       localStorage.setItem("theme", "dark");
