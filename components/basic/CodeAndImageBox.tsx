@@ -3,14 +3,14 @@ import Lightbox from "react-image-lightbox";
 import { Code } from "./code";
 import ImageBox from "./imageBox";
 
-type props = {
+type Props = {
     url: string;
     alt?: string;
     limit?: boolean;
     code: string
 };
 
-const CodeAndImageBox: FC<props> = ({ url, alt, limit = true, code }) => {
+const CodeAndImageBox = ({ url, alt, limit = true, code }:Props) => {
     const [dark, setDark] = useState<boolean>(false);
     const getTheme = () => {
         const theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";

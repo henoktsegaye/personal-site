@@ -1,5 +1,5 @@
 // pages/blogs/[slug].tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -12,8 +12,6 @@ import { IPost } from "../../types/post";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
 import LanguageStrings, { langType } from "../../lib/lang";
-import Link from "next/link"
-import Image from "next/image"
 
 interface returnPath {
   params: {
@@ -76,7 +74,7 @@ const PostPage: React.FC<Props> = ({
         {...props}
         className={`${!darkTheme ? "bg-gray-50" : "bg-gray-800"} px-3 py-1 rounded ${props.className}`}
       />,
-  };
+  } 
   return (
     <Layout
       locale={locale}

@@ -1,12 +1,12 @@
 import { FC, useState } from "react";
 import Lightbox from "react-image-lightbox";
 
-type props = {
+type Props = {
   url: string;
   alt?: string;
   limit?: boolean;
 };
-const ImageBox: FC<props> = ({ url, alt, limit = true }) => {
+const ImageBox= ({ url, alt, limit = true }:Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
