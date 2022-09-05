@@ -1,5 +1,5 @@
 ---
-date: "2021-03-28"
+date: "2022-09-05"
 thumbnail: /assets/javascript-primitives.png
 title: Understanding Javascript primitive types
 description: Javascript Primitive types are the basic building blocks of Javascript. We will try to understand how they work.
@@ -102,11 +102,12 @@ Well if primitives are not Objects you might ask how are we accessing properties
 
 <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" />
 <br />
-This is not a bug in javascript 😄
 
-This is actually one of the features of javascript. 
 
-Primitives are not Objects but they **act like they are** 🤔 ? Well here is how it works
+This is not a **bug in javascript 😄.**
+
+
+This is actually one of the features of javascript. Primitives are not Objects but they **act like they are** 🤔 ? Well here is how it works
 
 Javascript maps out primitive types to **_Wrapper Objects_** which is the reason we can see the `length` property of a string.
 Which will actually create a new object with value `"hello"`, so you can access the length property ( or any-other String property ) off that object. This is actually true for Other two Primitive types **Boolean** and **Number** .
@@ -138,7 +139,7 @@ numObj.valueOf() // 1
 typeof numObj.valueOf() // number
 ```
 
-But once we had access the property of the object, garbage Collector will remove the object from memory.
+But once we had access to the property of the object, garbage Collector will remove unused objects from memory.
 
 Javascript has 7 primitive types:
 
@@ -154,6 +155,11 @@ Javascript has 7 primitive types:
 The `symbol` data type is new in es6.
 `bigint` is new in es2020.
 
-We will dive deep into these primitive types in the next blog of this series.
+JavaScript is different in the way it treats **Numbers** and **Strings** ( they are represented as a primitive type on their own) which 
+is not as common in stablished programming languages like Java, Which for example represent numbers differently according to their size and properties.
+Float numbers have a **float** type in **Java** and integers as **int** while in javascript they are both just represent as **Number**.
+
+
+We will dive deeper into those primitive types and javascript implementation difference with other programming languages in the next blog of this series.
 
 Big thanks for [Natnael](https://nati43.github.io/) and [Abdulhamid](https://abdulhamid.et/) for reviewing the wording in this blog.
