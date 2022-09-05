@@ -52,10 +52,14 @@ const PostPage: React.FC<Props> = ({
       localStorage.setItem("theme", "dark");
       window.dispatchEvent(new Event("storage"));
       document.documentElement.classList.add("dark");
+      document.body.classList.add('bg-black')
+
     } else {
       localStorage.setItem("theme", "light");
       window.dispatchEvent(new Event("storage"));
       document.documentElement.classList.remove("dark");
+      document.body.classList.remove('bg-black')
+
     }
     setDarkTheme(!darkTheme);
   };

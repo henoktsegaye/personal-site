@@ -36,7 +36,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
 
                 <div className="pb-1 pt-3 px-6">
 
-                  <h2 className="text-lg font-bold mb-2 line-clamp-1 text-black dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                  <h2 className="text-xl font-bold mb-2 line-clamp-1 text-black dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
                     <Link href={`/works/${post.slug}`}>
                       <a>{post.title}</a>
                     </Link>
@@ -46,13 +46,13 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
 
                     {post.tech
                       ? post?.tech.slice(0, 3).map((t) => (
-                        <span className="text-gray-400 dark:text-gray-400 inline-block dark:bg-gray-900  text-sm py-1 rounded-xl mr-2  ">
+                        <span className="text-gray-500 dark:text-gray-400 inline-block dark:bg-gray-900  text-base py-1 rounded-xl mr-2  ">
                           {t}
                         </span>
                       ))
                       : null}
                   </div>
-                  <p className="dark:text-gray-200 h-16 text-gray-900 mb-2">
+                  <p className="dark:text-gray-200 h-16 text-gray-900 my-4">
                     {post.description}
                   </p>
                   <p className="text-gray-400 text-sm mb-2" >

@@ -47,6 +47,7 @@ const Header: React.FC<props> = ({
       : "light";
     if (xtheme == "dark") {
       document.documentElement.classList.add("dark");
+      document.body.classList.add('bg-black')
       localStorage.setItem("theme", "dark");
       setTheme(true);
     } else {
@@ -54,7 +55,7 @@ const Header: React.FC<props> = ({
     }
   }, [theme]);
   return (
-    <header className="pt-4 pb-4 py-2  bg-gray-100 lg:bg-white  dark:border-black dark:bg-black">
+    <header className="pt-4 pb-4 py-2 bg-white  dark:border-black dark:bg-black">
       <div className="mx-auto 2xl:max-w-screen-xl xl:max-w-screen-lg max-w-sm lg:max-w-screen-md ">
         <div className="grid grid-cols-7">
           <div className="flex flex-row justify-between items-center 2xl:col-span-4 xl:col-span-3  col-span-3 lg:col-span-2 ">

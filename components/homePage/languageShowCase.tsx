@@ -25,7 +25,10 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
             height={46}
             className="fill-current mr-2 text-black dark:text-gray-300"
           />
+          <p className="whitespace-nowrap" >
+
           React JS
+          </p>
           <span className="absolute bottom-2   left-2 text-xl z-10">
             💪
           </span>
@@ -36,20 +39,25 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
             width={46}
             height={46}
             className="fill-current mr-2 text-gray-600 dark:text-gray-300"
-          />{" "}
+          />
+          <p className="whitespace-nowrap" >
+
           Next JS
+          </p>
           <span className="absolute bottom-2   left-2 text-xl z-10">
             👍
           </span>
         </div>
         <div className="w-30 mx-2 bg-yellow-100 dark:bg-yellow-900 dark:text-white p-4 relative justify-center items-center flex rounded-xl">
-          {" "}
           <JavascriptIcon
             width={46}
             height={46}
             className="fill-current mr-2 text-black dark:text-gray-300"
-          />{" "}
+          />
+          <p className="whitespace-nowrap" >
+
           Javascript
+          </p>
           <span className="absolute bottom-2   left-2 text-xl z-10">
             😎
           </span>
@@ -60,20 +68,25 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
             width={46}
             height={46}
             className="fill-current mr-2 text-black dark:text-gray-300"
-          />{" "}
+          />
+          <p className="whitespace-nowrap" >
+
           Node JS
+          </p>
           <span className="absolute bottom-2   left-2 text-xl z-10">
             😎
           </span>
         </div>
         <div className="w-30 mx-2 bg-green-100 dark:bg-green-900 dark:text-white p-4 relative justify-center items-center flex rounded-xl">
-          {" "}
           <MongoIcon
             width={46}
             height={46}
             className="fill-current mr-2 text-black dark:text-gray-300"
           />
+          <p className="whitespace-nowrap" >
+
           MongoDB
+          </p>
           <span className="absolute bottom-2   left-2 text-xl z-10">
             👍
           </span>
@@ -85,7 +98,9 @@ const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
             height={46}
             className="fill-current mr-2 text-gray-600 dark:text-gray-300"
           />
+          <p className="whitespace-nowrap" >
           Wordpress
+          </p>
           <span className="absolute bottom-2   left-2 text-xl z-10">
             😎
           </span>

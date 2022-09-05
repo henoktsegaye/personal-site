@@ -299,15 +299,15 @@ const LanguageStrings: {
     },
     hero: {
       title: {
-        intro: "HI, I am ,",
+        intro: "HI, I am ",
         name: "Henok Tsegaye.",
         secondIntro: "I am a",
-        title1: "Technologiest.",
-        thirdIntro: "And mainly a",
-        title2: "Software Developer.",
+        title1: "Technologiest",
+        thirdIntro: "and mainly a",
+        title2: "Software Developer",
       },
-      subTitle: "Send me an email to introduce yourself.",
-      secondRowTitle: "Technologiest By Interest.",
+      subTitle: "Send me an email to introduce yourself",
+      secondRowTitle: "Technologiest By Interest!",
       moreText: [
         "Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
       ],

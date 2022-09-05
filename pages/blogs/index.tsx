@@ -33,10 +33,14 @@ const Blogs: React.FC<Props> = ({ files, localeString, locale }) => {
             localStorage.setItem("theme", "dark");
 
             document.documentElement.classList.add("dark");
+            document.body.classList.add('bg-black')
+
         } else {
             localStorage.setItem("theme", "light");
 
             document.documentElement.classList.remove("dark");
+            document.body.classList.remove('bg-black')
+
         }
         setTheme(!theme);
     };

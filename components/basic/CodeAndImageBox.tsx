@@ -10,7 +10,7 @@ type Props = {
     code: string
 };
 
-const CodeAndImageBox = ({ url, alt, limit = true, code }:Props) => {
+const CodeAndImageBox = ({ url, alt, limit = true, code }: Props) => {
     const [dark, setDark] = useState<boolean>(false);
     const getTheme = () => {
         const theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";
@@ -28,16 +28,18 @@ const CodeAndImageBox = ({ url, alt, limit = true, code }:Props) => {
         getTheme()
     }, [])
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} >
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', position: 'relative' }} >
             <div style={{
                 width: '40%',
             }}>
                 <Code className="" dark={!dark} children={code} />
             </div>
-            <ImageBox
-                url={url}
+            <img
                 alt={alt}
-                limit={limit}
+                src={url}
+                className={` my-6 ${limit ? "max-h-96" : ""
+                    } w-auto`}
+
             />
         </div>
     )
