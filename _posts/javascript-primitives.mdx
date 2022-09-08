@@ -59,6 +59,7 @@ let a = 1;
 
 
 Initializing a variable with a primitive type will create a new value in **stack** and assign the variable to it. JavaScript creates primitive types in stack with fixed space while **Objects** are created in **heap** memory, This is because objects are mutable and can be changed at any time taking up more memory.
+This is true because you can mutate objects adding new properties or changing existing ones.
 
 
 <CodeAndImageBox url={"/assets/blog/JP2.jpg"} code={`
@@ -79,7 +80,7 @@ a = 2;
 />
 
 
-Changing the value of `a` will not change the value of `b` since they are pointing to different values in the stack.At this point **GC( Garbage Collector)** will remove unreferenced values from the stack.
+Changing the value of `a` will not change the value of `b` since they are pointing to different address in the stack.At this point **GC( Garbage Collector)** will remove unreferenced addresses from the stack.
 
 ---
 Comparing primitive types to object 👇🏾
@@ -162,4 +163,4 @@ Float numbers have a **float** type in **Java** and integers as **int** while in
 
 We will dive deeper into those primitive types and javascript implementation difference with other programming languages in the next blog of this series.
 
-Big thanks for [Natnael](https://nati43.github.io/) and [Abdulhamid](https://abdulhamid.et/) for reviewing the wording in this blog.
+Big thanks for the people whom helped me review the wording in this blog.
