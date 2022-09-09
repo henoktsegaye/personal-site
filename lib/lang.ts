@@ -241,7 +241,7 @@ const LanguageStrings: {
     },
     general: {
       siteTitle: "Henok Tsegaye",
-      siteDescription: "Technologiest and Software developer",
+      siteDescription: "Technologist and Software developer",
       work: "Works",
       middleContent: "How it Started",
       blog: "Blog",
@@ -302,14 +302,14 @@ const LanguageStrings: {
         intro: "HI, I am ",
         name: "Henok Tsegaye.",
         secondIntro: "I am a",
-        title1: "Technologiest",
+        title1: "Technologists",
         thirdIntro: "and mainly a",
         title2: "Software Developer",
       },
       subTitle: "Send me an email to introduce yourself",
-      secondRowTitle: "Technologiest By Interest!",
+      secondRowTitle: "Technologist By Interest!",
       moreText: [
-        "Graduated from Addis Ababa University, I usaully work in web and mobile application development , for that reason I like using JAVASCRIPT. My work philosphy is Clean code and structure.",
+        "Graduated from Addis Ababa University, I usually work in web and mobile application development , I like using Javascript. My work philosophy is clean code and structure.",
       ],
     },
     socialMedia: {
@@ -322,7 +322,7 @@ const LanguageStrings: {
       title: "Previous Works",
       more: "View More",
       description:
-        "Here I Listed some of the works i have done so far, that might be intersting.",
+        "Here I Listed some of the works i have done so far, that might be interesting.",
     },
     blog: {
       title: "Some Thoughts i have.",
@@ -342,8 +342,8 @@ const LanguageStrings: {
     middleContent: {
       title: "How I got started!",
       description: [
-        "It's definetly a long story but i will keep it simple me and technology were not that close in the begning. But still I remember how excited I was when I first walked in to the ICT class in highschool, I even wrote what i was going to do in my journal. But still didn't know much about it til i took my first course in stastics.that was the moment",
-        "If you are still intereseted you might want to know more about it.",
+        "It's definitely a long story but i will keep it simple me and technology were not that close in the beginning. But still I remember how excited I was when I first walked in to the ICT class in highschool, I even wrote what i was going to do in my journal. But still didn't know much about it til i took my first course in stastics.that was the moment",
+        "If you are still interested you might want to know more about it.",
       ],
       link: {
         text: "More Coming Soon",
