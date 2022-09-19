@@ -12,7 +12,7 @@ type props = {
 
 const WorksTeaser: React.FC<props> = ({ works, strings }) => {
   return (
-    <div className=" mx-auto dark:bg-black bg-white " id="workTeaser">
+    <div className=" mx-auto bg-gray-50 dark:bg-gray-900 dark:bg-opacity-75 " id="workTeaser">
       <div className="2xl:max-w-screen-xl max-w-sm xl:max-w-screen-lg lg:max-w-screen-md mx-auto pt-6 pb-10">
         <div className="text-left mb-12">
           <h1 className="dark:text-gray-100 text-gray-900 font-bold text-4xl">
@@ -28,7 +28,7 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
           {works.map((post) => (
             <div
               key={post.slug}
-              className={`rounded-xl border  border-gray-200 dark:bg-gray-900 dark:border-gray-900 my-1  py-1 overflow-hidden `}
+              className={`rounded-xl shadow-xs dark:bg-black dark:border-gray-900 my-1 bg-white py-1 overflow-hidden `}
             >
               <div className="content">
 
@@ -46,13 +46,13 @@ const WorksTeaser: React.FC<props> = ({ works, strings }) => {
 
                     {post.tech
                       ? post?.tech.slice(0, 3).map((t) => (
-                        <span className="text-gray-500 dark:text-gray-400 inline-block dark:bg-gray-900  text-base py-1 rounded-xl mr-2  ">
+                        <span className="text-gray-500 px-2 dark:text-gray-400 inline-block   text-base py-1 rounded-xl mr-2  ">
                           {t}
                         </span>
                       ))
                       : null}
                   </div>
-                  <p className="dark:text-gray-200 h-16 text-gray-900 my-4">
+                  <p className="dark:text-gray-200 h-24 text-gray-900 my-4">
                     {post.description}
                   </p>
                   <p className="text-gray-400 text-sm mb-2" >

@@ -8,8 +8,8 @@ type props = {
 const EmailMe: React.FC<props> = ({ strings }) => {
   const { title, subtitle, link } = strings;
   return (
-    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg max-w-sm lg:max-w-screen-md mx-2  md:mx-auto my-20" id="emailMe">
-      <div className="bg-blue-50 dark:bg-black rounded-xl py-6 px-10 shadow-sm border dark:border-gray-800 border-gray-200">
+    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg max-w-sm lg:max-w-screen-md mx-2  md:mx-auto my-10" id="emailMe">
+      <div className="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-25 rounded-xl py-6 px-10 shadow-sm  dark:border-gray-800 border-gray-200">
         <p className="text-3xl dark:text-white text-black font-bold">
           {title}
         </p>

@@ -12,7 +12,7 @@ type Props = {
 const Featured: React.FC<Props> = ({ title, src, slug, color }: Props) => {
   const image = (
     <div
-      className={`bg-white dark:bg-gray-900  dark:border-gray-800  rounded-3xl  py-4`}
+      className={` dark:bg-gray-900 bg-white bg-opacity-25 dark:bg-opacity-25 backdrop-filter backdrop-blur-xl py-4`}
     >
       <div className="w-80 h-80 mx-auto  relative ">
         <Image

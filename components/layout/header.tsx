@@ -60,7 +60,7 @@ const Header: React.FC<props> = ({
         <div className="grid grid-cols-7">
           <div className="flex flex-row justify-between items-center 2xl:col-span-4 xl:col-span-3  col-span-3 lg:col-span-2 ">
             <Link href="/">
-              <a className="text-xl font-bold  dark:text-gray-400 text-gray-500 ">
+              <a className="text-xl dark:text-gray-400 text-gray-500 ">
                 <img src="/assets/name.png" className="h-10" alt={strings.siteTitle} />
               </a>
             </Link>

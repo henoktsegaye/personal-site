@@ -1,7 +1,6 @@
 // components/Meta.tsx
 import Head from "next/head";
 import { useRouter } from "next/router";
-
 import { SITE_URL } from "../../lib/constants";
 import { siteStrings, socialMedia } from "../../lib/lang";
 
@@ -11,6 +10,7 @@ type Props = {
   title?: string;
   description?: string;
   imgURL?: string;
+  children?: React.ReactNode
 };
 
 const Meta: React.FC<Props> = ({
@@ -19,6 +19,7 @@ const Meta: React.FC<Props> = ({
   title,
   description,
   imgURL,
+  children
 }: Props) => {
   const { siteTitle, siteDescription } = siteString;
   const router = useRouter();
@@ -73,6 +74,7 @@ const Meta: React.FC<Props> = ({
       <meta property="og:image" content={ogImage} key="ogImage" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={TWITTER_USERNAME} />
+      {children}
     </Head>
   );
 };

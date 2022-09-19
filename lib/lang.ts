@@ -178,10 +178,10 @@ const LanguageStrings: {
       title: {
         intro: "ሰላም",
         name: "ሔኖክ ፀጋዬ",
-        secondIntro: "እባላለሁ። ታዲያ",
-        title1: "ቴክኖሎጅስት",
+        secondIntro: "እባላለሁ።",
+        title1: "ሶፍትዌር አበልጻጊ",
         thirdIntro: "ስሆን በዋነኝነት ደግሞ ",
-        title2: "ሶፍትዌር አበልጻጊ ነኝ።",
+        title2: "ሁለገብ ዌብ አበልጻጊ ነኝ።",
       },
       subTitle: "ራስህን/ሽን ለማስተዎወቅ ታች ላይ ኢሜይል ልትልክ/ኪ ትችላላችሁ ።",
       secondRowTitle: "ቴክኖሎጅስት።",
@@ -195,8 +195,8 @@ const LanguageStrings: {
       description: "ከአሁን በፊት በተሻለ መንገድ የሰራሆቸው ስራዎች እንደሚከተለው ዘርዝሪያለሁ ።",
     },
     blog: {
-      title: "ከሀሳቦቸ መካከል",
-      description: "አንዳንድ ሃሳቦችን ከብዙ በትንሹ እንዲህ አቅርቢያለሁ።",
+      title: "ጦማር",
+      description: "",
     },
     socialMedia: {
       twitter: "https://twitter.com/henokcode",
@@ -241,7 +241,7 @@ const LanguageStrings: {
     },
     general: {
       siteTitle: "Henok Tsegaye",
-      siteDescription: "Technologist and Software developer",
+      siteDescription: "Henok Tsegaye is a freelance Software developer. He has been working as a web full stack developer for 4 years now.",
       work: "Works",
       middleContent: "How it Started",
       blog: "Blog",
@@ -302,9 +302,9 @@ const LanguageStrings: {
         intro: "HI, I am ",
         name: "Henok Tsegaye.",
         secondIntro: "I am a",
-        title1: "Technologists",
-        thirdIntro: "and mainly a",
-        title2: "Software Developer",
+        title1: "Software Engineer",
+        thirdIntro: "Mainly working as a",
+        title2: "Full Stack Developer",
       },
       subTitle: "Send me an email to introduce yourself",
       secondRowTitle: "Technologist By Interest!",
@@ -322,17 +322,17 @@ const LanguageStrings: {
       title: "Previous Works",
       more: "View More",
       description:
-        "Here I Listed some of the works i have done so far, that might be interesting.",
+        "Here are some works i have done so far that are public.",
     },
     blog: {
-      title: "Some Thoughts i have.",
+      title: "Blog",
       description:
-        "I usually think about stuff just like anyone, here are some of them that might interest you.",
+        "",
     },
     getConnected: {
       title: "Send Me a Message!",
       subtitle:
-        "I like hearing from people, even to say. seriously i like hearing from people.",
+        "I like to hear from people, even to say 'hi', you can click to send me an email here.",
       link: {
         href: "mailto:maxhenock@gmail.com",
         target: "_blank",
@@ -351,7 +351,7 @@ const LanguageStrings: {
       },
     },
     footer: {
-      title: "Designed By ME with ❤️",
+      title: "2022 Designed By me with ❤️",
     },
     string404: {
       siteTitle: "Page not found",

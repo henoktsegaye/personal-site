@@ -12,6 +12,7 @@ import { IPost } from "../../types/post";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
 import LanguageStrings, { langType } from "../../lib/lang";
+import Link from 'next/link'
 
 interface returnPath {
   params: {
@@ -78,6 +79,7 @@ const PostPage: React.FC<Props> = ({
         {...props}
         className={`${!darkTheme ? "bg-gray-50" : "bg-gray-800"} px-3 py-1 rounded ${props.className}`}
       />,
+      Link: Link
   } 
   return (
     <Layout
@@ -90,17 +92,26 @@ const PostPage: React.FC<Props> = ({
       theme={darkTheme}
       allStrings={localeString}
       slug={`${slug}`}
+      blog
+      dateModified={new Date(frontMatter.date)}
+      datePublished={new Date(frontMatter.date)}
     >
       <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
         <article className="prose prose-blue">
-          <div className="mb-4 mt-12">
+          <div className="mb-4 mt-12 rounded-3xl overflow-hidden " style={{backgroundImage: `url(${frontMatter.thumbnail})`}}>
             <Featured title={frontMatter.title} src={frontMatter.thumbnail} />
           </div>
           <h1 className="text-4xl text-black dark:text-white font-bold mb-4">
             {frontMatter.title}
           </h1>
-          <span className="text-gray-500 block mb-4  text-xl dark:text-gray-400">
-            {frontMatter?.date} | {frontMatter?.hashtag}
+          <span className="text-gray-500 block mb-4  dark:text-gray-400">
+            Date: {frontMatter?.date}, about 
+            <span className="font-bold dark:text-white text-black text-lg" > {frontMatter?.hashtag} </span> 
+             ,author <Link href="/">
+              <a href="/" className="text-blue-700 text-lg" >
+              {frontMatter?.author}
+              </a>
+              </Link>
           </span>
           <div className="text-lg blog border-t pt-4 dark:border-gray-900">
             <MDXRemote components={components} {...source} />

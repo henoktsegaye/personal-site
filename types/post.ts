@@ -5,6 +5,7 @@ export interface IPost {
   thumbnail: string;
   title: string;
   description: string;
+  author: string;
   color?: string;
   type?: string;
   tech?: string[];

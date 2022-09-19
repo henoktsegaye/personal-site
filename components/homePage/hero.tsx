@@ -17,7 +17,7 @@ type props = {
 const Hero: React.FC<props> = ({ hero, socialMedia }) => {
   const { title, subTitle, secondRowTitle, moreText } = hero;
   return (
-    <div className="2xl:max-w-screen-xl hero rounded-2xl bg-gray-50 dark:bg-black xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto pt-2 pb-4 lg:pt-6 lg:pb-8 my-6 px-2 ">
+    <div className="2xl:max-w-screen-xl hero rounded-2xl bg-blue-50 dark:bg-blue-900 dark:bg-opacity-25 xl:max-w-screen-lg lg:max-w-screen-md max-w-sm mx-auto pt-2 pb-4 lg:pt-6 lg:pb-8 my-6 px-2 ">
       <div className=" grid xl:grid-cols-6  grid-cols-3 items-center justify-between ">
        
         <div className="col-span-3  text-left py-4 pl-4">
