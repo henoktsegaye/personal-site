@@ -70,7 +70,7 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
 
         <EmailMe strings={getConnected} />
 
-        <Footer footer={footer} />
+        <Footer socialMedia={socialMedia}  footer={footer} />
       </div>
     </Layout>
   );

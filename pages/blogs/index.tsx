@@ -24,6 +24,7 @@ const Blogs: React.FC<Props> = ({ files, localeString, locale }) => {
         getConnected,
         footer,
         general,
+        socialMedia
     } = localeString;
 
     const [theme, setTheme] = useState<boolean>(false);
@@ -62,7 +63,7 @@ const Blogs: React.FC<Props> = ({ files, localeString, locale }) => {
                 <BlogsTeaser strings={blog} posts={posts} />
                 <EmailMe strings={getConnected} />
 
-                <Footer footer={footer} />
+                <Footer socialMedia={socialMedia}  footer={footer} />
             </div>
         </Layout>
     );

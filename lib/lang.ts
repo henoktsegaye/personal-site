@@ -325,9 +325,9 @@ const LanguageStrings: {
         "Here are some works i have done so far that are public.",
     },
     blog: {
-      title: "Blog",
+      title: "Recent Blog",
       description:
-        "",
+        "Recent Technical blog posts, I write about technical details of languages.",
     },
     getConnected: {
       title: "Send Me a Message!",

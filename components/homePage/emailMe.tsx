@@ -13,9 +13,9 @@ const EmailMe: React.FC<props> = ({ strings }) => {
         <p className="text-3xl dark:text-white text-black font-bold">
           {title}
         </p>
-        <p className="text-gray-600 dark:text-gray-300 mt-4 mb-2">{subtitle}</p>
+        <p className="text-gray-600 dark:text-gray-300 mt-4 mb-0">{subtitle}</p>
         <a href={link.href} >
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg mt-6">
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg mt-4">
             {link.text}
           </button>
         </a>

@@ -38,7 +38,7 @@ const PostPage: React.FC<Props> = ({
 }: Props) => {
 
   const [darkTheme, setDarkTheme] = useState<boolean>(false);
-  
+
   useEffect(() => {
     const xtheme = localStorage.getItem("theme")
       ? localStorage.getItem("theme")
@@ -47,7 +47,7 @@ const PostPage: React.FC<Props> = ({
       toggleTheme();
     }
   }, []);
-  
+
   const toggleTheme = () => {
     if (!darkTheme) {
       localStorage.setItem("theme", "dark");
@@ -65,22 +65,22 @@ const PostPage: React.FC<Props> = ({
     setDarkTheme(!darkTheme);
   };
 
-  const { footer, general } = localeString;
+  const { footer, general, socialMedia } = localeString;
   const components = {
     ImageBox,
     CodeAndImageBox,
-    code: (props: {className: string, children:string}) => (
+    code: (props: { className: string, children: string }) => (
       <Code
         {...props}
         dark={!darkTheme}
       />
     ),
-    inlineCode: (props: {className: string, children:string}) => <code
-        {...props}
-        className={`${!darkTheme ? "bg-gray-50" : "bg-gray-800"} px-3 py-1 rounded ${props.className}`}
-      />,
-      Link: Link
-  } 
+    inlineCode: (props: { className: string, children: string }) => <code
+      {...props}
+      className={`${!darkTheme ? "bg-gray-50" : "bg-gray-800"} px-3 py-1 rounded ${props.className}`}
+    />,
+    Link: Link
+  }
   return (
     <Layout
       locale={locale}
@@ -97,28 +97,30 @@ const PostPage: React.FC<Props> = ({
       datePublished={new Date(frontMatter.date)}
     >
       <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
-        <article className="prose prose-blue">
-          <div className="mb-4 mt-12 rounded-3xl overflow-hidden " style={{backgroundImage: `url(${frontMatter.thumbnail})`}}>
-            <Featured title={frontMatter.title} src={frontMatter.thumbnail} />
-          </div>
+        <article className="prose prose-blue mt-10">
+         
           <h1 className="text-4xl text-black dark:text-white font-bold mb-4">
             {frontMatter.title}
           </h1>
+          
+          <div className="mb-4 m">
+            <Featured title={frontMatter.title} src={frontMatter.thumbnail} />
+          </div>
           <span className="text-gray-500 block mb-4  dark:text-gray-400">
-            Date: {frontMatter?.date}, about 
-            <span className="font-bold dark:text-white text-black text-lg" > {frontMatter?.hashtag} </span> 
-             ,author <Link href="/">
+            Date: {frontMatter?.date}, about
+            <span className="font-bold dark:text-white text-black text-lg" > {frontMatter?.hashtag} </span>
+            ,author <Link href="/">
               <a href="/" className="text-blue-700 text-lg" >
-              {frontMatter?.author}
+                {frontMatter?.author}
               </a>
-              </Link>
+            </Link>
           </span>
           <div className="text-lg blog border-t pt-4 dark:border-gray-900">
             <MDXRemote components={components} {...source} />
           </div>
         </article>
       </div>
-      <Footer footer={footer} smaller />
+      <Footer socialMedia={socialMedia} footer={footer} smaller />
     </Layout>
   );
 };

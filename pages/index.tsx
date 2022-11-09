@@ -10,6 +10,7 @@ import LanguageShowCase from "../components/homePage/languageShowCase";
 import EmailMe from "../components/homePage/emailMe";
 import Hero from "../components/homePage/hero";
 import LanguageStrings, { langType } from "../lib/lang";
+import BlogsTeaser from "../components/homePage/blogTeaser";
 
 type Props = {
   files: {
@@ -68,8 +69,9 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
         <Hero hero={hero} socialMedia={socialMedia} />
         <LanguageShowCase title={languages.title} />
         <WorksTeaser works={works} strings={portfolio} />
+        <BlogsTeaser posts={posts} strings={blog} />
         <EmailMe strings={getConnected} />
-        <Footer footer={footer} />
+        <Footer socialMedia={socialMedia} footer={footer} />
       </div>
     </Layout>
   );

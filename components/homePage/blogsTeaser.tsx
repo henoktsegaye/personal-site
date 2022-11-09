@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { IPost } from "../../types/post";
 import Thumbnail from "../basic/thumbnail";
-import StarOutline from "../icons/star-outline.svg";
-import HeartOutline from "../icons/heart-outline.svg";
-import BulbOutline from "../icons/bulb-outline.svg";
 
 type props = {
   posts: IPost[];
@@ -19,13 +16,7 @@ const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
     <div className=" mx-auto bg-gray-50 dark:bg-gray-900 dark:bg-opacity-75 " id="blogTeaser">
       <div className="2xl:max-w-screen-xl max-w-sm xl:max-w-screen-lg lg:max-w-screen-md mx-auto pt-6 pb-10">
         <div className="text-left mb-12 mt-6  ">
-          <h1 className="dark:text-gray-50 text-black font-bold capitalize text-4xl">
-            {title}
-          </h1>
 
-          <p className="text-lg font-normal text-gray-600 dark:text-gray-400 mt-2">
-            {description}
-          </p>
         </div>
 
         <div className="grid 2xl:grid-cols-3 xl:grid-cols-3 grid-cols-1 gap-8 2xl:gap-12">
@@ -35,7 +26,7 @@ const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
               className={`rounded-xl dark:border-gray-900 border-gray-200 overflow-hidden `}
             >
               <div className="content">
-              
+
                 <div className="mb-4 bg-blue-100 rounded-xl dark:bg-blue-900">
                   <Thumbnail
                     slug={post.slug}
@@ -51,13 +42,13 @@ const BlogsTeaser: React.FC<props> = ({ posts, strings }) => {
                 <p className="dark:text-gray-300 text-gray-600 mb-4 text-sm">
                   {post.date}
                   <span className="text-right py-1 text-gray-600 px-4 mx-2 text-sm dark:bg-gray-900 dark:text-gray-300 bg-gray-50 rounded-xl">
-                     {post.hashtag}
+                    {post.hashtag}
                   </span>
                 </p>
                 <div className="text-gray-900 dark:text-gray-400 mb-3">
                   {post.description}
                 </div>
-               
+
               </div>
             </div>
           ))}

@@ -55,7 +55,7 @@ const WorksPage: React.FC<Props> = ({
     setTheme(!theme);
   };
   const ogImage = SITE_URL + frontMatter.thumbnail;
-  const { footer, general } = localeString;
+  const { footer, general, socialMedia } = localeString;
   return (
     <Layout
       locale={locale}
@@ -103,7 +103,7 @@ const WorksPage: React.FC<Props> = ({
           </div>
         </article>
       </div>
-      <Footer footer={footer} smaller />
+      <Footer socialMedia={socialMedia} footer={footer} smaller />
     </Layout>
   );
 };
