@@ -1,7 +1,7 @@
 // pages/works/[slug].tsx
 import "../../styles/blog.module.css";
 import { useState } from "react";
-import { GetStaticProps, GetStaticPaths } from "next";
+import { GetStaticPaths } from "next";
 import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -9,7 +9,6 @@ import "react-image-lightbox/style.css"; // This only needs to be imported once 
 import ImageBox from "../../components/basic/imageBox";
 
 import Layout from "../../components/layout/layout";
-import Featured from "../../components/basic/featured";
 import { IPost } from "../../types/post";
 import { SITE_URL } from "../../lib/constants";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
@@ -43,14 +42,12 @@ const WorksPage: React.FC<Props> = ({
       localStorage.setItem("theme", "dark");
 
       document.documentElement.classList.add("dark");
-      document.body.classList.add('bg-black')
-
+      document.body.classList.add("bg-black");
     } else {
       localStorage.setItem("theme", "light");
 
       document.documentElement.classList.remove("dark");
-      document.body.classList.remove('bg-black')
-
+      document.body.classList.remove("bg-black");
     }
     setTheme(!theme);
   };
@@ -83,13 +80,6 @@ const WorksPage: React.FC<Props> = ({
       </Head>
       <div className="lg:max-w-screen-lg max-w-sm mx-auto mt-10 pb-10">
         <article className="prose prose-blue">
-          <div className="mb-4 mt-12">
-            <Featured
-              title={frontMatter.title}
-              color={frontMatter.color}
-              src={frontMatter.thumbnail}
-            />
-          </div>
           <h1 className="text-5xl text-black dark:text-white font-bold mb-4">
             {frontMatter.title}
           </h1>
