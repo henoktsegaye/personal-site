@@ -1,0 +1,107 @@
+/**
+* styling for genial button using tailwind css
+* 
+*/
+.genial-button {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+}
+
+.genial-button--solid {
+    @apply bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500;
+}
+
+.genial-button--outline {
+    @apply border-indigo-600 text-indigo-600 bg-white hover:bg-gray-50;
+}
+
+.genial-button--ghost {
+    @apply bg-transparent hover:bg-gray-50 text-gray-700 dark:text-gray-500 hover:text-gray-900;
+}
+
+.genial-button--link {
+    @apply bg-transparent hover:bg-gray-50 text-indigo-600 hover:text-indigo-700;
+}
+
+.genial-button--disabled {
+    @apply bg-gray-300 text-gray-500 cursor-not-allowed;
+}
+
+.genial-button--sm {
+    @apply text-sm px-3 py-1;
+}
+
+.genial-button--lg {
+    @apply text-lg px-6 py-3;
+}
+
+.genial-button--xl {
+    @apply text-xl px-8 py-4;
+}
+
+.genial-button--block {
+    @apply w-full;
+}
+
+.genial-button--rounded {
+    @apply rounded-full;
+}
+
+.genial-button--rounded-sm {
+    @apply rounded-sm;
+}
+
+.genial-button--rounded-lg {
+    @apply rounded-lg;
+}
+
+.genial-button--rounded-full {
+    @apply rounded-full;
+}
+
+.genial-button--rounded-none {
+    @apply rounded-none;
+}
+
+.genial-button--gray {
+    @apply bg-gray-200 text-gray-600 dark:bg-gray-800 dark:hover:bg-black hover:bg-gray-300 focus:ring-gray-400;
+}
+
+.genial-button--red {
+    @apply bg-red-600 hover:bg-red-700 focus:ring-red-500;
+}
+
+.genial-button--yellow {
+    @apply bg-yellow-600 hover:bg-yellow-700 focus:ring-yellow-500;
+}
+
+.genial-button--green {
+    @apply bg-green-600 hover:bg-green-700 focus:ring-green-500;
+}
+
+.genial-button--blue {
+    @apply bg-blue-600 hover:bg-blue-700 focus:ring-blue-500;
+}
+
+.genial-button--indigo {
+    @apply bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500;
+}
+
+.genial-button--purple {
+    @apply bg-purple-600 hover:bg-purple-700 focus:ring-purple-500;
+}
+
+.genial-button--pink {
+    @apply bg-pink-600 hover:bg-pink-700 focus:ring-pink-500;
+}
+
+.genial-button--white {
+    @apply bg-white hover:bg-gray-50 text-gray-700 hover:text-gray-900;
+}
+
+.genial-button--black {
+    @apply bg-black hover:bg-gray-900 text-white hover:text-gray-100;
+}
+
+.genial-button--gray-outline {
+    @apply border-gray-600 text-gray-600 bg-white hover:bg-gray-50;
+}

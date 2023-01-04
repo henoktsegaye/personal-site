@@ -1,0 +1,39 @@
+---
+date: "2021-03-28"
+thumbnail: /assets/callerEmergency.png
+title: Emergency Caller Ethiopia v1.0
+description: App that collects all the neccessary phone numbers in all major cities in Ethiopia.
+tech: ["React Native", "Node js"]
+color: dark:from-red-900 dark:via-gray-800 from-red-100
+type: personal
+---
+
+---
+
+## **Buit to Help people find phones quick and on every major location.**
+
+when starting out this project, i was motivated by the lack of information that i have
+toward all major and important phone numbers for any ememrgency conditions. For example, if you saw a person getting envolved in a traffic
+accident, what is the first thing you do, well you will try to help him or call for help but we know we are not doctors or we don't know much we just want to call for help
+see this is where you notice that you don't even know an ambulance number that might be near you, so you are just there frustrated that you might not help this person that is suffering in front of you.
+its a sad story but i thought about it and i don't want to be that person, so the inspiration was for myself and i thought people might share that frustrations so that is the reason why i am bringing this to the public. But think about how much trouble it can save you from police to ambulance from fire works to traffic polices. This is a must have from my perspect.
+so that is the inspiration
+
+---
+
+### When was it started!
+
+it was started when i was a 4th year computer science student about 2 years a go, wow time fly.
+
+### Tech used
+
+i primarly used React native for this project. I was pretty good at reat so making a React Native project was easy enough, though my laptop at that time was a little slow and developing was challanging. but it was worthit.
+
+<div class="grid xl:grid-cols-4 dark:bg-gray-900 bg-gray-100 grid-cols-1  my-4  p-4 gap-4">
+
+<ImageBox url={"/assets/emergencyCaller/page1.jpg"} />
+<ImageBox url={"/assets/emergencyCaller/page2.jpg"} />
+
+<ImageBox url={"/assets/emergencyCaller/page3.jpg"} />
+<ImageBox url={"/assets/emergencyCaller/page4.jpg"} />
+</div>

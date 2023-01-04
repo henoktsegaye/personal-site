@@ -56,6 +56,7 @@ interface SiteSettings {
   work: string;
   middleContent: string;
   blog: string;
+  chart: string;
   emailMe: string;
 }
 
@@ -120,6 +121,7 @@ const LanguageStrings: {
       work: "ስራዎች",
       middleContent: "እንዴት ተጀመረ",
       blog: "ጦማር",
+      chart: "ቻርት",
       emailMe: "ኢሜል ላክ",
     },
     workHistories: {
@@ -241,10 +243,12 @@ const LanguageStrings: {
     },
     general: {
       siteTitle: "Henok Tsegaye",
-      siteDescription: "Henok Tsegaye is a freelance Software developer. He has been working as a web full stack developer for 4 years now.",
+      siteDescription:
+        "Henok Tsegaye is a freelance Software developer. He has been working as a web full stack developer for 4 years now.",
       work: "Works",
       middleContent: "How it Started",
       blog: "Blog",
+      chart: "Chart",
       emailMe: "Email Me",
     },
     workHistories: {
@@ -321,8 +325,7 @@ const LanguageStrings: {
     portfolio: {
       title: "Previous Works",
       more: "View More",
-      description:
-        "Here are some works i have done so far that are public.",
+      description: "Here are some works i have done so far that are public.",
     },
     blog: {
       title: "Recent Blog",

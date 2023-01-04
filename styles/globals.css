@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/**
+* import button css
+*/
+@import "./button.css";
+
 html,
 body {
   /*background-color: black; */
@@ -79,4 +85,13 @@ ol {
 
 .hero:hover .myimg {
   @apply blur-0;
+}
+.box-cont:hover .handle {
+  @apply opacity-100;
+}
+.handle {
+  @apply opacity-0;
+  @apply transition-opacity;
+  @apply duration-300;
+  @apply ease-in-out;
 }

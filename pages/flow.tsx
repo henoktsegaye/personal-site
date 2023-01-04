@@ -13,18 +13,27 @@ import Display404 from "../components/basic/display404";
 import EmailMe from "../components/homePage/emailMe";
 import Hero from "../components/homePage/hero";
 import LanguageStrings, { langType } from "../lib/lang";
+import { Flow } from "../components/chart/GenericBox";
 
 type Props = {
-  files: {
-    posts: IPost[];
-    works: IPost[];
-  };
   localeString: langType;
   locale: "am" | "en";
 };
 
-const NotFound: React.FC<Props> = ({ files, localeString, locale }) => {
-  const { posts, works } = files;
+const useWindowSize = () => {
+  const [size, setSize] = useState([0, 0]);
+  useEffect(() => {
+    const updateSize = () => {
+      setSize([window.innerWidth, window.innerHeight]);
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return size;
+};
+
+const FlowChart: React.FC<Props> = ({ localeString, locale }) => {
   const {
     middleContent,
     socialMedia,
@@ -38,18 +47,16 @@ const NotFound: React.FC<Props> = ({ files, localeString, locale }) => {
   } = localeString;
 
   const [theme, setTheme] = useState<boolean>(false);
-
+  const [width, height] = useWindowSize();
   const toogleTheme = () => {
     if (!theme) {
       localStorage.setItem("theme", "dark");
       document.documentElement.classList.add("dark");
-      document.body.classList.add('bg-black')
-
+      document.body.classList.add("bg-black");
     } else {
       localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
-      document.body.classList.remove('bg-black')
-
+      document.body.classList.remove("bg-black");
     }
     setTheme(!theme);
   };
@@ -63,35 +70,27 @@ const NotFound: React.FC<Props> = ({ files, localeString, locale }) => {
       theme={theme}
       locale={locale}
       allStrings={localeString}
+      slug="/flow"
     >
-      <div>
-        <Display404 strings={string404} />
-        <Hero hero={hero} socialMedia={socialMedia} />
-
-        <EmailMe strings={getConnected} />
-
-        <Footer socialMedia={socialMedia}  footer={footer} />
+      <div className="h-screen">
+        <div className="   mx-auto  h-5/6 ">
+          {width !== 0 && height !== 0 && (
+            <Flow width={width} height={height} />
+          )}
+        </div>
       </div>
     </Layout>
   );
 };
 
-export default NotFound;
+export default FlowChart;
 
 export const getStaticProps = async ({
   locale = "en",
 }: {
   locale: "am" | "en";
 }) => {
-  const files = getAllPosts([
-    "slug",
-    "date",
-    "thumbnail",
-    "title",
-    "description",
-  ]);
-
   const localeString: langType = LanguageStrings[locale];
 
-  return { props: { files, localeString, locale } };
+  return { props: { localeString, locale } };
 };

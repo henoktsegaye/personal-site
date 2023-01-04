@@ -65,7 +65,7 @@ const Header: React.FC<props> = ({
               </a>
             </Link>
           </div>
-          <div className=" flex-row 2xl:pl-6 justify-between hidden items-center 2xl:col-span-3 2xl:ml-32 xl:ml-40 xl:col-span-4 lg:col-span-5 lg:flex">
+          <div className=" flex-row 2xl:pl-6 justify-between hidden items-center 2xl:col-span-3   xl:col-span-4 lg:col-span-5 lg:flex">
             <Link href="/#workTeaser">
               <a className="text-lg dark:text-gray-400 text-gray-500 ">
                 {strings.work}
@@ -76,7 +76,12 @@ const Header: React.FC<props> = ({
                 {strings.blog}
               </a>
             </Link>
-            <div className="flex justify-between items-center w-7/12 px-2">
+            <Link href="/flow">
+              <a className={`text-lg ${slug === "/flow" ? "text-black dark:text-white" : " dark:text-gray-400 text-gray-500 "} `}>
+                {strings.chart}
+              </a>
+            </Link>
+            <div className="flex justify-between items-center w-3/6 px-2">
               <Link href="/#emailMe">
                 <a className="text-lg  px-0  rounded-lg dark:text-gray-400 text-gray-500">
                   {strings.emailMe}
