@@ -194,11 +194,17 @@ function Flow({ width, height }: Props) {
               ...edge.style,
               strokeDasharray: "5,5",
               strokeWidth:6,
-              border: "1px solid #000",
             },
           };
         }
-        return edge;
+        return {
+          ...edge,
+          style: {
+            ...edge.style,
+            strokeDasharray: "0",
+            strokeWidth:4,
+          },
+        };
       }),
     [edges, selectedEdgeId]
   );
