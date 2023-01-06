@@ -35,15 +35,8 @@ const useWindowSize = () => {
 
 const FlowChart: React.FC<Props> = ({ localeString, locale }) => {
   const {
-    middleContent,
-    socialMedia,
-    hero,
-    portfolio,
-    blog,
-    getConnected,
-    footer,
     general,
-    string404,
+    flowStrings
   } = localeString;
 
   const [theme, setTheme] = useState<boolean>(false);
@@ -64,8 +57,8 @@ const FlowChart: React.FC<Props> = ({ localeString, locale }) => {
   return (
     <Layout
       strings={general}
-      pageTitle={string404.siteTitle}
-      pageDescription={string404.subTitle}
+      pageTitle={flowStrings.title}
+      pageDescription={flowStrings.subTitle}
       changeTheme={toogleTheme}
       theme={theme}
       locale={locale}

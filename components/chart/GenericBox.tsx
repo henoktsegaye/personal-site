@@ -26,7 +26,10 @@ export type Values = {
   color: string;
   tags?: string[];
   value: string;
+  shape: "circle" | "square" | "rectangle" | "diamond" | "triangle";
   active?: boolean;
+  width?: number;
+  height?: number;
 };
 
 const initialEdges = [
@@ -87,6 +90,9 @@ function Flow({ width, height }: Props) {
         color: "#F0C6C6",
         tags: ["creative", "innovative"],
         value: "IDEAS",
+        shape: "rectangle",
+        width: 200,
+        height: 120,
       },
     },
     {
@@ -98,6 +104,9 @@ function Flow({ width, height }: Props) {
         color: "#9ce29d",
         tags: ["realistic", "practical", "concrete"],
         value: "Experiments",
+        shape: "rectangle",
+        width: 200,
+        height: 120,
       },
     },
     {
@@ -109,6 +118,9 @@ function Flow({ width, height }: Props) {
         color: "#B9D0FD",
         tags: ["analytical", "logical", "scientific"],
         value: "Evaluation",
+        shape: "rectangle",
+        width: 200,
+        height: 120,
       },
     },
   ] as Node<Values>[];
@@ -193,7 +205,7 @@ function Flow({ width, height }: Props) {
             style: {
               ...edge.style,
               strokeDasharray: "5,5",
-              strokeWidth:6,
+              strokeWidth: 6,
             },
           };
         }
@@ -202,7 +214,7 @@ function Flow({ width, height }: Props) {
           style: {
             ...edge.style,
             strokeDasharray: "0",
-            strokeWidth:4,
+            strokeWidth: 4,
           },
         };
       }),
@@ -228,6 +240,9 @@ function Flow({ width, height }: Props) {
         id: `node-${nodes.length + 1}`,
         value: "New Node",
         color: "#000000",
+        shape: "rectangle",
+        width: 200,
+        height: 120,
       },
     };
     setNodes((ns) => ns.concat(newNode));
@@ -286,6 +301,7 @@ function Flow({ width, height }: Props) {
                       );
                     }}
                   />
+
                   <input
                     type="color"
                     className="p-1 border rounded bg-transparent border-gray-400 dark:border-gray-700 "
@@ -345,6 +361,53 @@ function Flow({ width, height }: Props) {
                       setNodes(newNodes);
                     }}
                   />
+                  <p className="mb-0 mt-2"> Height: </p>
+
+                  <input
+                    type="number"
+                    className="p-2 rounded border bg-transparent border-gray-400 dark:text-gray-200 dark:border-gray-700 "
+                    placeholder="height"
+                    value={selectedNode.data.height || "40"}
+                    onChange={(e) => {
+                      const newNodes = nodes.map((node) => {
+                        if (node.id === selectedNode.id) {
+                          return {
+                            ...node,
+                            data: {
+                              ...node.data,
+                              height: Number(e.target.value),
+                            },
+                          };
+                        }
+                        return node;
+                      });
+                      setNodes(newNodes);
+                    }}
+                  />
+                  <p className="mb-0 mt-2"> Width: </p>
+                  <input
+                    type="number"
+                    className="p-2 rounded border bg-transparent border-gray-400 dark:text-gray-200 dark:border-gray-700 "
+                    placeholder="width"
+                    value={selectedNode.data.width || "40"}
+                    onChange={(e) => {
+                      console.log("ON EVENT:", e.target.value);
+                      const newNodes = nodes.map((node) => {
+                        if (node.id === selectedNode.id) {
+                          return {
+                            ...node,
+                            data: {
+                              ...node.data,
+                              width: Number(e.target.value),
+                            },
+                          };
+                        }
+                        return node;
+                      });
+                      setNodes(newNodes);
+                    }}
+                  />
+
                   <input
                     type="text"
                     className="p-2 border rounded bg-transparent border-gray-400 dark:text-gray-200 dark:border-gray-700 "
@@ -356,7 +419,7 @@ function Flow({ width, height }: Props) {
                             ...node,
                             data: {
                               ...node.data,
-                              tags: e.target.value
+                              tags: e.target.value !== ""
                                 ? e.target.value.split(",")
                                 : [],
                             },
@@ -368,6 +431,30 @@ function Flow({ width, height }: Props) {
                     }}
                     value={selectedNode.data?.tags?.join(",") || ""}
                   />
+                  <select
+                    className="p-2 border rounded bg-transparent border-gray-400 dark:text-gray-200 dark:border-gray-700 "
+                    value={selectedNode.data.shape}
+                    onChange={(e) => {
+                      const newNodes = nodes.map((node) => {
+                        if (node.id === selectedNode.id) {
+                          return {
+                            ...node,
+                            data: {
+                              ...node.data,
+                              shape: e.target.value,
+                            },
+                          };
+                        }
+                        return node;
+                      });
+                      setNodes(newNodes);
+                    }}
+                  >
+                    <option value="rectangle">rectangle</option>
+                    <option value="circle">circle</option>
+                    <option value="diamond">diamond</option>
+                  </select>
+
                   <input
                     type="color"
                     className="p-1 border rounded bg-transparent border-gray-400 dark:border-gray-700 "
@@ -417,13 +504,17 @@ function Flow({ width, height }: Props) {
             />
           </div>
         </Panel>
-        <MiniMap nodeColor={(nodes) => {
-         const foundNode = nodesWithActive.find((node) => node.id === nodes.id);
-          if (foundNode) {
-            return foundNode.data.color;
-          }
-          return "#eee";
-        }} />
+        <MiniMap
+          nodeColor={(nodes) => {
+            const foundNode = nodesWithActive.find(
+              (node) => node.id === nodes.id
+            );
+            if (foundNode) {
+              return foundNode.data.color;
+            }
+            return "#eee";
+          }}
+        />
         <Controls />
         <Background className="bg-gray-100 dark:bg-gray-800" />
       </ReactFlow>

@@ -104,6 +104,7 @@ interface LangType {
   getConnected: GetConnected;
   footer: Footer;
   string404: String404;
+  flowStrings: TitleSubtitle;
 }
 
 const LanguageStrings: {
@@ -235,6 +236,10 @@ const LanguageStrings: {
       subTitle: "ወደ ዋናዉ ማውጫ በመሄድ ማየት ይችላሉ ።",
       buttonText: "ወደ ማውጫው ተመለስ",
     },
+    flowStrings: {
+      title: "ቻርት ",
+      subTitle: "የቻርት መስሪያ",
+    },
   },
   en: {
     languages: {
@@ -361,6 +366,10 @@ const LanguageStrings: {
       title: "didn't found this page",
       subTitle: "you can go home and look around",
       buttonText: "Go Home",
+    },
+    flowStrings: {
+      title: "Flow Chart",
+      subTitle: "Make a flow chart and download it",
     },
   },
 };

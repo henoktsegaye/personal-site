@@ -1,26 +1,15 @@
 import { useCallback, useState, useEffect } from "react";
 import { Handle, Position } from "reactflow";
 import { Values } from "./GenericBox";
-const handleSourceStyle = {
-  
-  backgroundColor: "red",
-  width: 10,
-  marginRight: 10,
-  height: 10,
-};
-const handleTargetStyle = {
-  marginLeft: 10,
-  backgroundColor: "blue",
-  width: 10,
-  height: 10,
-};
+const handleSourceStyle = { left: 100, backgroundColor: "red", width: 10, height: 10 };
+const handleTargetStyle = { left: 120, backgroundColor: "blue",width: 10, height: 10 };
 
 type Props = {
   data: Values;
 };
 
-function TextUpdaterNode({ data }: Props) {
-  const { color, tags, value, id, active, shape, width=40, height = 40 } = data;
+function Triage({ data }: Props) {
+  const { color, tags, value, id, active } = data;
   const [text, setText] = useState(value);
 
   const onChange = useCallback((evt) => {
@@ -34,44 +23,32 @@ function TextUpdaterNode({ data }: Props) {
   return (
     <div className="box-cont">
       <div
-        className={`  flex flex-col justify-center items-center ${
-          shape === "circle" && "rounded-full "
-        } ${shape === "square" && "rounded-md"} ${
-          shape === "rectangle" && "rounded p-2"
-        } ${shape === "triangle" && "rounded-md"} ${
-          shape === "diamond" && "rounded-md"
-        } 
-
-        border-4 ${
+        className={`p-2 border-4 ${
           active && " border-4 border-dotted border-black"
-        } rounded-md  overflow-hidden ${color}}`}
+        } rounded-md w-60 overflow-hidden ${color}}`}
         style={{
           backgroundColor: color,
-          borderColor: !active ? color : "black",
-          width,
-          height,
+          borderColor: !active ?color: "black",
         }}
       >
         <div
-          className={`text-lg text-center bg-transparent w-full ${
+          className={`text-lg mb-2 text-center bg-transparent w-full ${
             isColorDark(color) ? "text-white" : "text-black"
           }`}
         >
           {text}
         </div>
 
-        {tags && Array.isArray(tags) && tags.length >= 1 && (
-          <div className="flex  flex-wrap p-2">
-            {tags?.map((tag) => (
-              <span
-                key={tag}
-                className={`bg-gray-200 dark:bg-gray-700 rounded-md px-2 py-1 mr-1 mt-1 text-xs font-medium inline-block h-auto text-gray-800 dark:text-gray-200`}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+        <div className="flex flex-wrap">
+          {tags?.map((tag) => (
+            <span
+              key={tag}
+              className={`bg-gray-200 dark:bg-gray-700 rounded-md px-2 py-1 mr-1 mt-1 text-xs font-medium text-gray-800 dark:text-gray-200`}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
       <Handle
         type="source"
@@ -115,4 +92,4 @@ const isColorDark = (color: string) => {
   return false;
 };
 
-export { TextUpdaterNode };
+export { Triage as TextUpdaterNode };
