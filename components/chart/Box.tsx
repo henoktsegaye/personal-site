@@ -53,7 +53,7 @@ function TextUpdaterNode({ data }: Props) {
         }}
       >
         <div
-          className={`text-lg text-center bg-transparent w-full ${
+          className={`text-md text-center bg-transparent w-full ${
             isColorDark(color) ? "text-white" : "text-black"
           }`}
         >

@@ -10,6 +10,7 @@ import ReactFlow, {
   addEdge,
   Panel,
   applyEdgeChanges,
+  MarkerType
 } from "reactflow";
 // 👇 you need to import the reactflow styles
 import "reactflow/dist/style.css";
@@ -40,15 +41,17 @@ const initialEdges = [
     targetHandle: "node-2-tt",
     target: "node-2",
     style: {
-      borderWidth: 4,
       stroke: "#F0C6C6",
-      strokeWidth: 4,
     },
     arrowHeadType: "arrowclosed",
     label: "IDEAS",
     labelStyle: {
       fontSize: 12,
       fontWeight: 700,
+    },
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      color: "#F0C6C6",
     },
   },
   {
@@ -58,14 +61,16 @@ const initialEdges = [
     source: "node-2",
     target: "node-3",
     style: {
-      borderWidth: 4,
       stroke: "#9ce29d",
-      strokeWidth: 4,
     },
     label: "Experiments",
     labelStyle: {
       fontSize: 12,
       fontWeight: 700,
+    },
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      color: "#9ce29d",
     },
   },
 ] as Edge[];
@@ -138,16 +143,16 @@ function Flow({ width, height }: Props) {
     const newEdge = addEdge(
       {
         ...connection,
-        markerEnd: true,
-        markerStart: true,
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+        },
+        markerStart: false,
         labelStyle: {
           fontSize: 12,
           fontWeight: 700,
         },
         style: {
           ...connection.style,
-
-          strokeWidth: 4,
         },
       },
       nodes
@@ -179,6 +184,10 @@ function Flow({ width, height }: Props) {
         if (node.id === selectedNodeId) {
           return {
             ...node,
+            style: {
+              ...node.style,
+              fontSize: 12,
+            },
             data: {
               ...node.data,
               active: true,
@@ -214,7 +223,7 @@ function Flow({ width, height }: Props) {
           style: {
             ...edge.style,
             strokeDasharray: "0",
-            strokeWidth: 4,
+            strokeWidth: 2,
           },
         };
       }),
@@ -309,6 +318,10 @@ function Flow({ width, height }: Props) {
                     onChange={(e) => {
                       const newEdge = {
                         ...selectedEdge,
+                        markerEnd: {
+                          type: MarkerType.ArrowClosed,
+                          color: e.target.value,
+                        },
                         style: {
                           ...selectedEdge.style,
                           stroke: e.target.value,
