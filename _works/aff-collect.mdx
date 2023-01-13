@@ -10,20 +10,13 @@ type: Addis-Software
 
 ---
 
-## A tracking system for affiliate programs
+A tracking system for affiliate programs.
+A project under [addissoftware](https://addissoftware.com).
 
-wAff colelct is a project i have done under [addissoftware](https://addissoftware.com).
-In this project i was a lead engineer at the company, the main aim of the project
-was to help clients manage their affilate buisness easily using the application.
 
-Clients requested this product because it was hard for them to track each earning
-they get from different affilate platforms. This system will do the tracking with
-a cron job that does the scrapping.
-
+Oversaw a team of three developers creating an aﬃliate revenue tracking and management system that works by scraping aﬃliate programs daily and monthly and aggregating the data to show relevant information. It can communicate with 12 aﬃliate programs that do not have API by logging in, scraping, and sending an invoice for scraped content.
 ### Tech used
-
-The Project primarly used [React](https://react.com) for the front end and this was the part i was usually involved in. and used [node js](https://nodejs.com) for the backend.
-in the front end we also used [Redux](https://redux.com) and [Redux Saga](https://redux-saga.com).
+We developed the API using Node.js, the front end with TypeScript, React, Redux, Redux-saga, and Ant Design, and for the scraper, we used a cron job written using Node.js. The cron job reports' failed attempts give notiﬁcations. This project also uses GitLab CI/CD and deploys the changes on the server set up on DigitalOcean. The Docker and Docker Compose were set up to run multiple Docker instances on both staging and production environments for the back and front ends.
 
 <div class="bg-gray-100 dark:bg-gray-900 p-4 my-4"> 
 <div class="grid xl:grid-cols-2 grid-cols-1  gap-4">

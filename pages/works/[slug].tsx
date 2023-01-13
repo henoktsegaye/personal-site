@@ -83,9 +83,12 @@ const WorksPage: React.FC<Props> = ({
           <h1 className="text-5xl text-black dark:text-white font-bold mb-4">
             {frontMatter.title}
           </h1>
-          <span className="text-gray-500 text-xl dark:text-gray-400">
-            {frontMatter?.type} | {frontMatter?.date} | #
-            {frontMatter?.tech?.join(", #")}
+          <span className="text-gray-500 mb-0 text-xl dark:text-gray-400">
+            {frontMatter?.type} | {frontMatter?.date} 
+            <span className=" ml-4 ">
+
+            {frontMatter?.tech?.map(el => (<span className="mr-2 text-base text-gray-400 dark:text-gray-600"> {el} </span>))}
+            </span>
           </span>
 
           <div className="text-lg blog ">
