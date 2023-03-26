@@ -1,28 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /**
 * import button css
 */
 @import "./button.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,400;1,500;1,700&display=swap');
 html,
-body {
+body,
+p {
   /*background-color: black; */
   padding: 0;
   scroll-behavior: smooth;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-ul, ol {
-  list-style: unset !important; 
+ul,
+ol {
+  list-style: unset !important;
   margin-left: 25px !important;
 }
 ol {
@@ -38,31 +38,38 @@ ol {
 }
 .blog h2 {
   @apply text-3xl;
-  @apply mb-2;
-  @apply mt-2;
-  @apply dark:text-gray-100;
-  @apply text-gray-800;
-  @apply font-bold;
+  @apply mb-3;
+  @apply mt-3;
+  @apply text-gray-900;
+  @apply dark:text-gray-200;
+  @apply leading-loose;
+  @apply font-extrabold;
 }
 
 .blog h3 {
   @apply text-2xl;
-  @apply mb-2;
+  @apply mt-3;
+  @apply mb-3;
+  @apply text-gray-900;
   @apply dark:text-gray-200;
-  @apply text-gray-700;
-  @apply font-bold;
+  @apply font-extrabold;
+  @apply leading-loose;
 }
 
-.blog p , body b {
+.blog p,
+body b {
   @apply dark:text-gray-400;
   @apply text-gray-600;
-  @apply mb-2;
+  @apply mt-3;
+  @apply mb-3;
+  @apply leading-8;
 }
 
 .blog strong {
-  @apply font-bold;
-  @apply dark:text-gray-300;
-  @apply text-gray-700;
+  @apply font-extrabold;
+  @apply leading-snug;
+  @apply text-gray-900;
+  @apply dark:text-gray-200;
 }
 
 .blog hr {
@@ -72,14 +79,14 @@ ol {
   @apply border-gray-200;
 }
 .blog a {
-  @apply text-blue-600;
-  @apply dark:text-blue-700;
+  @apply text-green-600;
+  @apply dark:text-green-700;
 }
 #nprogress .bar {
   @apply bg-gradient-to-r !important;
-  @apply from-blue-600 !important;
+  @apply from-green-600 !important;
   @apply via-indigo-600 !important;
-  @apply to-red-600 !important;
+  @apply to-pink-600 !important;
   @apply dark:bg-green-700 !important;
 }
 
@@ -94,4 +101,10 @@ ol {
   @apply transition-opacity;
   @apply duration-300;
   @apply ease-in-out;
+}
+
+::selection {
+  @apply text-white;
+  @apply bg-green-300;
+  @apply dark:bg-green-700;
 }

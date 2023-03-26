@@ -14,7 +14,7 @@ type props = {
 
 const LanguageShowCase: FC<props> = ({ title, subTitle }) => {
   return (
-    <div className="2xl:max-w-screen-xl xl:max-w-screen-lg max-w-screen-xl my-4 mx-auto mb-20">
+    <div className="2xl:max-w-screen-xl  max-w-screen-xl my-4 mx-auto mb-20">
       <h2 className="text-left text-3xl dark:text-white text-black w-full mb-5 ml-3 ">
         {title}
       </h2>

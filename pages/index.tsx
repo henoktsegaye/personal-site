@@ -1,16 +1,14 @@
 // pages/index.tsx
-import { useEffect, useState } from "react";
-import { GetStaticProps, GetStaticPropsContext } from "next";
-import Layout from "../components/layout/layout";
+import { useMemo, useState } from "react";
 import { IPost } from "../types/post";
 import { getAllPosts } from "../lib/mdxUtils";
-import Footer from "../components/layout/footer";
-import WorksTeaser from "../components/homePage/worksTeaser";
-import LanguageShowCase from "../components/homePage/languageShowCase";
-import EmailMe from "../components/homePage/emailMe";
-import Hero from "../components/homePage/hero";
 import LanguageStrings, { langType } from "../lib/lang";
-import BlogsTeaser from "../components/homePage/blogTeaser";
+import { AnimatePresence } from "framer-motion";
+import { BlogHeader } from "../components/blog/blogHeader";
+import { BlogCard } from "../components/blog/BlogCard";
+import { BlogNav } from "../components/blog/blogNav";
+import { Text } from "../components/basic/genial/text";
+import Footer from "../components/layout/footer";
 
 type Props = {
   files: {
@@ -22,58 +20,68 @@ type Props = {
 };
 
 const Home: React.FC<Props> = ({ files, localeString, locale }) => {
-  const { posts, works } = files;
-  const {
-    languages,
-    middleContent,
-    socialMedia,
-    hero,
-    portfolio,
-    blog,
-    getConnected,
-    footer,
-    general,
-    testimonials,
-    workHistories,
-  } = localeString;
+  const { posts } = files;
+  const { footer, general, socialMedia } = localeString;
 
-  const [theme, setTheme] = useState<boolean>(false);
+  const tags = useMemo(
+    () => new Set(posts.map((el) => el.hashtag.split(" ")).flat()),
+    [posts]
+  );
 
-  const toogleTheme = () => {
-    if (!theme) {
-      localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-      document.body.classList.add('bg-black')
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [search, setSearch] = useState<string>("");
 
-    } else {
-      localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-      document.body.classList.remove('bg-black')
-
-    }
-    setTheme(!theme);
-  };
+  const selectedPostsByTag = useMemo(
+    () =>
+      activeTag
+        ? posts.filter((el) => el.hashtag.split(" ").includes(activeTag))
+        : posts,
+    [activeTag, posts]
+  );
+  const selectedPosts = useMemo(
+    () =>
+      search
+        ? selectedPostsByTag.filter((el) =>
+            el.title.toLowerCase().includes(search.toLowerCase())
+          )
+        : selectedPostsByTag,
+    [selectedPostsByTag, search]
+  );
 
   return (
-    <Layout
-      strings={general}
-      pageTitle={general.siteDescription}
-      pageDescription={general.siteDescription}
-      pageImage="/assets/henok-face.jpg"
-      changeTheme={toogleTheme}
-      theme={theme}
-      locale={locale}
-      allStrings={localeString}
-    >
+    <div className="dark:bg-gary-700 h-full w-full ">
+      <BlogNav />
       <div>
-        <Hero hero={hero} socialMedia={socialMedia} />
-        <LanguageShowCase title={languages.title} />
-        <WorksTeaser works={works} strings={portfolio} />
-        <BlogsTeaser posts={posts} strings={blog} />
-        <EmailMe strings={getConnected} />
-        <Footer socialMedia={socialMedia} footer={footer} />
+        <div className="  h-full flex flex-col  w-full   ">
+          <div className="py-10 mt-6 max-w-screen-lg  2xl:max-w-screen-xl px-4 lg:px-0 mx-auto relative w-full">
+            <div className="grid grid-cols-12 gap-2 ">
+              <div className="my-6 col-span-12 ">
+                <BlogHeader
+                  tags={["All", ...tags]}
+                  search={search}
+                  onSearchChange={setSearch}
+                  activeTag={activeTag ?? "All"}
+                  onTagChange={(tag: string) =>
+                    setActiveTag(tag !== "All" ? tag : null)
+                  }
+                />
+                <div className="grid 2xl:grid-cols-1 grid-cols-1 lg:grid-cols-1 gap-2">
+                  <AnimatePresence>
+                    {selectedPosts.length === 0 && (
+                      <Text size="xl">No results Found </Text>
+                    )}
+                    {selectedPosts.map((el, index) => (
+                      <BlogCard blog={el} />
+                    ))}
+                  </AnimatePresence>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </Layout>
+      <Footer footer={footer} socialMedia={socialMedia} />
+    </div>
   );
 };
 
@@ -91,9 +99,6 @@ export const getStaticProps = async ({
     "title",
     "description",
     "hashtag",
-    "color",
-    "tech",
-    "type",
   ]);
 
   const localeString: langType = LanguageStrings[locale];

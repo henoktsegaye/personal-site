@@ -3,6 +3,7 @@ import TwitterIcon from "../icons/twitter.svg";
 import LinkedInIcon from "../icons/linkedin.svg";
 import InstagramIcon from "../icons/instagram.svg";
 import GithubIcon from "../icons/github.svg";
+import { Text } from "../basic/genial/text";
 
 type props = {
   footer: footer;
@@ -13,45 +14,54 @@ type props = {
 const Footer: React.FC<props> = ({ socialMedia, footer, smaller = false }) => {
   const { title } = footer;
   return (
-    <div className="bg-white border-t border-gray-100 dark:border-gray-900 dark:bg-black ">
+    <div className=" border-t text-xl border-gray-100 dark:border-gray-800 ">
       <div
-        className={` ${!smaller ? "2xl:max-w-screen-xl" : "lg:max-w-screen-lg"
-          } xl:max-w-screen-lg max-w-sm lg:max-w-screen-md py-10 mx-auto`}
+        className={` flex flex-row pt-8 pb-4 justify-between items-end max-w-screen-lg  2xl:max-w-screen-xl px-4 lg:px-0 mx-auto`}
       >
-        <p className="text-left text-gray-600 dark:text-gray-300">{title}</p>
-        <div className="flex flex-row justify-between mt-4">
-          <div className="flex flex-row">
-            <a href={socialMedia.github}>
-            <GithubIcon
-            width={16}
-            height={16}
-            className="fill-current mr-6 text-black dark:text-gray-300"
-          />
-            </a>
-            <a href={socialMedia.linkedIn}>
-            <LinkedInIcon
-            width={16}
-            height={16}
-            className="fill-current mr-6 text-black dark:text-gray-300"
-          />
-            </a>
-            <a href={socialMedia.twitter}>
-            <TwitterIcon
-            width={16}
-            height={16}
-            className="fill-current mr-6 text-black dark:text-gray-300"
-          /> 
-            </a>
-            <a href={socialMedia.instagram}>
-            <InstagramIcon
-            width={16}
-            height={16}
-            className="fill-current mr-6 text-black dark:text-gray-300"
-          />
-            </a>
+        <div className="" >
+        
+          <div className="flex flex-row justify-between mb-3">
+            <div className="flex flex-row gap-7 ">
+              <a href={socialMedia.github}>
+                <GithubIcon
+                  width={16}
+                  height={16}
+                  className="fill-current  text-black dark:text-gray-300"
+                />
+              </a>
+              <a href={socialMedia.linkedIn}>
+                <LinkedInIcon
+                  width={16}
+                  height={16}
+                  className="fill-current  text-black dark:text-gray-300"
+                />
+              </a>
+              <a href={socialMedia.twitter}>
+                <TwitterIcon
+                  width={16}
+                  height={16}
+                  className="fill-current text-black dark:text-gray-300"
+                />
+              </a>
+              <a href={socialMedia.instagram}>
+                <InstagramIcon
+                  width={16}
+                  height={16}
+                  className="fill-current  text-black dark:text-gray-300"
+                />
+              </a>
+            </div>
+            
           </div>
-
+          <div>
+          <Text className="" > Hi, I am Henok Tsegaye, You can call me Henok <br /> I am a full stack software engineer.</Text>
+        <Text className="" > ---</Text>
+          <Text >
+             Developed with Next.js and Tailwind CSS.
+          </Text>
+          </div>
         </div>
+      
       </div>
     </div>
   );

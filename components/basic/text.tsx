@@ -5,7 +5,7 @@ interface Props {
 
 const Text = ({ classname, children }: Props) => {
     return (<h1
-        className={`${classname ? classname : ''} text-transparent  bg-clip-text bg-gradient-to-r from-green-400 to-green-600`}
+        className={`${classname ? classname : ''} text-transparent  bg-clip-text bg-gradient-to-r from-green-400 to-blue-600`}
     >
         {children}
     </h1>)

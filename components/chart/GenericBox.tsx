@@ -17,6 +17,7 @@ import "reactflow/dist/style.css";
 import Button from "../basic/genial/button";
 import { TextUpdaterNode } from "./Box";
 import { toPng } from "html-to-image";
+import { Input } from "../basic/genial/input";
 
 type Props = {
   width: number;
@@ -275,8 +276,10 @@ function Flow({ width, height }: Props) {
         onConnect={onConnect}
         onEdgesChange={onEdgesChanges}
       >
-        <Panel className="panel" position="top-left">
-          <Button color="gray" size="sm" label="Add" onClick={onAdd} />
+        <Panel  className="panel p-4 rounded-lg shadow-lg bg-white dark:bg-black" position="top-left"> 
+        <Button color="primary" size="sm" label="Add" onClick={onAdd} />
+
+       
           <div className="flex flex-col gap-2">
             {selectedEdgeId !== "" && selectedEdge && (
               <div className="bg-transparent p-2 w-60">
@@ -289,10 +292,11 @@ function Flow({ width, height }: Props) {
                   />
                 </div>
                 <div className="grid grid-cols-1 gap-3 ">
-                  <input
+                  <Input
+                  size="sm"
                     type="text"
-                    className="p-2 rounded border bg-transparent border-gray-400 dark:text-gray-200 dark:border-gray-700 "
                     placeholder="name"
+                    label="Name"
                     value={selectedEdge?.label || ""}
                     onChange={(e) => {
                       const newEdge = {

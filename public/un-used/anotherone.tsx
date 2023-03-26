@@ -58,11 +58,11 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
     };
 
     return (
-        <div>
+        <div className=" " >
             <HeaderContainer>
                 <BlogCards blogs={posts} />
             </HeaderContainer>
-            <div className="bg-black font-mono text-gray-300" >
+            <div className="bg-black  text-gray-300" >
 
                 <div className="  2xl:max-w-screen-2xl max-w-screen-xl mx-auto" >
                     <p className="text-2xl mb-10 text-green-400">Previous Work I did</p>
@@ -113,7 +113,7 @@ export const getStaticProps = async ({
 
 const HeaderContainer = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="bg-black font-mono text-2xl block text-gray-300" style={{ height: '100vh', width: '100%' }}  >
+        <div className="bg-black  text-2xl block text-gray-300" style={{ height: '100vh', width: '100%' }}  >
 
 
             <div className=" 2xl:max-w-screen-xl h-full max-w-screen-xl mx-auto" >
@@ -173,12 +173,12 @@ const Header = () => {
         <div className=" pr-12 flex flex-col justify-between h-full"  >
             <div className="block">
                 <div>
-                    <Text classname="text-3xl font-extrabold font-mono mb-10" > Hello, I am Henok Tsegaye</Text>
-                    <p className="text-xl font-mono text-gray-500 capitalize">
+                    <Text classname="text-3xl font-extrabold  mb-10" > Hello, I am Henok Tsegaye</Text>
+                    <p className="text-xl  text-gray-500 capitalize">
                         A full stack developer experience deeloping software
                     </p>
 
-                    <p className="text-sm font-mono mt-8 text-gray-500 capitalize">
+                    <p className="text-sm  mt-8 text-gray-500 capitalize">
                         A full stack developer experience deeloping software for different companies
                         my main experiteis comes from Nodejs , backend and forntend as well I like working with languages that I will LanguageStrings
                         some chagnes are coming to this site which i like to be honset.
@@ -199,11 +199,11 @@ const Header = () => {
                     <p className="text-xl text-gray-300 mb-8" > Utility softwares hosted by me</p>
                     <div className="grid grid-cols-2 gap-4">
 
-                        {new Array(1).fill(null).map(el => (<div style={{padding: 1}} className=" rounded-lg bg-gradient-to-br from-blue-500 to-green-400 bg-gray-800 mb-2" >
-                            <div className="bg-black p-8 rounded-lg">
-                                <h1 className="text-gray-400 text-lg mb-4" >  Flow diagram </h1>
-                                <p className="text-base text-gray-500 mb-4" > a utility to share your own toghts and do some important things to help others</p>
-                                <a href="/sd" className="text-base text-gray-400" > Visit &rarr; </a>
+                        {new Array(2).fill(null).map(el => (<div style={{padding: 1}} className=" rounded-lg  bg-gradient-to-br from-blue-500 to-green-400 bg-gray-800 mb-2" >
+                            <div className=" bg-opacity-10 bg-white  p-8 rounded-lg">
+                                <h1 className="text-gray-800 text-lg mb-4" >  Flow diagram </h1>
+                                <p className="text-base text-gray-900 mb-4" > a utility to share your own toghts a</p>
+                                <a href="/sd" className="text-base text-gray-900" > Visit &rarr; </a>
                             </div></div>))}
                     </div>
                 </div>

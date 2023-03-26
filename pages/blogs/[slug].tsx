@@ -12,7 +12,11 @@ import { IPost } from "../../types/post";
 import { getPost, getAllPosts } from "../../lib/mdxUtils";
 import Footer from "../../components/layout/footer";
 import LanguageStrings, { langType } from "../../lib/lang";
-import Link from 'next/link'
+import Link from "next/link";
+import { BlogNav } from "../../components/blog/blogNav";
+import { useTheme } from "../../hooks/useTheme";
+import { format } from "date-fns";
+import { Text } from "../../components/basic/genial/text";
 
 interface returnPath {
   params: {
@@ -36,92 +40,45 @@ const PostPage: React.FC<Props> = ({
   locale,
   slug,
 }: Props) => {
-
-  const [darkTheme, setDarkTheme] = useState<boolean>(false);
-
-  useEffect(() => {
-    const xtheme = localStorage.getItem("theme")
-      ? localStorage.getItem("theme")
-      : "dark";
-    if (xtheme == "dark") {
-      toggleTheme();
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    if (!darkTheme) {
-      localStorage.setItem("theme", "dark");
-      window.dispatchEvent(new Event("storage"));
-      document.documentElement.classList.add("dark");
-      document.body.classList.add('bg-black')
-
-    } else {
-      localStorage.setItem("theme", "light");
-      window.dispatchEvent(new Event("storage"));
-      document.documentElement.classList.remove("dark");
-      document.body.classList.remove('bg-black')
-
-    }
-    setDarkTheme(!darkTheme);
-  };
+  const { isDark, toggleTheme } = useTheme();
 
   const { footer, general, socialMedia } = localeString;
   const components = {
     ImageBox,
     CodeAndImageBox,
-    code: (props: { className: string, children: string }) => (
-      <Code
+    code: (props: { className: string; children: string }) => (
+      <Code {...props} dark={!isDark} />
+    ),
+    inlineCode: (props: { className: string; children: string }) => (
+      <code
         {...props}
-        dark={!darkTheme}
+        className={`${
+          !isDark ? "bg-gray-50" : "bg-gray-800"
+        } px-3 py-1 rounded ${props.className}`}
       />
     ),
-    inlineCode: (props: { className: string, children: string }) => <code
-      {...props}
-      className={`${!darkTheme ? "bg-gray-50" : "bg-gray-800"} px-3 py-1 rounded ${props.className}`}
-    />,
-    Link: Link
-  }
+    Link: Link,
+  };
   return (
-    <Layout
-      locale={locale}
-      pageTitle={frontMatter.title}
-      pageDescription={frontMatter.description}
-      pageImage={frontMatter.thumbnail}
-      strings={general}
-      changeTheme={toggleTheme}
-      theme={darkTheme}
-      allStrings={localeString}
-      slug={`${slug}`}
-      blog
-      dateModified={new Date(frontMatter.date)}
-      datePublished={new Date(frontMatter.date)}
-    >
-      <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
-        <article className="prose prose-blue mt-10">
-         
-          <h1 className="text-4xl text-black dark:text-white font-bold mb-4">
-            {frontMatter.title}
-          </h1>
-          
-          <div className="mb-4 m">
-            <Featured title={frontMatter.title} src={frontMatter.thumbnail} />
+    <>
+      <BlogNav />
+      <div className="lg:max-w-screen-lg max-w-sm mx-auto py-10">
+        <article className="prose text-lg prose-blue mt-10">
+          <div className="mb-10 mt-32 ">
+            <Text isTitle className="mb-2" bold="extrabold" size="3xl">
+              {frontMatter?.title}
+            </Text>
+            <span className="text-gray-500 block mb-6  dark:text-gray-400">
+              Written on {format(new Date(frontMatter?.date), "MMM do yyyy")}
+            </span>
           </div>
-          <span className="text-gray-500 block mb-4  dark:text-gray-400">
-            Date: {frontMatter?.date}, about
-            <span className="font-bold dark:text-white text-black text-lg" > {frontMatter?.hashtag} </span>
-            ,author <Link href="/">
-              <a href="/" className="text-blue-700 text-lg" >
-                {frontMatter?.author}
-              </a>
-            </Link>
-          </span>
-          <div className="text-lg blog border-t pt-4 dark:border-gray-900">
+          <div className="  blog  dark:border-gray-900">
             <MDXRemote components={components} {...source} />
           </div>
         </article>
       </div>
       <Footer socialMedia={socialMedia} footer={footer} smaller />
-    </Layout>
+    </>
   );
 };
 
