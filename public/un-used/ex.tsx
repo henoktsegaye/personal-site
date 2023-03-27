@@ -1,6 +1,6 @@
-import BlogsTeaser from '../components/homePage/blogTeaser';
-import LanguageShowCase from '../components/homePage/languageShowCase'
-import Button from '../components/basic/genial/button';
+import BlogsTeaser from '../../components/homePage/blogTeaser';
+import LanguageShowCase from '../../components/homePage/languageShowCase'
+import Button from '../../components/basic/genial/button';
 const Ex = () => {
   return (
     <body className="bg-black h-full max-w-screen-xl mx-auto ">

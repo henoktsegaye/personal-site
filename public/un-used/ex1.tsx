@@ -1,21 +1,21 @@
 // pages/index.tsx
 import { useEffect, useState } from "react";
 import { GetStaticProps, GetStaticPropsContext } from "next";
-import Layout from "../components/layout/layout";
-import { IPost } from "../types/post";
-import { getAllPosts } from "../lib/mdxUtils";
-import Footer from "../components/layout/footer";
-import WorksTeaser from "../components/homePage/worksTeaser";
-import LanguageShowCase from "../components/homePage/languageShowCase";
-import EmailMe from "../components/homePage/emailMe";
-import Hero from "../components/homePage/hero";
-import LanguageStrings, { langType } from "../lib/lang";
-import BlogsTeaser from "../components/homePage/blogTeaser";
+import Layout from "../../components/layout/layout";
+import { IPost } from "../../types/post";
+import { getAllPosts } from "../../lib/mdxUtils";
+import Footer from "../../components/layout/footer";
+import WorksTeaser from "../../components/homePage/worksTeaser";
+import LanguageShowCase from "../../components/homePage/languageShowCase";
+import EmailMe from "../../components/homePage/emailMe";
+import Hero from "../../components/homePage/hero";
+import LanguageStrings, { langType } from "../../lib/lang";
+import BlogsTeaser from "../../components/homePage/blogTeaser";
 import MoonIcon from "../components/icons/moon-outline.svg";
 import SunIcon from "../components/icons/sun-outline.svg";
 import { formatDistance } from "date-fns";
-import { useTheme } from "../hooks/useTheme";
-import { BlogNav } from "../components/blog/blogNav";
+import { useTheme } from "../../hooks/useTheme";
+import { BlogNav } from "../../components/blog/blogNav";
 
 type Props = {
   files: {
