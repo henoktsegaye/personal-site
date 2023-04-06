@@ -49,7 +49,7 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
   );
 
   return (
-    <div className="dark:bg-gary-700 h-full w-full ">
+    <div className=" h-full w-full ">
       <BlogNav />
       <div>
         <div className="  h-full flex flex-col  w-full   ">

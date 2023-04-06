@@ -41,6 +41,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
       localStorage.setItem(THEME_CONST, DARK);
       document.documentElement.classList.add(DARK);
       document.body.classList.add("bg-gray-900");
+      document.body.classList.remove("bg-white");
     } else {
       localStorage.setItem(THEME_CONST, LIGHT);
       document.documentElement.classList.remove(DARK);
