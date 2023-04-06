@@ -10,7 +10,8 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ blog }: BlogCardProps) => {
-    const route = useRouter()
+  const searchParams = useSearchParams();
+  const route = useRouter()
   const { title, description, slug, date, thumbnail } = blog;
   return (
     <motion.div
