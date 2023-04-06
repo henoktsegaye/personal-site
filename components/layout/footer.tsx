@@ -2,6 +2,7 @@ import { footer, socialMedia } from "../../lib/lang";
 import TwitterIcon from "../icons/twitter.svg";
 import LinkedInIcon from "../icons/linkedin.svg";
 import InstagramIcon from "../icons/instagram.svg";
+import EmailIcon from "../icons/email-outline.svg";
 import GithubIcon from "../icons/github.svg";
 import { Text } from "../basic/genial/text";
 
@@ -50,6 +51,14 @@ const Footer: React.FC<props> = ({ socialMedia, footer, smaller = false }) => {
                   className="fill-current  text-black dark:text-gray-300"
                 />
               </a>
+              <a href={socialMedia.email}>
+                <EmailIcon
+                  width={16}
+                  height={16}
+                  className="fill-current  text-black dark:text-gray-300"
+                />
+              </a>
+
             </div>
             
           </div>

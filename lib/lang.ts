@@ -42,6 +42,7 @@ interface SocialMedia {
   github: string;
   instagram: string;
   linkedIn: string;
+  email:string
 }
 
 interface GetConnected {
@@ -206,6 +207,7 @@ const LanguageStrings: {
       github: "https://github.com/henoktsegaye",
       instagram: "https://instagram.com/henokcode",
       linkedIn: "https://www.linkedin.com/in/henok-tsegaye-yeshanew",
+      email: "mailto:maxhenock@gmail.com"
     },
     getConnected: {
       title: "ሀሳብዎን ይግለጡ ።",
@@ -326,6 +328,7 @@ const LanguageStrings: {
       github: "https://github.com/henoktsegaye",
       instagram: "https://instagram.com/henokcode",
       linkedIn: "https://www.linkedin.com/in/henok-tsegaye-yeshanew",
+      email: "mailto:maxhenock@gmail.com"
     },
     portfolio: {
       title: "Previous Works",
