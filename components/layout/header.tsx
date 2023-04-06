@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import MoonIcon from "../icons/moon-outline.svg";
 import SunIcon from "../icons/sun-outline.svg";
-import { SITE_NAME } from "../../lib/constants";
 import { siteStrings } from "../../lib/lang";
 
 type props = {
