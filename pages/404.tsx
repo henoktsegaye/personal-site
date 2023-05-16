@@ -1,18 +1,12 @@
 // pages/index.tsx
-import { useEffect, useState } from "react";
-import { GetStaticProps, GetStaticPropsContext } from "next";
-import Head from "next/head";
-
-import Layout from "../components/layout/layout";
-import Thumbnail from "../components/basic/thumbnail";
+import { useState } from "react";
 import { IPost } from "../types/post";
-import { SITE_NAME } from "../lib/constants";
 import { getAllPosts } from "../lib/mdxUtils";
 import Footer from "../components/layout/footer";
 import Display404 from "../components/basic/display404";
-import EmailMe from "../components/homePage/emailMe";
-import Hero from "../components/homePage/hero";
 import LanguageStrings, { langType } from "../lib/lang";
+import Meta from "../components/layout/meta";
+import { BlogNav } from "../components/blog/blogNav";
 
 type Props = {
   files: {
@@ -26,11 +20,8 @@ type Props = {
 const NotFound: React.FC<Props> = ({ files, localeString, locale }) => {
   const { posts, works } = files;
   const {
-    middleContent,
     socialMedia,
-    hero,
-    portfolio,
-    blog,
+
     getConnected,
     footer,
     general,
@@ -43,36 +34,30 @@ const NotFound: React.FC<Props> = ({ files, localeString, locale }) => {
     if (!theme) {
       localStorage.setItem("theme", "dark");
       document.documentElement.classList.add("dark");
-      document.body.classList.add('bg-black')
-
+      document.body.classList.add("bg-black");
     } else {
       localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark");
-      document.body.classList.remove('bg-black')
-
+      document.body.classList.remove("bg-black");
     }
     setTheme(!theme);
   };
 
   return (
-    <Layout
-      strings={general}
-      pageTitle={string404.siteTitle}
-      pageDescription={string404.subTitle}
-      changeTheme={toogleTheme}
-      theme={theme}
-      locale={locale}
-      allStrings={localeString}
-    >
-      <div>
-        <Display404 strings={string404} />
-        <Hero hero={hero} socialMedia={socialMedia} />
+    <div className=" h-full w-full ">
+      <Meta
+        socialMedia={socialMedia}
+        siteString={{
+          siteTitle: general.siteTitle,
+          siteDescription: general.siteDescription,
+        }}
+        title="homepage"
+      />
+      <BlogNav />
+      <Display404 strings={string404} />
 
-        <EmailMe strings={getConnected} />
-
-        <Footer socialMedia={socialMedia}  footer={footer} />
-      </div>
-    </Layout>
+      <Footer socialMedia={socialMedia} footer={footer} />
+    </div>
   );
 };
 

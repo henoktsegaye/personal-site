@@ -54,11 +54,11 @@ interface GetConnected {
 interface SiteSettings {
   siteTitle: string;
   siteDescription: string;
-  work: string;
-  middleContent: string;
-  blog: string;
-  chart: string;
-  emailMe: string;
+  work?: string;
+  middleContent?: string;
+  blog?: string;
+  chart?: string;
+  emailMe?: string;
 }
 
 interface Footer {
@@ -366,8 +366,8 @@ const LanguageStrings: {
     },
     string404: {
       siteTitle: "Page not found",
-      title: "didn't found this page",
-      subTitle: "you can go home and look around",
+      title: "didn't found that page",
+      subTitle: "Well I know how you end up here , I will try to figure that out! But meanwhile you can go back to home page",
       buttonText: "Go Home",
     },
     flowStrings: {

@@ -17,6 +17,7 @@ import { BlogNav } from "../../components/blog/blogNav";
 import { useTheme } from "../../hooks/useTheme";
 import { format } from "date-fns";
 import { Text } from "../../components/basic/genial/text";
+import Meta from "../../components/layout/meta";
 
 interface returnPath {
   params: {
@@ -61,17 +62,34 @@ const PostPage: React.FC<Props> = ({
   };
   return (
     <>
+      <Meta
+        socialMedia={socialMedia}
+        siteString={{
+          siteTitle: general.siteTitle,
+          siteDescription: general.siteDescription,
+        }}
+        title={frontMatter.title}
+        description={frontMatter.description}
+      />
+
       <BlogNav />
-      <div className="lg:max-w-screen-lg max-w-sm mx-auto py-10">
-        <article className="prose text-lg prose-blue mt-10">
-          <div className="mb-10 mt-32 ">
-            <Text isTitle className="mb-2" bold="extrabold" size="3xl">
+      <div className="dark:bg-gray-800 bg-gray-100 m-auto pt-40">
+        <div className="lg:max-w-screen-lg flex justify-start items-end max-w-sm mx-auto">
+          <div>
+            <Text isTitle className="mb-2" bold="extrabold" size="4xl">
               {frontMatter?.title}
             </Text>
-            <span className="text-gray-500 block mb-6  dark:text-gray-400">
+            <Text
+              size="xl"
+              className="text-gray-500 block mb-6  dark:text-gray-400"
+            >
               Written on {format(new Date(frontMatter?.date), "MMM do yyyy")}
-            </span>
+            </Text>
           </div>
+        </div>
+      </div>
+      <div className="lg:max-w-screen-lg max-w-sm mx-auto pb-10">
+        <article className="prose text-lg prose-blue mt-10">
           <div className="  blog  dark:border-gray-900">
             <MDXRemote components={components} {...source} />
           </div>

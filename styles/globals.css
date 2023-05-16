@@ -108,3 +108,7 @@ body b {
   @apply bg-green-300;
   @apply dark:bg-green-700;
 }
+
+.code-block:hover .copy-button {
+  @apply opacity-100;
+}

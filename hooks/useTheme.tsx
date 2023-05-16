@@ -3,7 +3,6 @@ import {
   createContext,
   useState,
   useEffect,
-  useLayoutEffect,
   useContext,
   useCallback,
 } from "react";
@@ -28,16 +27,17 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const foundTheme = storedTheme ?? (isBrowserSchemeDark() ? DARK : LIGHT);
     setDarkTheme(foundTheme === DARK);
   }, [setDarkTheme, isDark]);
-  useLayoutEffect(() => {
-	setTheme()
-	window.addEventListener("storage", setTheme);
+  useEffect(() => {
+    setTheme();
+    window.addEventListener("storage", setTheme);
   }, []);
 
   useEffect(() => {
     if (isDark === null) {
       return;
     }
-    if (isDark) {``
+    if (isDark) {
+      ``;
       localStorage.setItem(THEME_CONST, DARK);
       document.documentElement.classList.add(DARK);
       document.body.classList.add("bg-gray-900");

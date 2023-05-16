@@ -9,6 +9,7 @@ import { BlogCard } from "../components/blog/BlogCard";
 import { BlogNav } from "../components/blog/blogNav";
 import { Text } from "../components/basic/genial/text";
 import Footer from "../components/layout/footer";
+import Meta from "../components/layout/meta";
 
 type Props = {
   files: {
@@ -50,6 +51,14 @@ const Home: React.FC<Props> = ({ files, localeString, locale }) => {
 
   return (
     <div className=" h-full w-full ">
+      <Meta
+        socialMedia={socialMedia}
+        siteString={{
+          siteTitle: general.siteTitle,
+          siteDescription: general.siteDescription,
+        }}
+        title="homepage"
+      />
       <BlogNav />
       <div>
         <div className="  h-full flex flex-col  w-full   ">

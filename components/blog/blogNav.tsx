@@ -3,6 +3,7 @@ import { useTheme } from "../../hooks/useTheme";
 import { Text } from "../basic/genial/text";
 import MoonIcon from "../icons/moon-outline.svg";
 import SunIcon from "../icons/sun-outline.svg";
+import Meta from "../layout/meta";
 
 interface BlogNavProps {}
 const BlogNav = ({}: BlogNavProps) => {
@@ -10,7 +11,7 @@ const BlogNav = ({}: BlogNavProps) => {
   return (
     <div className="  bg-text-gray-500 dark:text-gray-100 ">
       <div
-        className=" fixed   backdrop-blur-lg rounded drop-shadow-lg  z-50  border-gray-200 dark:border-gray-800  bg-opacity-60 dark:bg-opacity-40  w-full "
+        className=" fixed  top-0  backdrop-blur-lg rounded drop-shadow-lg  z-50  border-gray-200 dark:border-gray-800  bg-opacity-60 dark:bg-opacity-40  w-full "
         style={{
           backdropFilter: "blur(23px)",
         }}
@@ -18,7 +19,10 @@ const BlogNav = ({}: BlogNavProps) => {
         <div className=" max-w-screen-xl 2xl:max-w-screen-xl lg:px-0 px-3 py-3 justify-between flex flex-row mx-auto w-full">
           <div className="grid grid-cols-4 items-center gap-8 ">
             <Link href="/">
-              <img src="/assets/logo1.png" className=" rounded h-12 mt-2" />
+              <img
+                src="/assets/logo1.png"
+                className=" cursor-pointer rounded h-12 mt-2"
+              />
             </Link>
           </div>
           <div className="flex gap-10  items-center">
