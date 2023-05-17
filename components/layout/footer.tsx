@@ -7,20 +7,17 @@ import GithubIcon from "../icons/github.svg";
 import { Text } from "../basic/genial/text";
 
 type props = {
-  footer: footer;
-  smaller?: boolean;
   socialMedia: socialMedia;
 };
 
-const Footer: React.FC<props> = ({ socialMedia, footer, smaller = false }) => {
-  const { title } = footer;
+const Footer: React.FC<props> = ({ socialMedia }) => {
   return (
     <div className=" border-t text-xl border-gray-100 dark:border-gray-800 ">
-      <div className=" grid xl:grid-cols-2   grid-cols-1 pt-8 pb-4 justify-between items-start max-w-screen-lg  2xl:max-w-screen-xl px-4 lg:px-0 mx-auto">
-        <div className=" mr-10">
-          <div>
+      <div className="flex flex-col xl:grid xl:grid-cols-2  pt-8 pb-4 justify-between items-start max-w-screen-lg  2xl:max-w-screen-xl px-4 lg:px-0 mx-auto">
+        <div className=" flex flex-col xl:mr-10">
+          <div className="flex flex-col w-full">
             <div className="flex flex-row justify-between my-4">
-              <div className="flex flex-row gap-7 ">
+              <div className="flex flex-row xl:gap-7  gap-4">
                 <a href={socialMedia.github}>
                   <GithubIcon
                     width={22}
@@ -105,10 +102,7 @@ const Footer: React.FC<props> = ({ socialMedia, footer, smaller = false }) => {
           </div>
         </div>
         <div className="col-span-2">
-          <Text className="mt-8">
-            {" "}
-            Developed with Next.js and Tailwind CSS.
-          </Text>
+          <Text className="mt-8">Developed with Next.js and Tailwind CSS.</Text>
         </div>
       </div>
     </div>

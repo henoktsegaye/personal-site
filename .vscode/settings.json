@@ -13,5 +13,8 @@
         "mdx": {
             "parser": "markdown"
         }
-    }
+    },
+    "cSpell.enableFiletypes": [
+        "mdx"
+    ]
 }
