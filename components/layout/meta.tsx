@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { SITE_URL } from "../../lib/constants";
 import { siteStrings, socialMedia } from "../../lib/lang";
+import Script from 'next/script'
 
 type Props = {
   siteString: siteStrings;
@@ -74,6 +75,19 @@ const Meta: React.FC<Props> = ({
       <meta property="og:image" content={ogImage} key="ogImage" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={TWITTER_USERNAME} />
+      <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8LFFV6MN7W"
+        />
+
+        <Script id="google-analytics">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8LFFV6MN7W');
+          `}
+        </Script>
       {children}
     </Head>
   );
